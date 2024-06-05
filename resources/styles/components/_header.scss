@@ -1,0 +1,28 @@
+header {
+  nav {
+    li.menu-item {
+      @apply text-navy text-base uppercase;
+    }
+
+    @media screen and (max-width: 786px) {
+      .navbar-collapse {
+        visibility: hidden;
+        opacity: 0;
+        max-height: 0px;
+        transition: all 0.3s ease-in-out;
+
+        ul {
+          @apply flex flex-col items-center;
+          li {
+            @apply py-1;
+          }
+        }
+        &.open {
+          visibility: visible;
+          opacity: 1;
+          max-height: 1000px;
+        }
+      }
+    }
+  }
+}

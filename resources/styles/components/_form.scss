@@ -1,0 +1,140 @@
+label {
+  @apply uppercase mb-1 block;
+}
+input,
+textarea,
+select {
+  @apply border border-midnight text-white;
+  width: 100%;
+  display: block;
+  background: none;
+  border-radius: 8px;
+  padding: 13px 21px;
+  font-size: 1rem;
+  font-family: 'Grotesk', Geneva, Tahoma, sans-serif;
+  transition: all 0.2s ease-in-out;
+  &:focus {
+    outline-color: #b269ff !important;
+    outline-style: solid;
+    outline-width: 3px;
+  }
+  &:focus {
+    @apply outline-indigo;
+  }
+}
+
+/* Custom styles for the dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 46px;
+
+  .dropdown-container {
+    @apply bg-indigoLight border border-midnight text-white;
+    border-radius: 8px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.open {
+    .dropdown-content {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .arrow {
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    .dropdown-content {
+      opacity: 1;
+      visibility: visible;
+      max-height: 1000px;
+    }
+  }
+
+  input {
+    border: none;
+    pointer-events: none;
+    padding-bottom: 8px !important;
+  }
+
+  .arrow {
+    position: absolute;
+    right: 12px;
+    top: 24px;
+    width: 20px;
+    height: 20px;
+    background: url('~@images/arrow.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transform-origin: center center;
+    transition: all 0.2s ease-in-out;
+
+    &.open {
+      transform: translateY(-50%) rotate(180deg);
+    }
+  }
+}
+.dropdown-content {
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0px;
+  min-width: 100%;
+  z-index: 1;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.dropdown-content .dropdown-item {
+  @apply font-Grotesk;
+  color: black;
+  padding: 13px 21px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 10px; /* 62.5% */
+  letter-spacing: 0.2px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #452faa 0%, #b269ff 100%);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease-in-out;
+  }
+  &:last-child {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+
+  &:hover {
+    color: white;
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}

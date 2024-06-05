@@ -1,0 +1,59 @@
+{
+  "name": "jon-michael-c/leibstarter",
+  "type": "wordpress-theme",
+  "license": "MIT",
+  "description": "Leibowitz Starter based on Sage by roots.io",
+  "homepage": "https://github.com/jon-michael-c/leibstarter",
+  "authors": [
+    {
+    "name": "jon-michael-c",
+    "email": "jon@jmcubano.com",
+    "homepage": "https://jmcubano.com"
+    }
+  ],
+  "keywords": [
+    "wordpress"
+  ],
+  "support": {
+    "issues": "https://github.com/roots/sage/issues",
+    "forum": "https://discourse.roots.io/"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+  "require": {
+    "php": ">=8.1",
+    "log1x/acf-composer": "^3.0",
+    "log1x/poet": "^2.0",
+    "log1x/sage-directives": "^2.0",
+    "log1x/sage-svg": "^1.1",
+    "roots/acorn": "*"
+  },
+  "require-dev": {
+    "laravel/pint": "^1.13"
+  },
+  "suggest": {
+    "log1x/sage-directives": "A collection of useful Blade directives for WordPress and Sage (^1.0)."
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "Roots\\Acorn\\ComposerScripts::postAutoloadDump"
+    ]
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "extra": {
+    "acorn": {
+      "providers": [
+        "App\\Providers\\ThemeServiceProvider"
+      ]
+    }
+  }
+}

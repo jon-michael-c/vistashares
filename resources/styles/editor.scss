@@ -1,0 +1,5 @@
+@import './app.scss';
+
+.acf-block-component {
+  @extend .content-grid;
+}

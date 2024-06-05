@@ -1,0 +1,16 @@
+.btn {
+  @apply text-white uppercase font-[700] rounded-[4px] text-sm px-[32px] py-[16px];
+  transition: color 0.2s ease-in, background-color 0.2s ease-in,
+    border-color 0.2s ease-in;
+
+  &.btn--sm {
+    @apply font-light px-[16px] py-[4px];
+  }
+
+  &.btn--primary {
+    @apply bg-red text-yellow hover:bg-yellow hover:text-navy;
+  }
+  &.btn--secondary {
+    @apply bg-orange text-navy hover:bg-yellow hover:text-red;
+  }
+}

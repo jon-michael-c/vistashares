@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+  color: inherit;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+svg {
+  shape-rendering: crispEdges;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Termina', Geneva, Tahoma, sans-serif;
+}
+
+body {
+  @apply bg-midnight text-white;
+  font-family: 'Termina', Geneva, Tahoma, sans-serif;
+  font-style: normal;
+  overflow-x: hidden;
+}
+main {
+  min-height: 500px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+}
+
+@layer base {
+  h1 {
+    @apply text-m3xl;
+    @media screen and (min-width: 768px) {
+      @apply text-3xl;
+    }
+  }
+  h2 {
+    @apply text-lg;
+    @media screen and (min-width: 768px) {
+      @apply text-2xl;
+    }
+  }
+
+  h3 {
+    @apply text-md;
+    @media screen and (min-width: 768px) {
+      @apply text-xl;
+    }
+  }
+  h4 {
+    @apply text-base;
+    @media screen and (min-width: 768px) {
+      @apply text-lg;
+    }
+  }
+  h5 {
+    @apply text-base font-Grotesk;
+  }
+  p {
+    @apply text-base font-Grotesk;
+  }
+}
+
+a {
+  transition: all 0.2s ease-in-out;
+}
+.icon {
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  &:hover {
+    filter: brightness(1.35);
+  }
+}
+
+.font-outline {
+  font-feature-settings: 'clig' off, 'liga' off;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #fff;
+  color: transparent;
+}
+
+.gradient-bg {
+  position: absolute;
+  max-height: 800px;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(14, 6, 45, 1) 95%
+    ),
+    url('~@images/gradient-bg.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  @media screen and (max-width: 768px) {
+    max-height: 200px;
+  }
+}
+
+.bg-gradient {
+  background: linear-gradient(270deg, #452faa 0%, #b269ff 100%);
+}
