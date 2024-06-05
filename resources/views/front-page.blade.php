@@ -3,27 +3,59 @@
 @section('content')
 
 @php
-$cards = [
-    [
-        'title' => 'Pending Launch',
-        'content' => [
-            'Vistashares',
-            'Electrification',
-            'Supercycle ETF'
+    $cards = [
+        [
+            'title' => 'Pending Launch',
+            'content' => [
+                'Vistashares',
+                'Electrification',
+                'Supercycle ETF'
+            ]
+        ],
+        [
+            'title' => 'Pending Launch',
+            'content' => [
+                'VistaShares Artificial ',
+                'Intelligence',
+                'Supercycle ETF'
+            ]
         ]
-    ],
-    [
-        'title' => 'Pending Launch',
-        'content' => [
-            'VistaShares Artificial ',
-            'Intelligence',
-            'Supercycle ETF'
-        ]
-    ]
-];
-/*
-VistaShares Artificial Intelligence Supercycle ETF 
-*/
+    ];
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $first_name = sanitize_text_field($_POST['first-name']);
+        $last_name = sanitize_text_field($_POST['last-name']);
+        $email = sanitize_email($_POST['email']);
+        $company = sanitize_text_field($_POST['company']);
+        $telephone = sanitize_text_field($_POST['telephone']);
+        $country = sanitize_text_field($_POST['country']);
+        $investor_type = sanitize_text_field($_POST['investor-type']);
+        $message = sanitize_textarea_field($_POST['message']);
+
+        $to = 'jonmichael@cubedwebdesign.com';
+        $subject = 'New Contact Form Submission';
+        $headers = array('Content-Type: text/html; charset=UTF-8');
+
+        $body = "
+        <html>
+        <body>
+        <p>First Name: $first_name</p>
+        <p>Last Name: $last_name</p>
+        <p>Email: $email</p>
+        <p>Company: $company</p>
+        <p>Telephone: $telephone</p>
+        <p>Country/Region: $country</p>
+        <p>Investor Type: $investor_type</p>
+        <p>Message: $message</p>
+        </body>
+        </html>";
+
+        wp_mail($to, $subject, $body, $headers);
+        echo '<p>Thank you for your message!</p>';
+    }
+    /*
+    VistaShares Artificial Intelligence Supercycle ETF 
+    */
 @endphp
 
 <section class="hero full-width pt-12">
@@ -43,10 +75,10 @@ VistaShares Artificial Intelligence Supercycle ETF
                 technological
                 advancements shaping our world—including artificial intelligence and electrification.</p>
             <div class="md:max-w-[600px] py-12 md:py-0">
-                <div class="flex flex-wrap md:flex-nowrap justify-center w-full gap-8 pb-4">
+                <div class="flex flex-wrap md:flex-nowrap justify-between  w-full gap-8 pb-4">
                     @foreach ($cards as $card)
                         <div
-                            class="h-fit border border-indigo p-8 rounded-tl-lg rounded-br-lg w-full max-w-[277px] md:h-[177px]">
+                            class="h-fit border border-indigo p-8 rounded-tl-lg rounded-br-lg w-full max-w-[277px] md:h-[220px] lg:h-[177px]">
                             <h5 class="text-indigo">{{ $card['title']}}</h5>
                             @foreach ($card['content'] as $line)
                                 <p>{{$line}}</p>
@@ -70,19 +102,19 @@ VistaShares Artificial Intelligence Supercycle ETF
            
     </div>
     <div class="form-container bg-indigoLight text-midnight p-10 rounded-tr-lg rounded-bl-lg md:px-16">
-        <form action="" class="">
+        <form id="contact-form" class="">
             <div class="grid gap-6 md:grid-cols-2 md:gap-x-10">
                 <div class="form-group col">
-                    <label for="name">First Name</label>
-                    <input type="text" name="name" id="name" class="form-control">
+                    <label for="firstName">First Name *</label>
+                    <input required type="text" name="firstName" id="firstName" class="form-control">
                 </div>
                 <div class="form-group col">
-                    <label for="name">Last Name</label>
-                    <input type="text" name="name" id="name" class="form-control">
+                    <label for="lastName">Last Name *</label>
+                    <input required type="text" name="lastName" id="lastName" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" name="email" id="email" class="form-control">
+                    <label for="email">Email Address *</label>
+                    <input required type="email" name="email" id="email" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="company">Company Name</label>
@@ -100,7 +132,7 @@ VistaShares Artificial Intelligence Supercycle ETF
                         <input type="text" id="country" name="country"
                             class="text-white form-control  block w-full rounded-md  "
                             readonly>
-                        <div class="dropdown-content mt-1 rounded-md border "></div>
+                        <div class="dropdown-content "></div>
                         </div>
                     </div>
                 </div>
@@ -121,8 +153,12 @@ VistaShares Artificial Intelligence Supercycle ETF
                 <label for="message">Message</label>
                 <textarea name="message" id="message" class="form-control w-full min-h-[250px]"></textarea>
             </div>
-            <div class="form-group mt-6">
+            <div class="form-group mt-6 flex items-center gap-8">
                 <button type="submit" class="btn btn-primary bg-gradient">Submit</button>
+
+                <div class="loader"></div>
+
+            <div id="form-response"></div>
             </div>
     </div>
     </form>

@@ -44,11 +44,6 @@ select {
   }
 
   &.open {
-    .dropdown-content {
-      opacity: 1;
-      visibility: visible;
-    }
-
     .arrow {
       transform: translateY(-50%) rotate(180deg);
     }
@@ -56,7 +51,8 @@ select {
     .dropdown-content {
       opacity: 1;
       visibility: visible;
-      max-height: 1000px;
+      max-height: 300px;
+      overflow-y: scroll;
     }
   }
 
@@ -91,9 +87,15 @@ select {
   visibility: hidden;
   max-height: 0px;
   min-width: 100%;
+  overflow-y: hidden;
   z-index: 1;
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+
+.dropdown-content::-webkit-scrollbar-track {
+  background: #c7a1ff;
+}
+
 .dropdown-content .dropdown-item {
   @apply font-Grotesk;
   color: black;

@@ -14,6 +14,25 @@ svg {
 html {
   scroll-behavior: smooth;
   font-family: 'Termina', Geneva, Tahoma, sans-serif;
+
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #c7a1ff;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0e062d;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #b269ff;
+
+    border-radius: 10px;
+  }
 }
 
 body {
@@ -22,6 +41,7 @@ body {
   font-style: normal;
   overflow-x: hidden;
 }
+
 main {
   min-height: 500px;
 }
@@ -109,4 +129,22 @@ a {
 
 .bg-gradient {
   background: linear-gradient(270deg, #452faa 0%, #b269ff 100%);
+}
+
+.loader {
+  display: none;
+  scale: 0.75;
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(farthest-side, #452faa 94%, #0000) top/8px 8px
+      no-repeat,
+    conic-gradient(#0000 30%, #452faa);
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
+  animation: l13 1s infinite linear;
+}
+@keyframes l13 {
+  100% {
+    transform: rotate(1turn);
+  }
 }
