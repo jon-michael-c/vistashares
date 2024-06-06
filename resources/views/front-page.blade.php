@@ -126,6 +126,7 @@
                         <div class="arrow"></div>
                         <input type="text" id="country" name="country"
                             class="form-control  block w-full rounded-md  "
+                            placeholder="-- Select --"
                             readonly>
                         <div class="dropdown-content "></div>
                         </div>
@@ -137,7 +138,8 @@
                         <div class="dropdown-container">
                         <div class="arrow"></div>
                         <input type="text" id="investor-type" name="investor-type"
-                            class=" form-control block w-full   "
+                            class=" form-control block w-full"
+                            placeholder="-- Select --"
                             readonly />
                         <div class="dropdown-content mt-1 "></div>
                         </div>

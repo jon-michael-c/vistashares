@@ -18,16 +18,28 @@
       </div>
     </div>
     <div class="legal ">
-      <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In aliquet, velit ut volutpat
-        tristique, mauris velit
-        auctor
-        massa, id feugiat diam justo vel ante. Vestibulum eu velit eget ligula accumsan dictum vel ut tortor. Etiam
-        convallis id
-        augue ut interdum. Mauris congue felis laoreet ligula suscipit pretium. Praesent sit amet fringilla justo, eu
-        pretium
-        lacus. Aliquam vel mauris nibh. Donec malesuada ornare leo eget viverra. Suspendisse vehicula condimentum velit,
-        nec
-        malesuada tellus volutpat a.</p>
+      <p class="text-sm mb-3 uppercase">BEFORE INVESTING YOU SHOULD CAREFULLY CONSIDER THE FUND’S INVESTMENT OBJECTIVES,
+        RISKS, CHARGES AND EXPENSES. THIS AND
+        OTHER INFORMATION IS IN THE PROSPECTUS, A COPY OF WHICH MAY BE OBTAINED FROM WWW.VISTASHARES.COM. PLEASE READ
+        THE
+        PROSPECTUS CAREFULLY BEFORE YOU INVEST.</p>
+      <p class="text-sm mb-3 uppercase">INFORMATION CONTAINED HEREIN IS SUBJECT TO COMPLETION OR AMENDMENT. A
+        REGISTRATION STATEMENT
+        RELATING TO THESE
+        SECURITIES HAS BEEN FILED WITH THE SECURITIES AND EXCHANGE COMMISSION BUT HAS NOT YET BECOME EFFECTIVE. THESE
+        SECURITIES
+        MAY NOT BE SOLD NOR MAY OFFERS TO BUY BE ACCEPTED PRIOR TO THE TIME THE REGISTRATION STATEMENT BECOMES
+        EFFECTIVE. THIS
+        COMMUNICATION SHALL NOT CONSTITUTE AN OFFER TO BUY OR THE SOLICITATION OF AN OFFER TO BUY NOR SHALL THERE BE ANY
+        SALE OF
+        THESE SECURITIES IN ANY STATE IN WHICH SUCH OFFER, SOLICITATION OR SALE WOULD BE UNLAWFUL PRIOR TO REGISTRATION
+        OR
+        QUALIFICATION UNDER SECURITIES LAWS OF ANY SUCH STATE.
+      </p>
+      <p class="text-sm mb-3 uppercase">
+        AN INDICATION OF INTEREST IN RESPONSE TO THIS ADVERTISEMENT WILL INVOLVE NO OBLIGATION OR COMMITMENT OF ANY
+        KIND.
+      </p>
     </div>
 
   </div>

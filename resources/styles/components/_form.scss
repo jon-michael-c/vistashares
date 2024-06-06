@@ -21,6 +21,10 @@ select {
   &:focus {
     @apply outline-indigo;
   }
+
+  &::placeholder {
+    @apply text-midnight opacity-45;
+  }
 }
 
 /* Custom styles for the dropdown */
