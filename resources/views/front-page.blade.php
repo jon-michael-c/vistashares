@@ -14,7 +14,8 @@
         ],
         [
             'title' => 'Pending Launch',
-            'content' => [ 'VistaShares Artificial ',
+            'content' => [
+                'VistaShares Artificial ',
                 'Intelligence',
                 'Supercycle ETF'
             ]
@@ -36,18 +37,18 @@
         $headers = array('Content-Type: text/html; charset=UTF-8');
 
         $body = "
-        <html>
-        <body>
-        <p>First Name: $first_name</p>
-        <p>Last Name: $last_name</p>
-        <p>Email: $email</p>
-        <p>Company: $company</p>
-        <p>Telephone: $telephone</p>
-        <p>Country/Region: $country</p>
-        <p>Investor Type: $investor_type</p>
-        <p>Message: $message</p>
-        </body>
-        </html>";
+                                                                                                    <html>
+                                                                                                    <body>
+                                                                                                    <p>First Name: $first_name</p>
+                                                                                                    <p>Last Name: $last_name</p>
+                                                                                                    <p>Email: $email</p>
+                                                                                                    <p>Company: $company</p>
+                                                                                                <p>Telephone: $telephone</p>
+                                                                                                <p>Country/Region: $country</p>
+                                                                                                <p>Investor Type: $investor_type</p>
+                                                                                                <p>Message: $message</p>
+                                                                                                </body>
+                                                                                                </html>";
 
         wp_mail($to, $subject, $body, $headers);
         echo '<p>Thank you for your message!</p>';
@@ -60,41 +61,34 @@
 <section class="hero full-width pt-12">
     <div class="gradient-bg full-width z-0"></div>
     <div class="">
-        <h1 class="mb-[16px] md:mb-0 text-white uppercase max-w-[800px]">The Next Generation  of <br class="break"/>  Thematics  is <br /> <span
-                class="font-outline">on the Horizon.</span> </h1>
-        <div class="mb-[32px] md:mb-0 flex-wrap md:flex lg:flex-nowrap md:pt-12 gap-8 justify-between">
-            <p class="md:max-w-[395px]">VistaShares ETFs are true thematics, offering Pure Exposure™  to the economic
+        <h1 class="mb-[16px] md:mb-0 text-white uppercase max-w-[800px]">The Next Generation of <br class="break" />
+            Thematics is <br /> <span class="font-outline">on the Horizon.</span> </h1>
+        <div class="mb-[16px] md:mb-0 flex-wrap md:flex lg:flex-nowrap md:pt-12 gap-8 justify-between">
+            <p class="mb-6 md:mb-0 md:max-w-[395px]">VistaShares ETFs are true thematics, offering Pure Exposure™  to
+                the economic
                 supercycles
                 poised to create
                 significant
                 investment value. Supercycles are long-term trends that disrupt current economic models through
                 disruptive
                 technological
-                advancements shaping our world—including artificial intelligence and electrification.</p>
-            <div class="lg:max-w-[530px] w-full py-12 md:py-0">
-                <div class="flex flex-col xs:flex-row  md:flex-nowrap w-full gap-8 pb-4">
-                    @foreach ($cards as $card)
-                        <div
-                            class="h-fit  border border-indigo p-8 rounded-tl-lg rounded-br-lg w-full sm:w-1/2 md:max-w-[277px] xs:min-h-[177px] sm:min-h-fit lg:h-[177px]">
-                            <h5 class="text-indigo">{{ $card['title']}}</h5>
-                            @foreach ($card['content'] as $line)
-                                <p>{{$line}}</p>
-                            @endforeach
-                        </div>
-                    @endforeach 
-        </div>
-                <span class="text-indigo text-[14px] font-Grotesk">More information on the ETFs, including how to
-                    invest, coming
-                    soon.</span>
+                advancements shaping our world.</p>
+            <div
+                class="w-full px-7 py-8  md:px-12 md:py-9 max-w-[480px] border   border-indigo rounded-tl-lg rounded-br-lg">
+                <h4 class="h-fit font-[400] leading-[1.52]  uppercase">
+                    Complete the form below to be among the first to learn more
+                </h4>
             </div>
         </div>
-        <hr class="border-indigo my-12  md:my-24">
+    </div>
+    <hr class="border-indigo my-12  md:my-24">
 </section>
 <section class="grid mb-4 gap-4 md:gap-6 md:my-6">
     <div class="grid gap-4 md:gap-6 ">
         <h2>Invest confidently in the disruptors on the horizon of innovation.</h2>
         <h4 class="text-indigo font-bold uppercase">Connect with VistaShares and join us at the forefront.</h4>
-        <p>Email us directly at <a class="underline hover:text-indigo" href="mailto:info@vistashares.com">info@VistaShares.com</a> or contact us through the form below.</p>
+        <p>Email us directly at <a class="underline hover:text-indigo"
+                href="mailto:info@vistashares.com">info@VistaShares.com</a> or contact us through the form below.</p>
     </div>
     <div class="form-container bg-indigoLight text-midnight p-10 px-6 rounded-tr-lg rounded-bl-lg md:px-16">
         <form id="contact-form" class="">
@@ -116,19 +110,17 @@
                     <input type="text" name="company" id="company" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="message">Telephone Number</label>
+                    <label for="telephone">Telephone Number</label>
                     <input type="tel" name="telephone" id="telephone" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="country">Country/Region</label>
                     <div class="dropdown country">
                         <div class="dropdown-container">
-                        <div class="arrow"></div>
-                        <input type="text" id="country" name="country"
-                            class="form-control  block w-full rounded-md  "
-                            placeholder="-- Select --"
-                            readonly>
-                        <div class="dropdown-content "></div>
+                            <div class="arrow"></div>
+                            <input type="text" id="country" name="country"
+                                class="form-control  block w-full rounded-md  " placeholder="-- Select --" readonly>
+                            <div class="dropdown-content "></div>
                         </div>
                     </div>
                 </div>
@@ -136,16 +128,14 @@
                     <label for="investor-type">Investor Type</label>
                     <div class="dropdown investor-type">
                         <div class="dropdown-container">
-                        <div class="arrow"></div>
-                        <input type="text" id="investor-type" name="investor-type"
-                            class=" form-control block w-full"
-                            placeholder="-- Select --"
-                            readonly />
-                        <div class="dropdown-content mt-1 "></div>
+                            <div class="arrow"></div>
+                            <input type="text" id="investor-type" name="investor-type"
+                                class=" form-control block w-full" placeholder="-- Select --" readonly />
+                            <div class="dropdown-content mt-1 "></div>
                         </div>
                     </div>
+                </div>
             </div>
-           </div> 
             <div class="form-group mt-6">
                 <label for="message">Message</label>
                 <textarea name="message" id="message" class="form-control w-full min-h-[250px]"></textarea>
@@ -155,7 +145,7 @@
 
                 <div class="loader"></div>
 
-            <div id="form-response"></div>
+                <div id="form-response"></div>
             </div>
     </div>
     </form>
@@ -164,7 +154,7 @@
             document.getElementById('investor-type').value = type;
         }
 
-        function insertItems (items, dropdown) {
+        function insertItems(items, dropdown) {
             items.forEach(item => {
                 const dropdownItem = document.createElement('div');
                 dropdownItem.classList.add('dropdown-item');
@@ -191,7 +181,7 @@
         const investorDropdown = document.querySelector('.dropdown.investor-type');
         const investorDropdownContent = investorDropdown.querySelector('.dropdown-content');
         insertItems(investorItems, investorDropdown);
-        
+
 
         investorDropdown.addEventListener('click', () => {
             investorDropdown.classList.toggle('open');
