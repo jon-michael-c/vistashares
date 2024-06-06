@@ -4,7 +4,7 @@ label {
 input,
 textarea,
 select {
-  @apply border border-midnight text-white;
+  @apply border border-midnight text-midnight;
   width: 100%;
   display: block;
   background: none;
@@ -31,13 +31,13 @@ select {
   height: 46px;
 
   .dropdown-container {
-    @apply bg-indigoLight border border-midnight text-white;
+    @apply bg-indigoLight border border-midnight text-midnight;
     border-radius: 8px;
     position: absolute;
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 50;
+    z-index: 1;
   }
   &:hover {
     cursor: pointer;
@@ -46,6 +46,9 @@ select {
   &.open {
     .arrow {
       transform: translateY(-50%) rotate(180deg);
+    }
+    .dropdown-container {
+      z-index: 999;
     }
 
     .dropdown-content {
@@ -94,16 +97,16 @@ select {
 
 .dropdown-content::-webkit-scrollbar-track {
   background: #c7a1ff;
+  padding: 2px;
 }
 
 .dropdown-content .dropdown-item {
-  @apply font-Grotesk;
-  color: black;
+  @apply font-Grotesk text-midnight;
   padding: 13px 21px;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 10px; /* 62.5% */
+  line-height: 1.25; /* 62.5% */
   letter-spacing: 0.2px;
   text-decoration: none;
   display: block;
@@ -135,8 +138,4 @@ select {
       opacity: 1;
     }
   }
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
 }

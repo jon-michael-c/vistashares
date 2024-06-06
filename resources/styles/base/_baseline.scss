@@ -30,9 +30,12 @@ html {
 
   ::-webkit-scrollbar-thumb {
     background: #b269ff;
-
     border-radius: 10px;
+    padding: 1px;
   }
+
+  scrollbar-width: thin;
+  scrollbar-color: #b269ff #0e062d;
 }
 
 body {
@@ -56,12 +59,23 @@ h6 {
 @layer base {
   h1 {
     @apply text-m3xl;
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 480px) {
       @apply text-3xl;
+      & > .break {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 786px) {
+      font-size: max(28px, 4vw);
     }
   }
   h2 {
-    @apply text-lg;
+    font-size: 1.5rem;
+    line-height: 1.583;
+    font-weight: 600;
+    letter-spacing: 0.0625rem;
+
     @media screen and (min-width: 768px) {
       @apply text-2xl;
     }
@@ -74,7 +88,9 @@ h6 {
     }
   }
   h4 {
-    @apply text-base;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.75rem;
     @media screen and (min-width: 768px) {
       @apply text-lg;
     }
@@ -83,7 +99,14 @@ h6 {
     @apply text-base font-Grotesk;
   }
   p {
-    @apply text-base font-Grotesk;
+    @apply font-Grotesk;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 1.4375rem;
+
+    @media screen and (min-width: 768px) {
+      @apply text-base;
+    }
   }
 }
 

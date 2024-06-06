@@ -14,7 +14,7 @@
 
       </div>
       <div class="md:flex">
-        <p>{{ $copyright }} {{$siteName}}</p>
+        <p class="font-Termina font-[500]">{{ $copyright }} {{$siteName}}</p>
       </div>
     </div>
     <div class="legal ">

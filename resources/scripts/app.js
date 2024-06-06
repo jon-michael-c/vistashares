@@ -40,6 +40,24 @@ domReady(async () => {
   countrySelect.addEventListener('click', function () {
     countrySelect.classList.toggle('open');
   });
+
+  document.addEventListener('click', function (event) {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    const target = event.target;
+    let isDropdown = false;
+    dropdowns.forEach(function (dropdown) {
+      if (dropdown.contains(target)) {
+        isDropdown = true;
+      } else {
+        dropdown.classList.remove('open');
+      }
+    });
+    if (!isDropdown) {
+      dropdowns.forEach(function (dropdown) {
+        dropdown.classList.remove('open');
+      });
+    }
+  });
 });
 
 /**
