@@ -133,7 +133,13 @@ class ThemeOptions extends Field
                 'label' => '404 Title',
                 'instructions' => 'Add your 404 title here.',
             ])
-
+            ->addTab('Email Settings', [
+                'placement' => 'left',
+            ])
+            ->addText('email_address', [
+                'label' => 'Email Address',
+                'instructions' => 'Add your email address here.',
+            ])
         ;
 
         return $themeOptions->build();

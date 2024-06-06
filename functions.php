@@ -84,10 +84,11 @@ function send_contact_email()
     $country = sanitize_text_field($_POST['country']);
     $investor_type = sanitize_text_field($_POST['investorType']);
     $message = sanitize_textarea_field($_POST['message']);
+    $email_address = get_field('email_address', 'options');
 
-    $to = 'info@vistashares.com';
+    $to = $email_address;
     $subject = 'New Contact Form Submission from vistashares.com';
-    $headers = array('Content-Type: text/html; charset=UTF-8', 'From: ' . $email);
+    $headers = array('Content-Type: text/html; charset=UTF-8', 'From: ' . 'wordpress@vistashares.com');
 
     $body = "
     <html>
