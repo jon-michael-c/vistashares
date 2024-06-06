@@ -85,8 +85,8 @@ function send_contact_email()
     $investor_type = sanitize_text_field($_POST['investorType']);
     $message = sanitize_textarea_field($_POST['message']);
 
-    $to = 'jonmichael@leibowitzdesign.com';
-    $subject = 'New Contact Form Submission';
+    $to = 'info@vistashares.com';
+    $subject = 'New Contact Form Submission from vistashares.com';
     $headers = array('Content-Type: text/html; charset=UTF-8', 'From: ' . $email);
 
     $body = "
