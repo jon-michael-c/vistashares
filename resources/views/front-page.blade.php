@@ -71,11 +71,11 @@
                 disruptive
                 technological
                 advancements shaping our world—including artificial intelligence and electrification.</p>
-            <div class="lg:max-w-[600px] w-full py-12 md:py-0">
-                <div class="flex flex-col xs:flex-row gap-4  md:flex-nowrap   w-full gap-8 pb-4">
+            <div class="lg:max-w-[530px] w-full py-12 md:py-0">
+                <div class="flex flex-col xs:flex-row  md:flex-nowrap w-full gap-8 pb-4">
                     @foreach ($cards as $card)
                         <div
-                            class="h-fit  border border-indigo p-8 rounded-tl-lg rounded-br-lg w-full sm:w-1/2 md:max-w-[277px] xs:min-h-[200px] lg:h-[177px]">
+                            class="h-fit  border border-indigo p-8 rounded-tl-lg rounded-br-lg w-full sm:w-1/2 md:max-w-[277px] xs:min-h-[177px] sm:min-h-fit lg:h-[177px]">
                             <h5 class="text-indigo">{{ $card['title']}}</h5>
                             @foreach ($card['content'] as $line)
                                 <p>{{$line}}</p>
