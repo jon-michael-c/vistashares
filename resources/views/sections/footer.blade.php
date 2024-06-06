@@ -18,28 +18,25 @@
       </div>
     </div>
     <div class="legal ">
-      <p class="text-sm mb-3 uppercase">BEFORE INVESTING YOU SHOULD CAREFULLY CONSIDER THE FUND’S INVESTMENT OBJECTIVES,
-        RISKS, CHARGES AND EXPENSES. THIS AND
-        OTHER INFORMATION IS IN THE PROSPECTUS, A COPY OF WHICH MAY BE OBTAINED FROM WWW.VISTASHARES.COM. PLEASE READ
-        THE
-        PROSPECTUS CAREFULLY BEFORE YOU INVEST.</p>
-      <p class="text-sm mb-3 uppercase">INFORMATION CONTAINED HEREIN IS SUBJECT TO COMPLETION OR AMENDMENT. A
-        REGISTRATION STATEMENT
-        RELATING TO THESE
-        SECURITIES HAS BEEN FILED WITH THE SECURITIES AND EXCHANGE COMMISSION BUT HAS NOT YET BECOME EFFECTIVE. THESE
-        SECURITIES
-        MAY NOT BE SOLD NOR MAY OFFERS TO BUY BE ACCEPTED PRIOR TO THE TIME THE REGISTRATION STATEMENT BECOMES
-        EFFECTIVE. THIS
-        COMMUNICATION SHALL NOT CONSTITUTE AN OFFER TO BUY OR THE SOLICITATION OF AN OFFER TO BUY NOR SHALL THERE BE ANY
-        SALE OF
-        THESE SECURITIES IN ANY STATE IN WHICH SUCH OFFER, SOLICITATION OR SALE WOULD BE UNLAWFUL PRIOR TO REGISTRATION
-        OR
-        QUALIFICATION UNDER SECURITIES LAWS OF ANY SUCH STATE.
-      </p>
-      <p class="text-sm mb-3 uppercase">
-        AN INDICATION OF INTEREST IN RESPONSE TO THIS ADVERTISEMENT WILL INVOLVE NO OBLIGATION OR COMMITMENT OF ANY
-        KIND.
-      </p>
+      <p class="text-sm mb-3 ">Before investing, you should carefully consider the fund’s investment
+        objectives, risks, charges, and expenses. This and
+        other information are in the prospectus, a copy of which may be obtained from <a
+          href="<?php echo home_url(); ?>" class="underline"> www.vistashares.com. </a> Please read
+        the
+        prospectus carefully before you invest. Information contained herein is subject to completion or amendment. A
+        registration statement relating to these securities has been filed with the Securities and Exchange Commission
+        but has
+        not yet become effective. These securities may not be sold nor may offers to buy be accepted prior to the time
+        the
+        registration statement becomes effective. This communication shall not constitute an offer to buy or the
+        solicitation of
+        an offer to buy nor shall there be any sale of these securities in any state in which such offer, solicitation,
+        or sale
+        would be unlawful prior to registration or qualification under securities laws of any such state. An indication
+        of
+        interest in response to this advertisement will involve no obligation or commitment of any kind.</p>
+      <p class="text-sm mb-3 ">Investments involve risk, including the loss of principal.</p>
+      <p class="text-sm mb-3">Foreside Fund Services, LLC</p>
     </div>
 
   </div>
