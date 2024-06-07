@@ -98,7 +98,7 @@ function send_contact_email()
     <p>Email: " . $email . "</p>
     <p>Company: " . $company . "</p>
     <p>Telephone: " . $telephone . "</p>
-    <p>Country/Region: " . $country . "</p>
+    <p>State/Region: " . $country . "</p>
     <p>Investor Type: " . $investor_type . "</p>
     <p>Message: " . $message . "</p>
     </body>

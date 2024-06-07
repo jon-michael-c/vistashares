@@ -106,15 +106,15 @@
                     <input required type="email" name="email" id="email" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="company">Company Name</label>
-                    <input type="text" name="company" id="company" class="form-control">
+                    <label for="company">Company Name *</label>
+                    <input type="text" name="company" id="company" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="telephone">Telephone Number</label>
                     <input type="tel" name="telephone" id="telephone" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="country">Country/Region</label>
+                    <label for="country">State/Region</label>
                     <div class="dropdown country">
                         <div class="dropdown-container">
                             <div class="arrow"></div>
@@ -125,12 +125,12 @@
                     </div>
                 </div>
                 <div class="form-group ">
-                    <label for="investor-type">Investor Type</label>
+                    <label for="investor-type">Investor Type *</label>
                     <div class="dropdown investor-type">
                         <div class="dropdown-container">
                             <div class="arrow"></div>
                             <input type="text" id="investor-type" name="investor-type"
-                                class=" form-control block w-full" placeholder="-- Select --" readonly />
+                                class=" form-control block w-full" placeholder="-- Select --" required readonly />
                             <div class="dropdown-content mt-1 "></div>
                         </div>
                     </div>
@@ -151,7 +151,17 @@
     </form>
     <script>
         function selectInvestorType(type) {
-            document.getElementById('investor-type').value = type;
+            let investorInput = document.getElementById('investor-type');
+            investorInput.value = type;
+            let companyInput = document.getElementById('company');
+            let companyLabel = document.querySelector('label[for="company"]');
+            if (investorInput.value == 'Individual Investor') {
+                companyInput.removeAttribute('required');
+                companyLabel.textContent = 'Company Name';
+            } else {
+                companyInput.setAttribute('required', '');
+                companyLabel.textContent = 'Company Name *';
+            }
         }
 
         function insertItems(items, dropdown) {
@@ -186,6 +196,20 @@
         investorDropdown.addEventListener('click', () => {
             investorDropdown.classList.toggle('open');
         });
+
+        let investorInput = document.getElementById('investor-type');
+        let companyInput = document.getElementById('company');
+        // Watch for changes in the investor type input
+        investorInput.addEventListener('change', () => {
+            console.log(investorInput.value);
+            // If the investor type is Individual Investor, company input not required
+            if (investorInput.value == 'Individual Investor') {
+                companyInput.removeAttribute('required');
+            } else {
+                companyInput.setAttribute('required', '');
+            }
+        });
+        
 
 
     </script>
