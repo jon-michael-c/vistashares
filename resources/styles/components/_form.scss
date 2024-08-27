@@ -97,11 +97,19 @@ select {
   overflow-y: hidden;
   z-index: 1;
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
 
-.dropdown-content::-webkit-scrollbar-track {
-  background: #c7a1ff;
-  padding: 2px;
+  &::-webkit-scrollbar-track {
+    background: #c7a1ff;
+    padding: 2px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #b269ff !important;
+    border-radius: 8px !important;
+  }
+
+  scrollbar-width: thin !important;
+  scrollbar-color: #b269ff !important;
 }
 
 .dropdown-content .dropdown-item {
