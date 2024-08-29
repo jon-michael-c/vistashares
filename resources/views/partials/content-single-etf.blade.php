@@ -1,0 +1,7 @@
+@include('partials.page-etf-header')
+@include('sections.etf.overview')
+@include('sections.etf.performance')
+@include('sections.etf.holdings')
+@include('sections.etf.documents')
+@include('sections.etf.cta')
+@include('sections.etf.faq')

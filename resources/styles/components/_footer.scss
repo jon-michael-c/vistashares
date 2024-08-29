@@ -3,4 +3,13 @@ footer {
     @apply hover:text-indigo;
     transition: color 0.2s ease-in-out;
   }
+
+  .legal {
+    p {
+      font-size: 12px !important;
+      @include sm {
+        font-size: 14px !important;
+      }
+    }
+  }
 }

@@ -1014,6 +1014,21 @@
           "color": "#0a192f",
           "name": "Navy",
           "slug": "navy"
+        },
+        {
+          "color": "#3e2ba5",
+          "name": "Ultramarine",
+          "slug": "ultramarine"
+        },
+        {
+          "color": "#7da2ff",
+          "name": "Cornflower",
+          "slug": "cornflower"
+        },
+        {
+          "color": "#f2f2f2",
+          "name": "Silver",
+          "slug": "silver"
         }
       ]
     },

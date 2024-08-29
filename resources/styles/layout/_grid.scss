@@ -35,7 +35,6 @@
 
 .content-grid .full-width {
   grid-column: full-width;
-
   display: grid;
   grid-template-columns: inherit;
 }
@@ -57,4 +56,10 @@
   margin-left: 0px !important;
   margin-right: 0px !important;
   padding: 0 36px;
+}
+
+.inner-full {
+  display: grid;
+  grid-column: full-width !important;
+  grid-template-columns: unset !important;
 }

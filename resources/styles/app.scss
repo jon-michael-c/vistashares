@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@import './base/breakpoints';
 @import './base/fonts';
 @import './base/baseline';
 @import './layout/grid';
@@ -9,3 +10,5 @@
 @import './components/buttons';
 @import './components/form';
 @import './components/footer';
+@import './components/hero';
+@import './pages/etf/faq.scss';

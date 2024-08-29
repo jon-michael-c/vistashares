@@ -140,6 +140,35 @@ class ThemeOptions extends Field
                 'label' => 'Email Address',
                 'instructions' => 'Add your email address here.',
             ])
+            ->addTab('Legal', [
+                'placement' => 'left',
+            ])
+            ->addNumber('copyright_first_year', [
+                'label' => 'Copyright First Year',
+                'instructions' => 'Add your first year here.',
+            ])
+            ->addWysiwyg('disclaimer', [
+                'label' => 'Footer Disclaimer',
+                'instructions' => 'Add your footer disclaimer here.',
+                'toolbar' => 'full',
+            ])
+            ->addTab("ETFs")
+            ->addRepeater('faqs', [
+                'label' => 'FAQs',
+                'instructions' => 'Add your FAQs here.',
+                'layout' => 'block',
+                'button_label' => 'Add FAQ',
+            ])
+            ->addText('question', [
+                'label' => 'Question',
+                'instructions' => 'Add your question here.',
+            ])
+            ->addWysiwyg('answer', [
+                'label' => 'Answer',
+                'instructions' => 'Add your answer here.',
+                'toolbar' => 'full',
+            ])
+            ->endRepeater()
         ;
 
         return $themeOptions->build();

@@ -23,9 +23,12 @@ class Footer extends Composer
     public function with()
     {
         return [
-            'copyright' => $this->copyright(2024),
+            'copyright' => $this->copyright(get_field('copyright_first_year', 'option') ?? date('Y')),
             'footerLogo' => $this->footerLogo(),
             'socialLinks' => $this->socialLinks(),
+            'disclaimer' => $this->disclaimer(),
+            'footerMenu' => getMenu('Footer Menu'),
+            'legalMenu' => getMenu('Legal Menu'),
         ];
     }
 
@@ -85,8 +88,13 @@ class Footer extends Composer
         if ($foundingYear == $currentYear) {
             return '© ' . $foundingYear;
         }
-        return '© ' . $foundingYear . ' - ' . $currentYear . ' ' . __('All rights reserved.', 'your-text-domain');
+        return '© ' . $foundingYear . ' - ' . $currentYear;
 
+    }
+
+    public function disclaimer()
+    {
+        return get_field('disclaimer', 'option');
     }
 
 }

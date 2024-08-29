@@ -11,11 +11,4 @@
   &.btn--sm {
     @apply font-light px-[16px] py-[4px];
   }
-
-  &.btn--primary {
-    @apply bg-red text-yellow hover:bg-yellow hover:text-navy;
-  }
-  &.btn--secondary {
-    @apply bg-orange text-navy hover:bg-yellow hover:text-red;
-  }
 }

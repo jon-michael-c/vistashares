@@ -23,7 +23,8 @@ class Header extends Composer
     public function with()
     {
         return [
-            'dummy' => 'Hello World'
+            'primaryMenu' => getMenu('Main Menu'),
+            'secondaryMenu' => getMenu('Secondary Menu')
         ];
 
     }
