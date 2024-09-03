@@ -1,5 +1,5 @@
 <footer class="bg-indigoLight w-full">
-    <div class="max-w-screen-2xl pt-12 pb-8 px-[24px] w-full">
+    <div class="max-w-screen-xl mx-auto pt-12 pb-8 px-[24px] w-full">
         <div class="mx-auto flex flex-col gap-2 justify-center text-center">
             <div class="site-branding max-w-[240px] mx-auto">
                 <a href="{{ home_url() }}" class="flex itms">
@@ -23,7 +23,7 @@
         </div>
     </div>
     <div class="bg-midnight w-full ">
-        <div class="mx-auto w-full max-w-screen-2xl px-[24px]   py-6 lg:py-8">
+        <div class="mx-auto w-full max-w-screen-xl px-[24px]   py-6 lg:py-8">
             <div class="text-center  mb-8  border-b-[1px] border-indigo py-4 md:flex md:justify-between">
                 <div class="mb-6 md:flex">
                     <p class="font-Termina font-[500]">{{ $copyright }} {{ $siteName }}</p>

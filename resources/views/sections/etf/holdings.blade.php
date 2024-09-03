@@ -1,19 +1,34 @@
+@php
+    $output = [
+        'head' => [],
+        'body' => [
+            'Lorem Ispum' => ['10%', '10%', '10%', '10%', '10%'],
+            'Lorem Ipsum' => ['10%', '10%', '10%', '10%', '10%'],
+        ],
+    ];
+@endphp
+
 <section id="holdings" class="py-8">
     <h2 class="pb-4">Holdings & Characteristics</h2>
-    <div class="top-holdings bg-white p-6">
-        <h3 class="text-midnight">Top Holdings</h3>
-    </div>
-    <div class="exposure bg-white p-6">
-        <h3 class="text-midnight">Exposure</h3>
-    </div>
-    <div class="etf-characteristics bg-white p-6">
-        <h3 class="text-ultramarine">ETF Characteristics</h3>
-    </div>
-    <div class="etf-risk bg-white p-6">
-        <h3 class="text-ultramarine">ETF Risk Stats</h3>
+    <div class="grid gap-6">
+        <div class="top-holdings bg-white p-6">
+            <x-table title="Top Holdings" type="long" :output="$output" />
+
+        </div>
+        <div class="exposure bg-white p-6">
+            <h3 class="text-midnight">Exposure</h3>
+        </div>
+        <div class="sm:grid sm:grid-cols-2 sm:gap-6">
+            <div class="etf-characteristics bg-white p-6">
+                <x-table title="ETF Characteristics" />
+            </div>
+            <div class="etf-risk bg-white p-6">
+                <x-table title="ETF Risk Stats" />
+            </div>
+        </div>
     </div>
     <div class="discloures pt-8">
-        <h3 class="text-white mb-4">Discloure</h3>
+        <h3 class="text-white mb-4 font-semibold">Disclosure</h3>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis sapien ac nulla bibendum rutrum vitae
             nec erat. Nunc eget metus quis sapien facilisis rutrum quis et diam. Duis congue sodales ultricies. Sed

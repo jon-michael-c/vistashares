@@ -1,6 +1,6 @@
 <header class="banner bg-beige text-white sticky z-[999] top-0 left-0 drop-shadow-sm ">
     <nav class="navbar">
-        <div class="max-w-screen-2xl flex flex-wrap items-end justify-between mx-auto py-4 px-[24px] gap-2 ">
+        <div class="max-w-screen-xl flex flex-wrap items-end justify-between mx-auto py-4 px-[24px] gap-2 ">
             @if ($siteLogo)
                 <a href="{{ $homeUrl }}" class="flex items-center max-w-[70%] space-x-3 rtl:space-x-reverse">
                     <img src="{{ $siteLogo }}" class="h-9 md:h-10" alt="{{ get_bloginfo('name', 'display') }} logo" />
