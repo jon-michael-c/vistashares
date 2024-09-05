@@ -50,6 +50,7 @@
         &:first-child {
           text-align: left;
           @apply text-midnight;
+          display: block;
         }
       }
     }
@@ -83,6 +84,20 @@
           &:first-child {
             text-align: left;
             @apply text-ultramarine;
+          }
+        }
+      }
+
+      @include m-sm {
+        tr {
+          td {
+            display: inline-block;
+            width: 20%;
+            text-align: left !important;
+
+            &:first-child {
+              width: 100%;
+            }
           }
         }
       }

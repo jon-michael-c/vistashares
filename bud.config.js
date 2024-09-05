@@ -33,8 +33,8 @@ export default async (app) => {
    * @see {@link https://bud.js.org/reference/bud.watch}
    */
   app
-    .setUrl('http://localhost:3100')
-    .setProxyUrl('http://vista.leibowitzdesign.local')
+    .setUrl('http://localhost:3105')
+    .setProxyUrl('https://vista.leibowitzdesign.local')
     .watch(['resources/views', 'app']);
 
   /**

@@ -7,12 +7,16 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Blocks\\Example' => $baseDir . '/app/Blocks/Example.php',
+    'App\\Blocks\\HomeProcess' => $baseDir . '/app/Blocks/HomeProcess.php',
     'App\\Options\\ThemeOptions' => $baseDir . '/app/Options/ThemeOptions.php',
     'App\\Providers\\ThemeServiceProvider' => $baseDir . '/app/Providers/ThemeServiceProvider.php',
     'App\\View\\Components\\Button' => $baseDir . '/app/View/Components/Button.php',
+    'App\\View\\Components\\Card' => $baseDir . '/app/View/Components/Card.php',
     'App\\View\\Components\\ExampleComponent' => $baseDir . '/app/View/Components/ExampleComponent.php',
     'App\\View\\Components\\Hello' => $baseDir . '/app/View/Components/Hello.php',
     'App\\View\\Components\\Socials' => $baseDir . '/app/View/Components/Socials.php',
+    'App\\View\\Components\\Table' => $baseDir . '/app/View/Components/Table.php',
+    'App\\View\\Components\\TwoThirds' => $baseDir . '/app/View/Components/TwoThirds.php',
     'App\\View\\Composers\\App' => $baseDir . '/app/View/Composers/App.php',
     'App\\View\\Composers\\Comments' => $baseDir . '/app/View/Composers/Comments.php',
     'App\\View\\Composers\\Footer' => $baseDir . '/app/View/Composers/Footer.php',

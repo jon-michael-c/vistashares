@@ -95,24 +95,25 @@ const config = {
         },
       ],
     },
-    extend: {
-      colors: {
-        midnight: '#0E062D',
-        indigo: '#B269FF',
-        indigoLight: '#C7A1FF',
-        navy: '#0A192F',
-        ultramarine: '#3E2BA5',
-        cornflower: '#7DA2FF',
-        silver: '#F2F2F2',
-        red: '#FF6D6D',
-        green: '#6C9A8B',
-        orange: '#FF6D00',
-        yellow: '#FFD03D',
-      }, // Extend Tailwind's default colors
-      backgroundImage: {
-        'gradient-1':
-          'linear-gradient(71deg, #3E2BA5 2.55%, #5D13C1 46.99%, #B269FF 96.37%)',
-      },
+    colors: {
+      midnight: '#0E062D',
+      indigo: '#B269FF',
+      indigoLight: '#C7A1FF',
+      navy: '#0A192F',
+      ultramarine: '#3E2BA5',
+      cornflower: '#7DA2FF',
+      silver: '#F2F2F2',
+      red: '#FF6D6D',
+      green: '#6C9A8B',
+      orange: '#FF6D00',
+      yellow: '#FFD03D',
+      white: '#FFFFFF',
+    }, // Extend Tailwind's default colors
+    backgroundImage: {
+      'gradient-1':
+        'linear-gradient(71deg, #3E2BA5 2.55%, #5D13C1 46.99%, #B269FF 96.37%)',
+      'gradient-2': 'linear-gradient(147deg, #B269FF 13.28%, #3E2BA5 90.08%)',
+      'gradient-3': 'linear-gradient(180deg, #3E2BA5 5.54%, #A658FF 169.07%);',
     },
     borderWidth: {
       DEFAULT: '1px',

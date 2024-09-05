@@ -19,21 +19,40 @@
     ];
     $featureImg = get_the_post_thumbnail_url();
     $title = get_the_title();
-    $excerpt = get_the_content();
+    $excerpt = strip_tags(get_the_content());
+    $fact_sheet = get_field('fact_sheet');
+    $presentation = get_field('presentation');
 @endphp
-
-
-
-<section class="full-width py-8 sm:py-16">
-    <div class="title flex gap-2 sm:gap-6 sm:flex-wrap">
-        <img src="{{ $featureImg }}" alt="{{ $title }} icon"
-            class="w-[50px] h-auto object-container sm:w-[100px] " />
-        <div>
-            <h1>{!! $title !!}</h1>
-            <h3 class="hidden sm:block">{!! $excerpt !!}</h3>
+<section class="full-width py-24 sm:py-32 text-silver gradient-bg">
+    <div class="sm:flex sm:justify-between sm:items-center">
+        <div class="title flex gap-2 pb-5 sm:gap-6 sm:flex-wrap ">
+            <img src="{{ $featureImg }}" alt="{{ $title }} icon"
+                class="w-[50px] h-auto object-container sm:w-[100px] " />
+            <div>
+                <h1>{!! $title !!}</h1>
+                <h3 class="hidden sm:block">{!! $excerpt !!}</h3>
+            </div>
+        </div>
+        <h3 class="block sm:hidden">{!! $excerpt !!}</h3>
+        <div class="grid gap-6 pt-8">
+            @if ($fact_sheet)
+                <a href="{{ $fact_sheet['url'] }}" target="_blank" class="flex items-center gap-2">
+                    <img src="@asset('images/download.svg')" alt="PDF icon" class="w-4 h-auto object-container" />
+                    <p class="font-semibold font-Termina underline">
+                        Fund Fact Sheet
+                    </p>
+                </a>
+            @endif
+            @if ($presentation)
+                <a href="{{ $presentation['url'] }}" target="_blank" class="flex items-center gap-2">
+                    <img src="@asset('images/download.svg')" alt="PDF icon" class="w-4 h-auto object-container" />
+                    <p class="font-semibold font-Termina underline">
+                        Presentation
+                    </p>
+                </a>
+            @endif
         </div>
     </div>
-    <h3 class="block sm:hidden">{!! $excerpt !!}</h3>
 </section>
 <section class="full-width bg-indigoLight font-Termina">
     <ul class="flex flex-col gap-3  py-6 sm:py-8 sm:flex-row sm:justify-between sm:gap-0 sm:items-center">

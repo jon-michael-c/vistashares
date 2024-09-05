@@ -7,7 +7,7 @@
         ],
     ];
 @endphp
-<section id="performance" class="bg-gradient-1 full-width py-8">
+<section id="performance" class="bg-gradient-3 full-width py-8">
     <h3 class="text-white pb-4">Prices & Performance</h3>
     <div class="grid gap-6">
         <div class="bg-white p-6">

@@ -374,9 +374,9 @@ class ComposerStaticInit31b828898c01c92b2333c2ab5ea5ae82
         ),
         'Illuminate\\Support\\' => 
         array (
-            0 => __DIR__ . '/..' . '/illuminate/macroable',
+            0 => __DIR__ . '/..' . '/illuminate/collections',
             1 => __DIR__ . '/..' . '/illuminate/conditionable',
-            2 => __DIR__ . '/..' . '/illuminate/collections',
+            2 => __DIR__ . '/..' . '/illuminate/macroable',
             3 => __DIR__ . '/..' . '/illuminate/support',
         ),
         'Illuminate\\Session\\' => 
@@ -528,12 +528,16 @@ class ComposerStaticInit31b828898c01c92b2333c2ab5ea5ae82
 
     public static $classMap = array (
         'App\\Blocks\\Example' => __DIR__ . '/../..' . '/app/Blocks/Example.php',
+        'App\\Blocks\\HomeProcess' => __DIR__ . '/../..' . '/app/Blocks/HomeProcess.php',
         'App\\Options\\ThemeOptions' => __DIR__ . '/../..' . '/app/Options/ThemeOptions.php',
         'App\\Providers\\ThemeServiceProvider' => __DIR__ . '/../..' . '/app/Providers/ThemeServiceProvider.php',
         'App\\View\\Components\\Button' => __DIR__ . '/../..' . '/app/View/Components/Button.php',
+        'App\\View\\Components\\Card' => __DIR__ . '/../..' . '/app/View/Components/Card.php',
         'App\\View\\Components\\ExampleComponent' => __DIR__ . '/../..' . '/app/View/Components/ExampleComponent.php',
         'App\\View\\Components\\Hello' => __DIR__ . '/../..' . '/app/View/Components/Hello.php',
         'App\\View\\Components\\Socials' => __DIR__ . '/../..' . '/app/View/Components/Socials.php',
+        'App\\View\\Components\\Table' => __DIR__ . '/../..' . '/app/View/Components/Table.php',
+        'App\\View\\Components\\TwoThirds' => __DIR__ . '/../..' . '/app/View/Components/TwoThirds.php',
         'App\\View\\Composers\\App' => __DIR__ . '/../..' . '/app/View/Composers/App.php',
         'App\\View\\Composers\\Comments' => __DIR__ . '/../..' . '/app/View/Composers/Comments.php',
         'App\\View\\Composers\\Footer' => __DIR__ . '/../..' . '/app/View/Composers/Footer.php',

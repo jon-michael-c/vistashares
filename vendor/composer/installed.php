@@ -3,7 +3,7 @@
         'name' => 'jon-michael-c/leibstarter',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'f41352e258505b2afe328e95192211ace6d8c1d3',
+        'reference' => 'dca574cc5b8e3def84ca1abbd70186902d6830e2',
         'type' => 'wordpress-theme',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -337,7 +337,7 @@
         'jon-michael-c/leibstarter' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'f41352e258505b2afe328e95192211ace6d8c1d3',
+            'reference' => 'dca574cc5b8e3def84ca1abbd70186902d6830e2',
             'type' => 'wordpress-theme',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
