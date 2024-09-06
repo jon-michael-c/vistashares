@@ -4223,6 +4223,11 @@ helpful-decorators@2.1.0:
     lodash.once "4.1.1"
     lodash.throttle "4.1.1"
 
+highcharts@^11.4.8:
+  version "11.4.8"
+  resolved "https://registry.yarnpkg.com/highcharts/-/highcharts-11.4.8.tgz#252e71b81c24ec9f99e756b76dbebd7546e18dda"
+  integrity sha512-5Tke9LuzZszC4osaFisxLIcw7xgNGz4Sy3Jc9pRMV+ydm6sYqsPYdU8ELOgpzGNrbrRNDRBtveoR5xS3SzneEA==
+
 html-entities@^2.1.0:
   version "2.3.2"
   resolved "https://registry.npmjs.org/html-entities/-/html-entities-2.3.2.tgz"
