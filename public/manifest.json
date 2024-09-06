@@ -1,6 +1,7 @@
 {
   "app.js": "js/app.js",
   "editor.js": "js/editor.js",
+  "highchart.js": "js/highchart.js",
   "runtime.js": "js/runtime.js",
   "images/gradient-img.jpeg": "images/gradient-img.jpeg",
   "images/gradient-bg-1.svg": "images/gradient-bg-1.svg",

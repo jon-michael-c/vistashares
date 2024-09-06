@@ -17,7 +17,9 @@
         </div>
         <div class="exposure bg-white p-6">
             <h3 class="text-midnight">Exposure</h3>
-            <div id="top-chart" class="top-chart w-400 h-400 bg-gray-200"></div>
+            <div class="grid sm:grid-cols-2 gap-4">
+                <x-exposure />
+            </div>
         </div>
         <div class="sm:grid sm:grid-cols-2 sm:gap-6">
             <div class="etf-characteristics bg-white p-6">

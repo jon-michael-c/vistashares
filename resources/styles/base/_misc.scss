@@ -28,3 +28,46 @@
     }
   }
 }
+
+.border-list {
+  li {
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      opacity: 0.3;
+      @apply bg-indigo;
+    }
+
+    &:first-child {
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        opacity: 0.3;
+        @apply bg-indigo;
+      }
+    }
+  }
+
+  &.border-list-light {
+    li {
+      &::after {
+        opacity: 1;
+      }
+
+      &:first-child {
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,4 @@
 import domReady from '@roots/sage/client/dom-ready';
-import Highcharts from 'highcharts';
 
 /**
  * Application entrypoint
@@ -40,107 +39,6 @@ domReady(async () => {
         answer.style.maxHeight = fullHeight;
       }
     });
-  });
-
-  Highcharts.chart('top-chart', {
-    exporting: {
-      enabled: false,
-    },
-    chart: {
-      type: 'pie',
-    },
-    title: {
-      text: '',
-      align: 'center',
-      verticalAlign: 'middle',
-      y: 10,
-    },
-    plotOptions: {
-      pie: {
-        shadow: false,
-        center: ['50%', '50%'],
-        allowPointSelect: true,
-        cursor: 'default',
-        borderRadius: '0px',
-        slicedOffset: 20,
-        borderWidth: 5,
-        dataLabels: {
-          enabled: false,
-        },
-        showInLegend: false,
-        allowPointSelect: false,
-        point: {
-          events: {
-            legendItemClick: function (e) {
-              e.preventDefault();
-            },
-          },
-        },
-      },
-    },
-    tooltip: {
-      valueSuffix: '%',
-      pointFormat: '', // disables unneeded tooltip line
-    },
-    series: [
-      {
-        type: 'pie',
-        name: 'budget',
-        innerSize: '50%',
-        data: [
-          {
-            name: 'Lorem Ispum',
-            y: 17.0,
-            color: '#0E062D',
-          },
-          {
-            name: 'Loreum Ispum',
-            y: 15.2,
-            color: '#3E2BA5',
-          },
-          {
-            name: 'Lorem Ispum',
-            y: 15.1,
-            color: '#B269FF',
-          },
-          {
-            name: 'Lorem Ispum',
-            y: 14.9,
-            color: '#9990ca',
-          },
-          {
-            name: 'Lreo Ispum',
-            y: 12.0,
-            color: '#7DA2FF',
-          },
-          {
-            name: 'Lorem Ispsum',
-            y: 5.5,
-            color: '#9550FC',
-          },
-        ],
-      },
-    ],
-    responsive: {
-      rules: [
-        {
-          condition: {
-            maxWidth: 400,
-          },
-          chartOptions: {
-            series: [
-              {},
-              {
-                id: 'versions',
-                dataLabels: {
-                  enabled: false,
-                },
-              },
-            ],
-          },
-        },
-      ],
-    },
   });
 });
 

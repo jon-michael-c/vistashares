@@ -15,5 +15,12 @@
       "wp-data",
       "wp-hooks"
     ]
+  },
+  "highchart": {
+    "js": [
+      "js/runtime.js",
+      "js/highchart.js"
+    ],
+    "dependencies": []
   }
 }
