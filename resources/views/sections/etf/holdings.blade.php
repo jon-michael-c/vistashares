@@ -13,11 +13,10 @@
     <div class="grid gap-6">
         <div class="top-holdings bg-white p-6">
             <x-table title="Top Holdings" type="long" :output="$output" />
-
         </div>
         <div class="exposure bg-white p-6">
             <h3 class="text-midnight">Exposure</h3>
-            <div class="grid sm:grid-cols-2 gap-4">
+            <div class="grid items-center sm:grid-cols-2 gap-4">
                 <x-exposure />
             </div>
         </div>
