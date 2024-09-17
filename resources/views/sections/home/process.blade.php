@@ -1,14 +1,20 @@
 <section class="py-8">
-    <h1>
-        Investment Process and Approach
-    </h1>
-    <p>
-        Our unique investment process is built on the foundation of four key weighting mechanisms that ensure high
-        quality, and pure exposure to supercycles
-    </p>
-    <h3 class="text-indigo leading-[1.44] font-semibold pb-4 border-b-2 border-solid border-indigo">
-        VISTASHARES INVESTMENT METHODOLOGY
-    </h3>
+    <div class="pb-4">
+        <h1>
+            Investment Process <span class="font-outline"> and Approach</span>
+        </h1>
+    </div>
+    <div class="pb-4">
+        <p>
+            Our unique investment process is built on the foundation of four key weighting mechanisms that ensure high
+            quality, and pure exposure to supercycles
+        </p>
+    </div>
+    <div class="pb-4">
+        <h3 class="text-indigo leading-[1.44] font-semibold pb-4 border-b-2 border-solid border-indigo">
+            VISTASHARES INVESTMENT METHODOLOGY
+        </h3>
+    </div>
     <div class="pt-4">
         @foreach ($categories as $category)
             <h3>{!! $category['category-name'] !!}</h3>

@@ -57,6 +57,22 @@
     }
   }
 
+  &.border-list-silver {
+    li {
+      position: relative;
+
+      &::after {
+        @apply bg-silver;
+      }
+
+      &:first-child {
+        &::before {
+          @apply bg-silver;
+        }
+      }
+    }
+  }
+
   &.border-list-light {
     li {
       &::after {
