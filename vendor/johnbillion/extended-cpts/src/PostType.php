@@ -160,7 +160,7 @@ class PostType {
 			'singular_name'            => $this->post_singular,
 			'menu_name'                => $this->post_plural,
 			'name_admin_bar'           => $this->post_singular,
-			'add_new'                  => 'Add New',
+			'add_new'                  => sprintf( 'Add New %s', $this->post_singular ),
 			'add_new_item'             => sprintf( 'Add New %s', $this->post_singular ),
 			'edit_item'                => sprintf( 'Edit %s', $this->post_singular ),
 			'new_item'                 => sprintf( 'New %s', $this->post_singular ),
@@ -187,6 +187,7 @@ class PostType {
 			'item_link'                => sprintf( '%s Link', $this->post_singular ),
 			'item_link_description'    => sprintf( 'A link to a %s.', $this->post_singular_low ),
 			'item_trashed'             => sprintf( '%s trashed.', $this->post_singular ),
+			'template_name'            => sprintf( 'Single item: %s', $this->post_singular ),
 		];
 
 		# Build the featured image labels:
@@ -253,7 +254,7 @@ class PostType {
 		# Custom post type permastruct:
 		if ( $this->args['rewrite'] && ! empty( $this->args['rewrite']['permastruct'] ) ) {
 			add_action( 'registered_post_type', [ $this, 'registered_post_type' ], 1, 2 );
-			add_filter( 'post_type_link',       [ $this, 'post_type_link' ], 1, 4 );
+			add_filter( 'post_type_link',       [ $this, 'post_type_link' ], 1, 2 );
 		}
 
 		# Rewrite testing:
@@ -646,11 +647,9 @@ class PostType {
 	 *
 	 * @param string  $post_link The post's permalink.
 	 * @param WP_Post $post      The post in question.
-	 * @param bool    $leavename Whether to keep the post name.
-	 * @param bool    $sample    Is it a sample permalink.
 	 * @return string The post's permalink.
 	 */
-	public function post_type_link( string $post_link, WP_Post $post, bool $leavename, bool $sample ): string {
+	public function post_type_link( string $post_link, WP_Post $post ): string {
 		# If it's not our post type, bail out:
 		if ( $this->post_type !== $post->post_type ) {
 			return $post_link;

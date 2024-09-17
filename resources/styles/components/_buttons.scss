@@ -1,5 +1,7 @@
 .btn {
-  @apply text-white uppercase font-[700] rounded-[4px] text-sm px-[32px] py-[16px];
+  background: linear-gradient(90deg, #b269ff 0%, #3e2ba5 100%);
+  padding: 0.4rem 1rem;
+
   transition: color 0.2s ease-in, background-color 0.2s ease-in,
     border-color 0.2s ease-in;
 
@@ -11,4 +13,13 @@
   &.btn--sm {
     @apply font-light px-[16px] py-[4px];
   }
+}
+
+.wp-buttons {
+  margin-top: 1rem;
+}
+
+.wp-button {
+  background: linear-gradient(90deg, #b269ff 0%, #3e2ba5 100%);
+  padding: 0.4rem 1rem;
 }

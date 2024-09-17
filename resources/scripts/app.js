@@ -1,9 +1,11 @@
 import domReady from '@roots/sage/client/dom-ready';
+import Navbar from './components/Navbar';
 
 /**
  * Application entrypoint
  */
 domReady(async () => {
+  new Navbar('.navbar');
   const faqItems = document.querySelectorAll('.faq-item');
 
   faqItems.forEach((item) => {

@@ -60,9 +60,9 @@ Not your first time here? See [Recent Changes for Developers](https://github.com
 ## Minimum Requirements ##
 
 * **PHP:** 7.4  
-  - Tested up to PHP 8.2
-* **WordPress:** 5.6  
-  - Tested up to WP 6.4
+  - Tested up to PHP 8.3
+* **WordPress:** 5.7  
+  - Tested up to WP 6.6
 
 ## Installation ##
 

@@ -22,50 +22,57 @@ class Exposure extends Component
             '#0E062D',
             '#3E2BA5',
             '#B269FF',
-            '#988ecb',
+            '#9990ca',
             '#7DA2FF',
-            '#9550FC'
+            '#9550FC',
+            '#87a5f0',
+            '#c5d4fb',
+            '#9fc0f3',
+            '#9c94bc',
 
         ];
         $this->output = $this->compileData();
 
     }
+    private function readCSV($csvFile, $delimiter = ",")
+    {
+        $file_handle = fopen($csvFile, 'r');
+        $line_of_text = [];
+        while (!feof($file_handle)) {
+            $line_of_text[] = fgetcsv($file_handle, 1024, $delimiter);
+        }
+        fclose($file_handle);
+        $filtered = array_filter($line_of_text); // Filter out any empty lines
+        $header = array_shift($filtered); // Remove the header
+        $res = [];
+
+        foreach ($filtered as $key => $value) {
+            $res[] = array_combine($header, $value);
+        }
+
+        return $res;
+    }
+
+    private function formatData($arr)
+    {
+        // Sort the array by the 'Weightings' key in reverse order
+        usort($arr, function ($a, $b) {
+            return $b['Weightings'] <=> $a['Weightings'];
+        });
+
+    }
+
 
     private function compileData()
     {
-        $data =
-            [
-                [
-                    'name' => 'Lorem Ispum',
-                    'y' => 17.0,
-                ],
-                [
-                    'name' => 'Loreum Ispum',
-                    'y' => 15.2,
-                ],
-                [
-                    'name' => 'Lorem Ispum',
-                    'y' => 15.1,
-                ],
-                [
-                    'name' => 'Lorem Ispum',
-                    'y' => 14.9,
-                ],
-                [
-                    'name' => 'Lreo Ispum',
-                    'y' => 12.0,
-                ],
-                [
-                    'name' => 'Lorem Ispsum',
-                    'y' => 5.5,
-                ],
-            ];
+        $data = $this->readCSV(get_theme_root() . '/' . get_template() . '/resources/data/TidalETF_Services.40ZZ.JO_Holdings_05082023.csv', ',');
+        $this->formatData($data);
 
         $res = [];
         foreach ($data as $index => $item) {
             $res[] = [
-                'name' => $item['name'],
-                'y' => $item['y'],
+                'name' => $item['SecurityName'],
+                'y' => floatval(str_replace('%', '', $item['Weightings'])),
                 'color' => $this->colors[$index % count($this->colors)],
             ];
         }
@@ -73,6 +80,8 @@ class Exposure extends Component
         return $res;
 
     }
+
+
 
 
     /**

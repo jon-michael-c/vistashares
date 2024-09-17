@@ -149,6 +149,14 @@ article {
     margin-bottom: 6px;
   }
 }
+
+.font-outline {
+  font-feature-settings: 'clig' off, 'liga' off;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #fff;
+  color: transparent;
+}
+
 .icon {
   transition: all 0.2s ease-in-out;
   position: relative;

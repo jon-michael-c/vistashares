@@ -8,12 +8,11 @@
                     <span class="w-[15px] h-[15px] block " style="background: {{ $item['color'] }};"></span>
                     <span>{{ $item['name'] }}</span>
                 </div>
-                <span>{{ $item['y'] }}</span>
+                <span>{{ $item['y'] }} %</span>
             </li>
             @php($i++)
         @endforeach
     </ul>
 </div>
-
 
 <script src="@asset('js/highchart.js')" defer></script>

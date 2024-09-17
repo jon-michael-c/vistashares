@@ -1,0 +1,18 @@
+<section class="full-width bg-gradient-4 py-16">
+    <div class="pb-8">
+        <h2>{!! $title !!}</h2>
+        <p>{!! $description !!}</p>
+        <div class="wp-buttons">
+            <a href="{{ $cta['url'] }}" class="wp-button">{{ $cta['title'] }}</a>
+        </div>
+    </div>
+    <div class="featured-posts grid gap-8 sm:grid-cols-3">
+        @foreach ($feature_posts as $postID)
+            @include('components.posts.preview', [
+                'permalink' => get_the_permalink($postID),
+                'date' => get_the_date('F j, Y', $postID),
+                'title' => get_the_title($postID),
+            ])
+        @endforeach
+    </div>
+</section>

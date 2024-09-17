@@ -1,23 +1,28 @@
 <footer class="bg-indigoLight w-full">
     <div class="max-w-screen-xl mx-auto pt-12 pb-8 px-[24px] w-full">
-        <div class="mx-auto flex flex-col gap-2 justify-center text-center">
-            <div class="site-branding max-w-[240px] mx-auto">
+        <div class="mx-auto flex flex-col gap-2 justify-center text-center sm:text-left sm:flex-row sm:justify-between">
+            <div
+                class="site-branding max-w-[240px] mx-auto sm:mx-0 sm:flex sm:flex-col sm:justify-between sm:items-start">
                 <a href="{{ home_url() }}" class="flex itms">
                     <img src="{{ $footerLogo }}" class="h-10 md:h-10" alt="{{ $siteName }} logo" />
                 </a>
+                <div class="footer-socials hidden sm:block">
+                    @include('components.socials', ['socialLinks' => $socialLinks])
+                </div>
             </div>
-            <div class="footer-menu pt-8 pb-4">
+
+            <div class="footer-menu pt-8 pb-4 sm:pt-0 sm:pb-0">
                 @if ($footerMenu && is_array($footerMenu) && count($footerMenu) > 0)
                     @include('components.menus.footer', ['menu' => $footerMenu])
                 @endif
             </div>
-            <div class="footer-newsletter text-midnight pb-4">
+            <div class="footer-newsletter text-midnight pb-4 sm:pb-0">
                 <p>Subscribe to Newsletter</p>
                 <input placeholder="Email Address" />
                 <button>Subscribe</button>
 
             </div>
-            <div class="footer-socials ">
+            <div class="footer-socials block sm:hidden">
                 @include('components.socials', ['socialLinks' => $socialLinks])
             </div>
         </div>

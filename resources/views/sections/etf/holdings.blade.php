@@ -7,7 +7,6 @@
         ],
     ];
 @endphp
-
 <section id="holdings" class="py-8">
     <h2 class="pb-4">Holdings & Characteristics</h2>
     <div class="grid gap-6">

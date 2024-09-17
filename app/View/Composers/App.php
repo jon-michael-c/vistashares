@@ -26,6 +26,7 @@ class App extends Composer
             'homeUrl' => home_url(),
             'siteName' => $this->siteName(),
             'siteLogo' => get_field('logo', 'option'),
+            'feedDir' => get_theme_root() . '/' . get_template() . '/resources/data',
         ];
     }
 
