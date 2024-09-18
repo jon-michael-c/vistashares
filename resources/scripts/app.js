@@ -1,13 +1,15 @@
 import domReady from '@roots/sage/client/dom-ready';
 import Navbar from './components/Navbar';
 import ETFSlider from './components/ETFSlider';
+import ProcessSlider from './components/ProcessSlider';
 
 /**
  * Application entrypoint
  */
 domReady(async () => {
   const SiteNav = new Navbar('.navbar');
-  window.Slider = new ETFSlider();
+  window.etfslider = new ETFSlider();
+  window.processslider = new ProcessSlider();
   const faqItems = document.querySelectorAll('.faq-item');
 
   faqItems.forEach((item) => {

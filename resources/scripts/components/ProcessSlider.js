@@ -1,10 +1,10 @@
-export default class ETFSlider {
+export default class ProcessSlider {
   constructor() {
-    let elem = document.querySelector('.hero-etf-slider');
+    let elem = document.querySelector('.process-slider');
     if (!elem) return;
     this.elem = elem;
-    this.slides = elem.querySelectorAll('.hero-etf-slider-slide');
-    this.scrollbar = elem.querySelector('.etf-slider-scrollbar > .bar');
+    this.slides = elem.querySelectorAll('.process-category');
+    this.scrollbar = elem.querySelector('.process-scrollbar > .bar');
     this.interval = null;
     this.timeout = null;
     this.index = 0;
@@ -13,12 +13,12 @@ export default class ETFSlider {
 
   init() {
     this.elem
-      .querySelector('.etf-slider-arrow.up')
+      .querySelector('.process-arrow.up')
       .addEventListener('click', () => {
         this.prev();
       });
     this.elem
-      .querySelector('.etf-slider-arrow.down')
+      .querySelector('.process-arrow.down')
       .addEventListener('click', () => {
         this.next();
       });
