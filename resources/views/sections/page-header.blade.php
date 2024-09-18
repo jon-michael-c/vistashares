@@ -1,19 +1,15 @@
-<section class="hero h-fit full-width relative gradient-bg">
-    <div class="sm:w-[40%]">
+<section class="page-header h-fit full-width relative gradient-bg ">
+    <div class="sm:w-[50%] sm:max-w-[450px]">
         <div class="line-bg ">
             <img src="@asset('images/line-logo.svg')" alt="line background" />
         </div>
         <div class="hero-content py-20 sm:py-48 sm:pr-2">
             <div class="pb-4">
-                {!! $hero_header !!}
+                <h1>{!! get_the_title() !!}</h1>
             </div>
             <div class="pb-8">
-                {!! $hero_text !!}
+                {!! get_field('page_excerpt') !!}
             </div>
-            <div>
-                <a href="{{ $hero_cta['url'] }}" class="wp-button">{{ $hero_cta['title'] }}</a>
-            </div>
-
         </div>
         <div class="">
             <svg width="0" height="0" viewBox="0 0 708 443" preserveAspectRatio="none">
@@ -25,9 +21,8 @@
             </svg>
         </div>
     </div>
-    <div class="inner-full relative sm:absolute sm:top-0 sm:right-0 sm:w-[60%] sm:h-full ">
-        @include('partials.home.etf-slider', [
-            'etfs' => $hero_etfs,
-        ])
+    <div class="inner-full relative sm:absolute sm:top-0 sm:right-0 sm:w-[50%] sm:max-w-[800px] sm:h-full zig-zag">
+        <img src="{{ get_the_post_thumbnail_url(get_the_ID()) }}" alt="{{ get_the_title() }}"
+            class="w-full h-full object-cover" />
     </div>
 </section>

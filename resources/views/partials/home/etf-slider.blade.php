@@ -1,4 +1,4 @@
-<div class="hero-etf-slider content-grid sm:pl-[12rem]">
+<div class="hero-etf-slider  zig-zag content-grid sm:pl-[12rem]">
     <div class="pt-20 pb-10 sm:py-0 sm:flex sm:justify-center sm:items-center">
         <div class="bg-image">
             <img src="https://vista.leibowitzdesign.local/wp-content/uploads/2024/09/hero.png" />

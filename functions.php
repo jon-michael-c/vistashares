@@ -109,60 +109,7 @@ function getMenu($location)
 }
 
 
-add_action('init', 'register_page_fields');
-function register_page_fields()
-{
-    if (function_exists('acf_add_local_field_group')):
 
-        acf_add_local_field_group(
-            array(
-                'key' => 'group_6153e0a2a9b7e',
-                'title' => 'Page Fields',
-                'fields' => array(
-                    array(
-                        'key' => 'field_6153e0b0a9b7f',
-                        'label' => 'Excerpt',
-                        'name' => 'excerpt',
-                        'type' => 'wysiwyg',
-                        'toolbar' => 'full',
-                        'media_upload' => 1,
-                        'instructions' => '',
-                        'required' => 0,
-                        'conditional_logic' => 0,
-                        'wrapper' => array(
-                            'width' => '',
-                            'class' => '',
-                            'id' => '',
-                        ),
-                        'default_value' => '',
-                        'placeholder' => '',
-                        'maxlength' => '',
-                        'rows' => '',
-                        'new_lines' => '',
-                    ),
-                ),
-                'location' => array(
-                    array(
-                        array(
-                            'param' => 'post_type',
-                            'operator' => '==',
-                            'value' => 'page',
-                        ),
-                    ),
-                ),
-                'menu_order' => 0,
-                'position' => 'normal',
-                'style' => 'default',
-                'label_placement' => 'top',
-                'instruction_placement' => 'label',
-                'hide_on_screen' => '',
-                'active' => true,
-                'description' => '',
-            )
-        );
-
-    endif;
-}
 
 add_action('init', 'register_team_member_fields');
 function register_team_member_fields()
