@@ -4,11 +4,10 @@ label {
 input,
 textarea,
 select {
-  @apply border border-midnight text-midnight;
+  @apply border border-indigoLight text-midnight;
+  background: rgba(199, 161, 255, 0.2);
   width: 100%;
   display: block;
-  background: none;
-  border-radius: 8px;
   padding: 13px 21px;
   font-size: 1rem;
   font-family: 'Grotesk', Geneva, Tahoma, sans-serif;
@@ -36,7 +35,6 @@ select {
 
   .dropdown-container {
     @apply bg-indigoLight border border-midnight text-midnight;
-    border-radius: 8px;
     position: absolute;
     width: 100%;
     top: 0;

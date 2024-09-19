@@ -140,3 +140,10 @@
     object-fit: cover;
   }
 }
+
+.contact {
+  .line-bg {
+    top: 10%;
+    z-index: 0;
+  }
+}
