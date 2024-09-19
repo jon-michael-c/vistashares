@@ -1,1 +1,1 @@
-@include('sections.callout')
+@include('sections.howtoinvest.callout')

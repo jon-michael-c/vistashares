@@ -1,4 +1,4 @@
-<section class="page-header h-fit full-width relative gradient-bg ">
+<section class="page-header h-fit full-width relative gradient-bg overflow-hidden">
     <div class="sm:w-[50%] sm:max-w-[450px]">
         <div class="line-bg ">
             <img src="@asset('images/line-logo.svg')" alt="line background" />
