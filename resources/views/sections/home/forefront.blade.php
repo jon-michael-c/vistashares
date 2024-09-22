@@ -1,4 +1,4 @@
-<section class="full-width bg-gradient-4 py-16">
+<x-section class="bg-gradient-4">
     <div class="pb-8">
         <h2>{!! $title !!}</h2>
         <p>{!! $description !!}</p>
@@ -15,4 +15,4 @@
             ])
         @endforeach
     </div>
-</section>
+</x-section>

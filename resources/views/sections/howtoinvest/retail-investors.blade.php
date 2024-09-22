@@ -1,8 +1,8 @@
-<section class="retail-investors full-width bg-gradient-7 py-8 sm:py-16">
+<x-section class="retail-investors bg-gradient-7">
     <div class="grid gap-4 sm:grid-cols-2 sm:gap-16">
         <div class="grid gap-4 sm:gap-6 sm:content-start">
             <div>
-                <h3>{!! $heading !!}</h3>
+                <h2>{!! $heading !!}</h2>
             </div>
             <div>
                 <h3 class="text-cornflower">{!! $sub_heading !!}</h3>
@@ -40,4 +40,4 @@
             </x-card>
         </div>
     </div>
-</section>
+</x-section>

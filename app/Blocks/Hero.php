@@ -172,7 +172,7 @@ class Hero extends Block
                 'post_type' => ['etf'],
                 'return_format' => 'id',
             ])
-            ->addTextarea('etf_description')
+            ->addWysiwyg('etf_description')
             ->endRepeater()
         ;
 

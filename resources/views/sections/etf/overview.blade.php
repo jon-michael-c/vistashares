@@ -3,7 +3,7 @@
     $etf_summary = get_field('etf_summary');
     $eft_objective = get_field('etf_objective');
 @endphp
-<section id="overview" class="py-8">
+<x-section id="overview">
     <h2 class="pb-4">ETF Overview</h2>
     <div class="grid gap-6">
         <div class="reasons">
@@ -57,4 +57,4 @@
 
         </div>
     </div>
-</section>
+</x-section>

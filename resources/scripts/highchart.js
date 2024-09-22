@@ -2,6 +2,8 @@ import Highcharts from 'highcharts';
 
 export default class HighChartsController {
   constructor() {
+    let container = document.querySelector('#exposure-chart');
+    if (!container) return;
     let dataSeries = document
       .querySelector('#exposure-chart')
       .getAttribute('data-series');

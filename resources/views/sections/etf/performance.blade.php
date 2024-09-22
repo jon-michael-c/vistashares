@@ -7,7 +7,7 @@
         ],
     ];
 @endphp
-<section id="performance" class="bg-gradient-3 full-width py-8">
+<x-section id="performance" class="bg-gradient-3">
     <h3 class="text-white pb-4">Prices & Performance</h3>
     <div class="grid gap-6">
         <div class="bg-white p-6">
@@ -17,4 +17,4 @@
             <x-table title="Performance History" type="long" :output="$output" />
         </div>
     </div>
-</section>
+</x-section>

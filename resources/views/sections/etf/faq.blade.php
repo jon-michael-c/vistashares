@@ -1,8 +1,8 @@
 @php
     $faqs = get_field('faqs', 'option');
 @endphp
-<section id="faqs" class="faqs bg-gradient-1 full-width">
-    <div class="py-16">
+<x-section id="faqs" class="faqs bg-gradient-1">
+    <div class="">
         <h2 class="pb-4">FAQs</h2>
         @if ($faqs)
             <div class="faqs-container">
@@ -22,4 +22,4 @@
             </div>
         @endif
     </div>
-</section>
+</x-section>

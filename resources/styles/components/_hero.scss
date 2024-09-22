@@ -94,11 +94,13 @@
 .hero-etf-slider {
   position: relative;
   .hero-etf-slider-slide {
+    position: absolute;
     visibility: hidden;
+    top: 0;
+    transform: translate(0%, 25%);
     opacity: 0;
     scale: 0.8;
     @include sm {
-      position: absolute;
       top: 50%;
       left: 17vw;
       max-width: 500px;
@@ -110,7 +112,9 @@
       visibility: visible;
       opacity: 1;
       scale: 1;
-      transform: translate(0%, -50%);
+      @include sm {
+        transform: translate(0%, -50%);
+      }
     }
   }
 }

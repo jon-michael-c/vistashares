@@ -14,5 +14,3 @@
         @endforeach
     </ul>
 </div>
-
-<script src="@asset('js/highchart.js')" defer></script>

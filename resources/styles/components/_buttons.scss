@@ -20,6 +20,22 @@
 }
 
 .wp-button {
-  background: linear-gradient(90deg, #b269ff 0%, #3e2ba5 100%);
+  background-size: 200% auto;
+
+  background-position: right center;
+  background-image: linear-gradient(
+    to right,
+
+    #c7a1ff 0%,
+    #b269ff 50%,
+    #3e2ba5 100%
+  );
+
   padding: 0.4rem 1rem;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-position: left center;
+    @apply text-midnight;
+  }
 }

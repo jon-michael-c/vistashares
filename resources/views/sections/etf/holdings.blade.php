@@ -7,7 +7,7 @@
         ],
     ];
 @endphp
-<section id="holdings" class="py-8">
+<x-section id="holdings">
     <h2 class="pb-4">Holdings & Characteristics</h2>
     <div class="grid gap-6">
         <div class="top-holdings bg-white p-6">
@@ -47,4 +47,4 @@
             ultrices. Donec eu pellentesque neque.
         </p>
     </div>
-</section>
+</x-section>

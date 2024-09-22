@@ -1,4 +1,4 @@
-<div class="team-member-preview">
+<a href="{{ get_the_permalink($id) }}" class="team-member-preview">
     <div class="w-full">
         <img src="{{ get_the_post_thumbnail_url($id, 'medium') }}" alt="{{ get_the_title($id) }}" class="w-full h-auto" />
     </div>
@@ -8,4 +8,4 @@
     </div>
 
 
-</div>
+</a>

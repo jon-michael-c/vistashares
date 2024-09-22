@@ -5,7 +5,7 @@
         </div>
         <div class="hero-content py-20 sm:py-48 sm:pr-2">
             <div class="pb-4">
-                <h1>{!! get_the_title() !!}</h1>
+                <h1 class="capitalize">{!! get_the_title() !!}</h1>
             </div>
             <div class="pb-8">
                 {!! get_field('page_excerpt') !!}

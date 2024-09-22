@@ -4,6 +4,7 @@ import ETFSlider from './components/ETFSlider';
 import ProcessSlider from './components/ProcessSlider';
 import './contact-form';
 import countries from './countries.json';
+import './highchart.js';
 
 /**
  * Application entrypoint

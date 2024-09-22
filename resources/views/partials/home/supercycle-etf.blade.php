@@ -27,7 +27,7 @@
             <ul class="border-list border-list-silver">
                 @if ($items)
                     @foreach ($items as $key => $value)
-                        <li class="py-2">
+                        <li class="py-3 flex justify-between items-center">
                             <p>{{ $key }}</p>
                             <p>{{ $value }}</p>
                         </li>

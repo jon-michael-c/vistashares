@@ -1,4 +1,4 @@
-<section class="py-8">
+<x-section>
     <div class="pb-4">
         <h1>
             Investment Process <span class="font-outline"> and Approach</span>
@@ -65,4 +65,4 @@
             @endforeach
         </div>
     </div>
-</section>
+</x-section>

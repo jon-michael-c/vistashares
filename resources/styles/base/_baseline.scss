@@ -72,13 +72,12 @@ h6 {
       font-weight: 700;
       line-height: 1.2857; /* 128.571% */
       letter-spacing: 0.01em;
-      text-transform: uppercase;
     }
   }
   h2 {
     font-size: 22px;
     font-weight: 700;
-    line-height: 2.4555;
+    line-height: 1.28;
     @include sm {
       font-size: 36px;
       font-weight: 400;

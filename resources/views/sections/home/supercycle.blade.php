@@ -1,4 +1,4 @@
-<section class=" full-width bg-gradient-6 pb-8 sm:pb-16">
+<x-section class="bg-gradient-6">
     <div class="pb-4">
         <h1 class="leading-[1.5]">VistaShares <span class="font-outline">Supercycle</span> ETFs<sup>TM</sup></h1>
     </div>
@@ -13,4 +13,4 @@
             'postID' => 33,
         ])
     </div>
-</section>
+</x-section>
