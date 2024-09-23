@@ -7,7 +7,7 @@ const config = {
       sm: '640px',
       md: '768px',
       lg: '1024px',
-      xl: '1200px',
+      xl: '1249px',
     },
     fontFamily: {
       Grotesk: ['Grotesk', 'sans-serif'],

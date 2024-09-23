@@ -10,14 +10,17 @@ class Section extends Component
 {
 
     public $class;
+    public $id;
     public $bg_image;
     /**
      * Create a new component instance.
      */
-    public function __construct($class = '', $bg_image = null)
+    public function __construct($class = '', $id = '', $bg_image = null)
     {
         $this->class = $class;
+        $this->id = $id;
         $this->bg_image = $bg_image;
+
     }
 
     /**

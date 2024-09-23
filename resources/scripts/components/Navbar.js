@@ -9,6 +9,7 @@ class Navbar {
     toggler.addEventListener('click', () => {
       const target = this.element.querySelector('.navbar-collapse');
       target.classList.toggle('open');
+      toggler.classList.toggle('open');
     });
   }
 }

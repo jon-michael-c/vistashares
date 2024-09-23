@@ -10,17 +10,19 @@
             @if ($etf_docs)
                 <ul class="w-full doc-items">
                     @foreach ($etf_docs as $doc)
-                        <li class="flex py-2 w-full ">
-                            <a href="{{ $doc['etf_doc']['url'] }}" target="_blank"
-                                class="flex justify-between items-center gap-2 w-full">
-                                <p class="font-semibold font-Termina ">
-                                    {{ $doc['title'] }}
-                                </p>
-                                <span class="underline uppercase text-right text-cornflower">
-                                    PDF
-                                </span>
-                            </a>
-                        </li>
+                        @if ($doc['etf_doc'])
+                            <li class="flex py-2 w-full ">
+                                <a href="{{ $doc['etf_doc']['url'] }}" target="_blank"
+                                    class="flex justify-between items-center gap-2 w-full">
+                                    <p class="font-semibold font-Termina ">
+                                        {{ $doc['title'] }}
+                                    </p>
+                                    <span class="underline uppercase text-right text-cornflower">
+                                        PDF
+                                    </span>
+                                </a>
+                            </li>
+                        @endif
                     @endforeach
                 </ul>
             @endif
