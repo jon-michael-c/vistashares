@@ -60,16 +60,27 @@ $grotesk-font-weights-styles: (
     'weight': 300,
     'style': 'normal',
   ),
-  Medium: (
+  Book: (
     'weight': 400,
     'style': 'normal',
   ),
 
+  Medium: (
+    'weight': 500,
+    'style': 'normal',
+  ),
+  SemiBold: (
+    'weight': 600,
+    'style': 'normal',
+  ),
   Bold: (
     'weight': 700,
     'style': 'normal',
   ),
-
+  BoldItalic: (
+    'weight': 700,
+    'style': 'italic',
+  ),
   Black: (
     'weight': 900,
     'style': 'normal',

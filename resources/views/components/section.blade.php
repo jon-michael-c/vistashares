@@ -8,7 +8,7 @@
     }
 @endphp
 
-<section class="full-width relative overflow-hidden py-8 sm:py-24 {!! $class !!}"
+<section class="full-width relative overflow-hidden py-8 sm:py-28 {!! $class !!}"
     @if (isset($id)) id="{{ $id }}" @endif>
     @if (isset($bg_image))
         <div class="bg-image inner-full">

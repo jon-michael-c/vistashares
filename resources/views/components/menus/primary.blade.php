@@ -11,12 +11,12 @@
                     @foreach ($item['children'] as $child)
                         <li
                             class="menu-item sub-menu-item px-4 py-2 hover:bg-gray transition-all {!! $item['classes'] !!}">
-                            <a href="{{ $child['url'] }}" class="text-white block ">{{ $child['title'] }}</a>
+                            <a href="{{ $child['url'] }}" class="text-white block ">{!! $child['title'] !!}</a>
                         </li>
                     @endforeach
                 </ul>
             @else
-                <a href="{{ $item['url'] }}" class="font-semibold text-white block">{{ $item['title'] }}</a>
+                <a href="{{ $item['url'] }}" class="font-semibold text-white block">{!! $item['title'] !!}</a>
             @endif
         </li>
     @endforeach

@@ -54,6 +54,13 @@
           opacity: 0.5;
           transition: all 0.2s ease-in-out;
         }
+
+        &:hover {
+          cursor: pointer;
+          h3 {
+            opacity: 0.75;
+          }
+        }
       }
 
       .process-category-items {

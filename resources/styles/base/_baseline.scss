@@ -12,30 +12,6 @@ svg {
 }
 
 html {
-  scroll-behavior: smooth;
-  font-family: 'Termina', Geneva, Tahoma, sans-serif;
-
-  ::-webkit-scrollbar {
-    width: 7px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: #c7a1ff;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: #0e062d;
-    border-radius: 5px;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: #b269ff;
-    border-radius: 10px;
-    padding: 1px;
-  }
-
-  scrollbar-width: thin;
-  scrollbar-color: #b269ff #0e062d;
 }
 
 body {
@@ -76,11 +52,10 @@ h6 {
   }
   h2 {
     font-size: 22px;
-    font-weight: normal;
     line-height: 1.28;
+    font-weight: 600;
     @include sm {
       font-size: 36px;
-      font-weight: 400;
       line-height: normal;
     }
   }
@@ -93,7 +68,7 @@ h6 {
     @include sm {
       font-size: 24px;
       font-style: normal;
-      font-weight: 400;
+      font-weight: 600;
       line-height: 1.3333; /* 133.333% */
     }
   }
@@ -147,6 +122,11 @@ article {
   p:not(:last-child) {
     margin-bottom: 6px;
   }
+}
+
+b,
+strong {
+  font-weight: 600;
 }
 
 .font-outline {

@@ -50,7 +50,8 @@
                                             class="w-[37px] h-[32px]" />
                                     @endif
                                     @if ($item['heading'])
-                                        <p class="font-semibold font-Termina">{!! $item['heading'] !!}</p>
+                                        <p class=" font-semibold font-Termina ">
+                                            {!! $item['heading'] !!}</p>
                                     @endif
                                     @if ($item['description'])
                                         <p>

@@ -5,6 +5,7 @@ export default class ProcessSlider {
     this.elem = elem;
     this.slides = elem.querySelectorAll('.process-category');
     this.scrollbar = elem.querySelector('.process-scrollbar > .bar');
+    this.headers = elem.querySelectorAll('.category-name');
     this.interval = null;
     this.timeout = null;
     this.index = 0;
@@ -33,6 +34,12 @@ export default class ProcessSlider {
       this.timeout = setTimeout(() => {
         this.play();
       }, 5000);
+    });
+
+    this.headers.forEach((header, index) => {
+      header.addEventListener('click', () => {
+        this.move(index);
+      });
     });
   }
 

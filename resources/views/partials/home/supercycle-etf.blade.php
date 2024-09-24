@@ -8,7 +8,6 @@
         'Inception date' => '12/31/2020',
         'Expense Ratio' => '0.75%',
         'YTD Return' => '12.5%',
-        '5 yr return' => '12.5%',
     ];
 
 @endphp

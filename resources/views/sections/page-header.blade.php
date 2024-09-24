@@ -3,7 +3,7 @@
         <div class="line-bg ">
             <img src="@asset('images/line-logo.svg')" alt="line background" />
         </div>
-        <div class="hero-content py-20 sm:py-48 sm:pr-2">
+        <div class="hero-content py-20 relative sm:py-48 sm:pr-2">
             <div class="pb-4">
                 <h1 class="capitalize">{!! get_the_title() !!}</h1>
             </div>
