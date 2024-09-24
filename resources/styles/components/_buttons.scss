@@ -19,7 +19,8 @@
   margin-top: 1rem;
 }
 
-.wp-button {
+.wp-button,
+.btn-primary {
   background-size: 200% auto;
 
   background-position: right center;
@@ -32,7 +33,7 @@
   );
 
   padding: 0.4rem 1rem;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.35s ease;
 
   &:hover {
     background-position: left center;

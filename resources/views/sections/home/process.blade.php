@@ -54,9 +54,7 @@
                                             {!! $item['heading'] !!}</p>
                                     @endif
                                     @if ($item['description'])
-                                        <p>
-                                            {!! $item['description'] !!}
-                                        </p>
+                                        {!! $item['description'] !!}
                                     @endif
                                 </div>
                             </x-card>

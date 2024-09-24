@@ -152,6 +152,7 @@ class Hero extends Block
             'hero_text' => get_field('hero_text'),
             'hero_cta' => get_field('hero_cta'),
             'hero_etfs' => get_field('hero_etfs'),
+            'hero_img' => get_field('hero_img'),
         ];
     }
 
@@ -163,6 +164,7 @@ class Hero extends Block
         $fields = Builder::make('hero');
 
         $fields
+            ->addImage('hero_img')
             ->addWysiwyg('hero_header')
             ->addWysiwyg('hero_text')
             ->addLink("hero_cta")
