@@ -6,7 +6,7 @@
             <a href="{{ $cta['url'] }}" class="wp-button">{{ $cta['title'] }}</a>
         </div>
     </div>
-    <div class="featured-posts grid gap-8 sm:grid-cols-3">
+    <div class="featured-posts grid gap-8 sm:grid-cols-2 md:grid-cols-3">
         @foreach ($feature_posts as $postID)
             @include('components.posts.preview', [
                 'permalink' => get_the_permalink($postID),

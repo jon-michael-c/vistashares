@@ -1,0 +1,11 @@
+.post-preview {
+  min-height: 175px;
+
+  .post-title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}

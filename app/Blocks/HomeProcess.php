@@ -149,6 +149,7 @@ class HomeProcess extends Block
     {
         return [
             'items' => $this->items(),
+            'process_description' => get_field('process_description'),
         ];
     }
 
@@ -160,6 +161,7 @@ class HomeProcess extends Block
         $homeProcess = Builder::make('home_process');
 
         $homeProcess
+            ->addWysiwyg('process_description')
             ->addRepeater('categories', [
                 'label' => 'Categories',
                 'instructions' => 'Add your category information here.',

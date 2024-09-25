@@ -19,7 +19,7 @@
         <x-card type="alt">
             <div class="sm:flex sm:justify-between sm:items-center sm:p-4">
                 <p class="font-Termina">
-                    MADE AND MANAGED WITH DOMAIN EXPERTISE
+                    {!! $cta_text !!}
                 </p>
                 <a href="{{ $cta['url'] }}" class="wp-button inline-block mt-4 sm:mt-0">{{ $cta['title'] }}</a>
             </div>

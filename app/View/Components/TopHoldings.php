@@ -41,7 +41,7 @@ class TopHoldings extends Component
 
     public function download()
     {
-        $res = get_field('top_holding_download');
+        $res = get_field('top_holdings_download');
         if (isset($res['url'])) {
             $res = $res['url'];
         } else {

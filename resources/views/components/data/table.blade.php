@@ -25,7 +25,7 @@
         @endif
     </table>
     @if ($download != '')
-        <div class="flex justify-end items-center mb-2">
+        <div class="flex justify-end items-center my-4 sm:my-6">
             <x-download class="text-indigo" color="#B269FF" :url="$download">
                 Download
             </x-download>

@@ -148,7 +148,9 @@ class PureExposure extends Block
     public function with(): array
     {
         return [
-            'items' => $this->items(),
+            'pure_exposures' => get_field('pure_exposures'),
+            'cta_text' => get_field('cta_text'),
+            'cta' => get_field('cta'),
         ];
     }
 
@@ -170,6 +172,7 @@ class PureExposure extends Block
             ->addText('heading')
             ->addTextarea('description')
             ->endRepeater()
+            ->addTextarea('cta_text')
             ->addLink('cta')
         ;
 

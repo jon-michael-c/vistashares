@@ -6,11 +6,13 @@
         <p>{!! $description !!}</p>
     </div>
     <div class="supercycle-etfs grid gap-8 sm:grid-cols-2">
-        @include('partials.home.supercycle-etf', [
-            'postID' => 35,
-        ])
-        @include('partials.home.supercycle-etf', [
-            'postID' => 33,
-        ])
+        @if (isset($super_cycle) && is_array($super_cycle))
+            @foreach ($super_cycle as $cycle)
+                @include('partials.home.supercycle-etf', [
+                    'postID' => $cycle['etf'],
+                    'etf_description' => $cycle['description'],
+                ])
+            @endforeach
+        @endif
     </div>
 </x-section>

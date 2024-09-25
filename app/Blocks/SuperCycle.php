@@ -148,7 +148,7 @@ class SuperCycle extends Block
     public function with(): array
     {
         return [
-            'items' => $this->items(),
+            'super_cycle' => get_field('supercycle_items'),
         ];
     }
 
@@ -167,7 +167,12 @@ class SuperCycle extends Block
                     'layout' => 'block',
                 ]
             )
-            ->addText('item')
+            ->addPostObject('etf', [
+                'label' => 'ETF',
+                'post_type' => ['etf'],
+                'return_format' => 'id',
+            ])
+            ->addWysiwyg('description')
             ->endRepeater()
 
         ;

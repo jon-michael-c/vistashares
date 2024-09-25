@@ -4,8 +4,8 @@
         <x-top-holdings />
         <x-exposure />
         <div class="sm:grid sm:grid-cols-2 sm:gap-6">
-            <x-etf-characteristics />
-            <x-etf-risk />
+            <x-e-t-f-characteristics />
+            <x-e-t-f-risk />
         </div>
     </div>
     <div class="discloures pt-8">

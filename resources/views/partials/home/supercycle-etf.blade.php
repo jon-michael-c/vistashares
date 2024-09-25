@@ -34,8 +34,8 @@
                 @endif
             </ul>
         </div>
-        <div>
-            <p class="font-Termina">Drive your portfolio growth with next-generation, clean automotive technology</p>
+        <div class="Termina text-silver">
+            {!! $etf_description !!}
         </div>
         <div>
             <a href="{{ $permalink }}" class="wp-button">Discover</a>

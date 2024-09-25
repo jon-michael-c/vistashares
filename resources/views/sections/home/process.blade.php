@@ -5,10 +5,7 @@
         </h1>
     </div>
     <div class="pb-4">
-        <p>
-            Our unique investment process is built on the foundation of four key weighting mechanisms that ensure high
-            quality, and pure exposure to supercycles
-        </p>
+        {!! $process_description !!}
     </div>
     <div class="pb-4">
         <h3 class="text-indigo leading-[1.44] font-semibold pb-4 border-b-2 border-solid border-indigo">
