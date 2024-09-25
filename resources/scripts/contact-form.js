@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  console.log('contact-form.js loaded');
+  if (!document.getElementById('contact-form')) return;
 
   document
     .getElementById('contact-form')

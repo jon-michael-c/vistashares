@@ -5,21 +5,35 @@
     </div>
     <table class="mt-4 w-full border-collapse">
         @if ($output['head'])
-            <tr>
-                @foreach ($output['head'] as $head)
-                    <th class="text-midnight font-medium py-4">{{ $head }}</th>
-                @endforeach
-            </tr>
+            <thead>
+                <tr>
+                    @foreach ($output['head'] as $head)
+                        <th class="text-midnight font-medium py-4">{{ $head }}</th>
+                    @endforeach
+                </tr>
+            </thead>
         @endif
         @if ($output['body'])
             @foreach ($output['body'] as $key => $value)
                 <tr>
-                    <td>{{ $key }}</td>
+                    <td>{!! $key !!}</td>
                     @foreach ($value as $val)
-                        <td>{{ $val }}</td>
+                        <td>{!! $val !!}</td>
                     @endforeach
                 </tr>
             @endforeach
         @endif
     </table>
+    @if ($download != '')
+        <div class="flex justify-end items-center mb-2">
+            <x-download class="text-indigo" color="#B269FF" :url="$download">
+                Download
+            </x-download>
+        </div>
+    @endif
+    @if ($disclaimer)
+        <div class="disclaimer text-midnight">
+            {!! $disclaimer !!}
+        </div>
+    @endif
 </div>

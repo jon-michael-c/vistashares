@@ -1,0 +1,5 @@
+<div class="etf-prices">
+    <div class="bg-white p-6 sm:p-10">
+        <x-table title="ETF Prices" type="long" :output="$output" :download="$download" :disclaimer="$disclaimer" />
+    </div>
+</div>

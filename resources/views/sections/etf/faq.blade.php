@@ -1,7 +1,7 @@
 @php
-    $faqs = get_field('faqs', 'option');
+    $faqs = get_field('faqs');
 @endphp
-<x-section id="faqs" class="faqs bg-gradient-1">
+<x-section id="faqs" class="faqs gradient-bg">
     <div class="">
         <h2 class="pb-4">FAQs</h2>
         @if ($faqs)

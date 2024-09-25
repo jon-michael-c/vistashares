@@ -153,22 +153,6 @@ class ThemeOptions extends Field
                 'toolbar' => 'full',
             ])
             ->addTab("ETFs")
-            ->addRepeater('faqs', [
-                'label' => 'FAQs',
-                'instructions' => 'Add your FAQs here.',
-                'layout' => 'block',
-                'button_label' => 'Add FAQ',
-            ])
-            ->addText('question', [
-                'label' => 'Question',
-                'instructions' => 'Add your question here.',
-            ])
-            ->addWysiwyg('answer', [
-                'label' => 'Answer',
-                'instructions' => 'Add your answer here.',
-                'toolbar' => 'full',
-            ])
-            ->endRepeater()
         ;
 
         return $themeOptions->build();

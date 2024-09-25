@@ -10,19 +10,23 @@
             <x-card class="bg-white">
                 <h3 class="text-ultramarine">Reasons to consider {!! get_the_title() !!}</h3>
                 @if ($reasons)
-                    <div class="grid gap-4 py-3 sm:py-6 sm:grid-cols-3 sm:gap-8">
+                    <div class="grid justify-items-start gap-4 py-3 sm:py-6 sm:grid-cols-3 sm:gap-8">
                         @foreach ($reasons as $reason)
-                            <div class="grid gap-2 sm:gap-4">
+                            <div class="">
                                 <img src="{{ $reason['icon']['url'] }}" alt="{{ $reason['icon']['alt'] }}"
-                                    class="w-[48px] h-[48px]" />
-                                <div class="text-midnight">
+                                    class="w-[48px] h-[48px] " />
+                                <div class="text-midnight pt-8">
                                     {!! $reason['text'] !!}
                                 </div>
                             </div>
                         @endforeach
                     </div>
                 @endif
+                <div class="wp-buttons">
+                    <a href="{{ home_url('how-to-invest') }}" class="wp-button">How to Invest</a>
+                </div>
             </x-card>
+
         </div>
         <div class="grid sm:grid-cols-2 gap-6">
             <div class="etf-summary">
@@ -39,22 +43,9 @@
             </div>
         </div>
         <div class="grid  gap-6 sm:grid-cols-2">
-            <div class="key-info">
-                <div class="bg-white p-6">
-                    <x-table title="Key Information" />
-                </div>
-            </div>
-            <div class="trading-details">
-                <div class="bg-white p-6">
-                    <x-table title="Trading Details" />
-                </div>
-            </div>
-            <div class="distributions">
-                <div class="bg-white p-6">
-                    <x-table title="Distributions" />
-                </div>
-            </div>
-
+            <x-fund-details />
+            <x-trading-details />
+            <x-distributions />
         </div>
     </div>
 </x-section>

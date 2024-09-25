@@ -17,6 +17,20 @@
     margin-bottom: 1rem;
     background: transparent;
     font-family: 'Grotesk', sans-serif;
+    thead {
+      tr {
+        &::after,
+        &::before {
+          opacity: 0 !important;
+        }
+        th {
+          text-align: right;
+          @apply text-ultramarine font-normal;
+          padding: 0px !important;
+          padding-bottom: 4px !important;
+        }
+      }
+    }
 
     tr {
       position: relative;
@@ -49,7 +63,7 @@
 
         &:first-child {
           text-align: left;
-          @apply text-midnight;
+          @apply text-midnight font-medium;
           display: block;
         }
       }

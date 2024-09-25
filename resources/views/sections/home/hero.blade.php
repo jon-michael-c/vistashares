@@ -3,7 +3,7 @@
         <div class="line-bg ">
             <img src="@asset('images/line-logo.svg')" alt="line background" />
         </div>
-        <div class="hero-content py-20 my-auto sm:py-0 sm:pr-2">
+        <div class="hero-content py-20 my-auto sm:py-0 sm:pr-2 z-10">
             <div class="pb-4">
                 {!! $hero_header !!}
             </div>

@@ -36,21 +36,14 @@
         <h3 class="block sm:hidden">{!! $excerpt !!}</h3>
         <div class="grid gap-6 pt-8">
             @if ($fact_sheet)
-                <a href="{{ $fact_sheet['url'] }}" target="_blank"
-                    class="flex items-center gap-2 cursor-pointer hover:text-midnight">
-                    <img src="@asset('images/download.svg')" alt="PDF icon" class="w-4 h-auto object-container" />
-                    <p class="font-semibold font-Termina underline">
-                        Fund Fact Sheet
-                    </p>
-                </a>
+                <x-download :url="$fact_sheet['url']">
+                    Fact Sheet
+                </x-download>
             @endif
             @if ($presentation)
-                <a href="{{ $presentation['url'] }}" target="_blank" class="flex items-center gap-2 cursor-pointer">
-                    <img src="@asset('images/download.svg')" alt="PDF icon" class="w-4 h-auto object-container" />
-                    <p class="font-semibold font-Termina underline">
-                        Presentation
-                    </p>
-                </a>
+                <x-download :url="$presentation['url']">
+                    Presentation
+                </x-download>
             @endif
         </div>
     </div>

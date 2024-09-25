@@ -1,31 +1,11 @@
-@php
-    $output = [
-        'head' => [],
-        'body' => [
-            'Lorem Ispum' => ['10%', '10%', '10%', '10%', '10%'],
-            'Lorem Ipsum' => ['10%', '10%', '10%', '10%', '10%'],
-        ],
-    ];
-@endphp
 <x-section id="holdings">
     <h2 class="pb-4">Holdings & Characteristics</h2>
     <div class="grid gap-6">
-        <div class="top-holdings bg-white p-6">
-            <x-table title="Top Holdings" type="long" :output="$output" />
-        </div>
-        <div class="exposure bg-white p-6">
-            <h3 class="text-midnight">Exposure</h3>
-            <div class="grid items-center sm:grid-cols-2 gap-4">
-                <x-exposure />
-            </div>
-        </div>
+        <x-top-holdings />
+        <x-exposure />
         <div class="sm:grid sm:grid-cols-2 sm:gap-6">
-            <div class="etf-characteristics bg-white p-6">
-                <x-table title="ETF Characteristics" />
-            </div>
-            <div class="etf-risk bg-white p-6">
-                <x-table title="ETF Risk Stats" />
-            </div>
+            <x-etf-characteristics />
+            <x-etf-risk />
         </div>
     </div>
     <div class="discloures pt-8">

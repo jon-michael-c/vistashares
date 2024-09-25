@@ -29,6 +29,6 @@
         </div>
     </div>
     <div class="inner-full sm:w-[40%] sm:absolute sm:top-0 sm:right-0">
-        <img src="https://vista.leibowitzdesign.local/wp-content/uploads/2024/08/AIS-ETF.png" />
+        <img src="/wp-content/uploads/2024/08/AIS-ETF.png" />
     </div>
 </section>

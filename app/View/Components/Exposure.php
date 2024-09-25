@@ -11,6 +11,8 @@ class Exposure extends Component
 
     public $output;
     public $colors;
+    public $disclaimer;
+    public $download;
 
     /**
      * Create a new component instance.
@@ -32,6 +34,9 @@ class Exposure extends Component
 
         ];
         $this->output = $this->compileData();
+        $this->disclaimer = $this->getDisclaimer();
+        $this->download = $this->download();
+
 
     }
     private function readCSV($csvFile, $delimiter = ",")
@@ -82,6 +87,24 @@ class Exposure extends Component
     }
 
 
+    public function getDisclaimer()
+    {
+        $res = get_field('exposure_disclaimer');
+        return $res;
+    }
+
+    public function download()
+    {
+        $res = get_field('exposure_download');
+        if (isset($res['url'])) {
+            $res = $res['url'];
+        } else {
+            $res = '';
+        }
+        return $res;
+    }
+
+
 
 
     /**
@@ -89,6 +112,6 @@ class Exposure extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.exposure');
+        return view('components.data.exposure');
     }
 }

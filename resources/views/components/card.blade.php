@@ -1,5 +1,5 @@
 @if ($type == 'default')
-    <div class="{!! $class !!} p-[1.75rem]  rounded-tl-lg rounded-br-lg">
+    <div class=" p-[1.75rem] sm:p-10  rounded-tl-lg rounded-br-lg {!! $class !!}">
         {{ $slot }}
     </div>
 @elseif ($type == 'alt')
