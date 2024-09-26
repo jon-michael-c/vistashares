@@ -7,9 +7,9 @@
             <ul class="flex flex-col border-list border-list-light">
                 @php($i = 0)
                 @foreach ($output as $item)
-                    <li class="flex justify-between items-center py-2" data-index="{{ $i }}">
+                    <li class="flex justify-between items-center py-2 gap-4 sm:gap-0" data-index="{{ $i }}">
                         <div class="flex items-center gap-2">
-                            <span class="color w-[15px] h-[15px] block "
+                            <span class="color aspect-square w-[15px] h-[15px] block "
                                 style="background: {{ $item['color'] }};"></span>
                             <span class="name">{{ $item['name'] }}</span>
                         </div>
@@ -22,7 +22,7 @@
     </div>
     @if ($download != '')
         <div class="flex justify-end items-center my-4 lg:my-8">
-            <x-download class="text-indigo" color="#B269FF" :url="$download">
+            <x-download class="text-indigo light" color="#B269FF" :url="$download">
                 Download
             </x-download>
         </div>

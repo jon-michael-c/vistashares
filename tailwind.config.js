@@ -101,6 +101,7 @@ const config = {
       indigoLight: '#C7A1FF',
       navy: '#0A192F',
       ultramarine: '#3E2BA5',
+      'cornflower-300': '#A3BDFF',
       cornflower: '#7DA2FF',
       silver: '#F2F2F2',
       red: '#FF6D6D',

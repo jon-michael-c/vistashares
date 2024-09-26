@@ -1,5 +1,5 @@
 <section class="page-header gradient-bg h-fit full-width relative overflow-hidden">
-    <div class="sm:w-[50%] sm:max-w-[450px]">
+    <div class="h-[400px] flex items-center sm:block sm:h-[500px] sm:w-[50%] sm:max-w-[450px]">
         <div class="line-bg ">
             <img src="@asset('images/line-logo.svg')" alt="line background" />
         </div>

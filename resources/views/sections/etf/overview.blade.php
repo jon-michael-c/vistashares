@@ -10,7 +10,7 @@
             <x-card class="bg-white">
                 <h3 class="text-ultramarine">Reasons to consider {!! get_the_title() !!}</h3>
                 @if ($reasons)
-                    <div class="grid justify-items-start gap-4 py-3 sm:py-6 sm:grid-cols-3 sm:gap-8">
+                    <div class="grid justify-items-start gap-8 py-3 sm:py-6 sm:grid-cols-3 sm:gap-8">
                         @foreach ($reasons as $reason)
                             <div class="">
                                 <img src="{{ $reason['icon']['url'] }}" alt="{{ $reason['icon']['alt'] }}"
@@ -31,13 +31,13 @@
         <div class="grid sm:grid-cols-2 gap-6">
             <div class="etf-summary">
                 <x-card class="bg-gradient-2 sm:h-full">
-                    <h3 class="text-white">ETF Summary</h3>
+                    <h3 class="text-white pb-3 sm:pb-6">ETF Summary</h3>
                     {!! $etf_summary !!}
                 </x-card>
             </div>
             <div class="etf-objective">
                 <x-card class="bg-gradient-2 sm:h-full">
-                    <h3 class="text-white">ETF Objective</h3>
+                    <h3 class="text-white pb-3 sm:pb-6">ETF Objective</h3>
                     {!! $eft_objective !!}
                 </x-card>
             </div>

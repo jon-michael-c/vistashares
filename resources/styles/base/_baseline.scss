@@ -46,6 +46,24 @@ body {
 
 main {
   min-height: 500px;
+
+  a:not(.wp-button) {
+    &:hover {
+      @apply text-ultramarine;
+
+      svg {
+        @apply fill-ultramarine;
+      }
+    }
+    &.light {
+      &:hover {
+        @apply text-ultramarine;
+        svg {
+          @apply fill-ultramarine;
+        }
+      }
+    }
+  }
 }
 footer {
   overflow-x: hidden;
@@ -224,7 +242,7 @@ body
   display: block;
   position: absolute;
   height: 100%;
-  width: auto !important;
+  width: 10px !important;
   left: 25%;
   opacity: 0;
   padding: 8px;

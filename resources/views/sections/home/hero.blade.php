@@ -1,9 +1,9 @@
 <section class="hero h-fit full-width relative gradient-bg">
-    <div class="sm:w-[50%] sm:max-w-[550px] flex">
+    <div class="h-[400px] flex items-center md:h-full md:w-[50%] md:max-w-[550px] ">
         <div class="line-bg ">
             <img src="@asset('images/line-logo.svg')" alt="line background" />
         </div>
-        <div class="hero-content py-20 my-auto sm:py-0 sm:pr-2 z-10">
+        <div class="hero-content py-20 my-auto md:py-0 md:pr-2 z-10">
             <div class="pb-4">
                 {!! $hero_header !!}
             </div>
@@ -25,7 +25,7 @@
             </svg>
         </div>
     </div>
-    <div class="inner-full relative sm:absolute sm:top-0 sm:right-0 sm:w-[55%] sm:h-full z-10">
+    <div class="inner-full relative md:absolute md:top-0 md:right-0 md:w-[55%] md:h-full z-10">
         @include('partials.home.etf-slider', [
             'etfs' => $hero_etfs,
             'bg_img' => $hero_img,

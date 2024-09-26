@@ -1,5 +1,5 @@
-<div class="hero-etf-slider  zig-zag content-grid sm:pl-[12rem]">
-    <div class="min-h-[420px] sm:min-h-full pt-20 pb-10 sm:py-0 sm:flex sm:justify-center sm:items-center">
+<div class="hero-etf-slider  zig-zag content-grid md:pl-[12rem]">
+    <div class="min-h-[420px] md:min-h-full pt-20 pb-10 md:py-0 md:flex md:justify-center md:items-center">
         <div class="bg-image">
             @if ($bg_img)
                 <img src="{{ $bg_img['url'] }}" alt="{{ $bg_img['alt'] }}" />
@@ -9,8 +9,8 @@
         @if ($etfs)
             @foreach ($etfs as $etf)
                 <div class="hero-etf-slider-slide">
-                    <div class="flex items-center gap-2 sm:gap-4 pb-4">
-                        <img class="w-[45px] h-[45px] sm:w-[60px] sm:h-[60px]"
+                    <div class="flex items-center gap-2 md:gap-4 pb-4">
+                        <img class="w-[45px] h-[45px] md:w-[60px] md:h-[60px]"
                             src="{{ get_the_post_thumbnail_url($etf['etf']) }}" />
                         <h2>{{ get_the_title($etf['etf']) }}</h2>
                     </div>

@@ -2,7 +2,7 @@
   width: 100%;
   overflow: hidden;
   z-index: 10;
-  @include sm {
+  @include md {
     aspect-ratio: 5 / 2;
   }
 
@@ -44,11 +44,13 @@
       justify-content: flex-end;
       align-items: center;
       bottom: -170px;
-      @include sm {
+      @include md {
         position: absolute;
-
-        bottom: 10%;
         right: 10%;
+        bottom: 1%;
+      }
+      @include lg {
+        bottom: 3%;
       }
       .etf-slider-controls {
         height: 130px;
@@ -102,7 +104,9 @@
     transform: translate(0%, 25%);
     opacity: 0;
     scale: 0.8;
-    @include sm {
+    max-width: 450px;
+    padding-right: 24px;
+    @include md {
       top: 50%;
       left: 17vw;
       max-width: 500px;
@@ -114,9 +118,15 @@
       visibility: visible;
       opacity: 1;
       scale: 1;
-      @include sm {
+      @include md {
         transform: translate(0%, -50%);
       }
     }
+  }
+}
+
+@include md-lg {
+  .hero {
+    height: 550px;
   }
 }

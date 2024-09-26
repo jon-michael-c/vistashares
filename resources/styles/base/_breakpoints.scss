@@ -46,3 +46,15 @@
     @content;
   }
 }
+
+@mixin sm-md {
+  @media (min-width: 640px) and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin md-lg {
+  @media (min-width: 768px) and (max-width: 1023px) {
+    @content;
+  }
+}

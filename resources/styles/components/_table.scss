@@ -1,6 +1,5 @@
 .data-table {
   &-head {
-    margin-bottom: 1.5rem;
     h3 {
       @apply text-ultramarine font-semibold;
     }
@@ -8,6 +7,10 @@
     h5 {
       @apply text-cornflower font-normal;
       text-transform: uppercase;
+    }
+
+    @include sm {
+      margin-bottom: 1.5rem;
     }
   }
   table {
@@ -143,6 +146,8 @@
   @include m-sm {
     &:not(.long) {
       tr {
+        display: block;
+        width: 100%;
         td {
           display: inline-block;
           width: 100%;

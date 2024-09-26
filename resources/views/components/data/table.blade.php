@@ -31,12 +31,12 @@
     </div>
     @if ($type == 'long')
         <div class="table-scroll mb-2 text-right text-ultramarine sm:hidden">
-            <p>Scroll to view more</p>
+            <p>Swipe to view more</p>
         </div>
     @endif
     @if ($download != '')
         <div class="flex justify-end items-center my-4 sm:my-8">
-            <x-download class="text-indigo" color="#B269FF" :url="$download">
+            <x-download class="text-indigo light" color="#B269FF" :url="$download">
                 Download
             </x-download>
         </div>

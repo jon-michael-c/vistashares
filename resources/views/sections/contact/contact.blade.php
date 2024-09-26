@@ -1,4 +1,4 @@
-<x-section class="contact bg-gradient-9">
+<x-section class="contact-section bg-gradient-9">
     <div class="grid gap-8 sm:grid-cols-2 sm:gap-16">
         <div>
             <div class="pb-4">

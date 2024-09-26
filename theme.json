@@ -41,6 +41,11 @@
           "slug": "ultramarine"
         },
         {
+          "color": "#a3bdff",
+          "name": "Cornflower-300",
+          "slug": "cornflower-300"
+        },
+        {
           "color": "#7da2ff",
           "name": "Cornflower",
           "slug": "cornflower"

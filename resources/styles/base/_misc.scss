@@ -121,7 +121,7 @@
 }
 
 .zig-zag {
-  @include sm {
+  @include md {
     clip-path: url(#zig);
   }
 }
@@ -140,19 +140,30 @@
   }
 }
 
-.contact {
+.contact-section {
   .line-bg {
-    top: 10%;
-    z-index: 0;
+    top: unset;
+    bottom: 0;
+    left: -90%;
+    @include sm {
+      left: -15%;
+      bottom: -5%;
+      width: 60%;
+      z-index: 0;
+      grid-column: full-width !important;
+    }
   }
 }
 
 .team-member-single {
   position: relative;
   .line-bg {
-    left: 0;
+    top: unset;
+    left: unset;
+    right: 0;
     bottom: 0;
     z-index: 0;
+    grid-column: full-width !important;
   }
 
   .grid {
@@ -162,8 +173,8 @@
 }
 
 .page-header {
-  .line-bg {
-    @include sm {
+  @include sm {
+    .line-bg {
       top: -30%;
       width: 67%;
     }
@@ -228,4 +239,17 @@
       }
     }
   }
+}
+
+.font-semibold {
+  p {
+    font-weight: 600 !important;
+  }
+}
+
+.diagonal {
+  background-color: #f2f2f2;
+  width: 5px;
+  height: 200px;
+  transform: rotate(25deg);
 }

@@ -7,11 +7,12 @@
     <div class="w-full">
         @if ($investor_ctas)
             @foreach ($investor_ctas as $cta)
-                <div class="cta Termina flex flex-col items-start w-full py-4 gap-2 sm:flex-row sm:justify-between ">
+                <div
+                    class="cta Termina flex flex-col items-start w-full py-4 gap-3 sm:flex-row sm:justify-between sm:gap-6">
                     <div class="font-medium">
                         {!! $cta['description'] !!}
                     </div>
-                    <a href="{{ $cta['link']['url'] }}" class="wp-button">{{ $cta['link']['title'] }}</a>
+                    <a href="{{ $cta['link']['url'] }}" class="wp-button text-nowrap">{{ $cta['link']['title'] }}</a>
                 </div>
                 @unless ($loop->last)
                     <hr class="my-4 border-gray-300">

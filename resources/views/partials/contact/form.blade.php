@@ -1,5 +1,5 @@
  <form id="contact-form" class="">
-     <div class="grid gap-6 ">
+     <div class="grid gap-4 ">
          <div class="form-group col">
              <label for="firstName">First Name *</label>
              <input required type="text" name="firstName" id="firstName" class="form-control">

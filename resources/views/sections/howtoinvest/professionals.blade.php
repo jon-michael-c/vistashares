@@ -4,7 +4,7 @@
             <img src="{{ $image['url'] }}" alt="{{ $image['alt'] }}" class="w-full h-full object-bottom" />
         </div>
     @endif
-    <div class="min-h-[400px] sm:flex sm:flex-col sm:justify-center sm:gap-6 ">
+    <div class="min-h-[400px] flex flex-col gap-4 justify-center sm:gap-6 ">
         <div class="sm:max-w-[800px]">
             <h2>
                 {!! $heading !!}

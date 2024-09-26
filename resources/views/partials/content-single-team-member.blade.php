@@ -4,8 +4,9 @@
     </div>
     <div class="grid gap-4">
         <div class="back-link flex gap-2 uppercase">
-            <span><a href="{{ home_url('/about-us') }}" class="text-silver opacity-75">Team</a> &gt; <span
-                    class="underline font-bold">BIO</span></span>
+            <span><a href="{{ home_url('/about-us#team') }}"
+                    class="text-silver opacity-75 hover:text-indigo hover:opacity-100 transition-all">Team</a> &gt;
+                <span class="underline font-bold">BIO</span></span>
         </div>
         <div class="flex flex-col gap-8 sm:flex-row-reverse sm:gap-16">
             <div class="sm:w-[40%]">
