@@ -1,21 +1,15 @@
 {
   "app": {
     "js": [
-      "js/runtime.b3d092.js",
-      "js/app.0db8ae.js"
-    ],
-    "css": [
-      "css/app.cef75d.css"
+      "js/runtime.js",
+      "js/app.js"
     ],
     "dependencies": []
   },
   "editor": {
     "js": [
-      "js/runtime.b3d092.js",
-      "js/editor.c86a86.js"
-    ],
-    "css": [
-      "css/editor.70bb9b.css"
+      "js/runtime.js",
+      "js/editor.js"
     ],
     "dependencies": [
       "wp-data",
@@ -24,8 +18,8 @@
   },
   "highchart": {
     "js": [
-      "js/runtime.b3d092.js",
-      "js/highchart.3cbb4d.js"
+      "js/runtime.js",
+      "js/highchart.js"
     ],
     "dependencies": []
   }

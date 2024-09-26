@@ -3,7 +3,7 @@
     <div class="grid gap-6">
         <x-top-holdings />
         <x-exposure />
-        <div class="sm:grid sm:grid-cols-2 sm:gap-6">
+        <div class="grid gap-6 sm:grid-cols-2 sm:gap-6">
             <x-e-t-f-characteristics />
             <x-e-t-f-risk />
         </div>

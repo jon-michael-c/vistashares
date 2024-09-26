@@ -5,7 +5,7 @@
         </div>
     @endif
     <div class="min-h-[400px] sm:flex sm:flex-col sm:justify-center sm:gap-6 ">
-        <div class="sm:max-w-[600px]">
+        <div class="sm:max-w-[800px]">
             <h2>
                 {!! $heading !!}
             </h2>

@@ -1,9 +1,9 @@
 <x-section class="bg-gradient-4">
-    <div class="w-full sm:grid sm:grid-cols-2 sm:gap-8">
+    <div class="w-full grid gap-6 md:grid-cols-2 sm:gap-8">
         @if ($cards)
             @foreach ($cards as $card)
-                <x-card type="alt">
-                    <div class="sm:p-8">
+                <x-card class="border-indigo border-[1px]" type="default">
+                    <div class="lg:p-8">
                         <h3>{!! $card['heading'] !!}</h3>
                         {!! $card['description'] !!}
                     </div>

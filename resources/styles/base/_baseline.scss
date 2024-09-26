@@ -12,6 +12,29 @@ svg {
 }
 
 html {
+  scroll-behavior: smooth;
+
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #c7a1ff;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0e062d;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #b269ff;
+    border-radius: 10px;
+    padding: 1px;
+  }
+
+  scrollbar-width: thin;
+  scrollbar-color: #b269ff #0e062d;
 }
 
 body {
@@ -40,7 +63,7 @@ h6 {
     font-size: 22px;
     font-style: normal;
     font-weight: 600;
-    line-height: 1.5;
+    line-height: 1.2857;
     letter-spacing: 0.01em;
     @include sm {
       font-size: 42px;
@@ -55,7 +78,7 @@ h6 {
     line-height: 1.28;
     font-weight: 600;
     @include sm {
-      font-size: 36px;
+      font-size: 42px;
       line-height: normal;
     }
   }

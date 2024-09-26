@@ -11,12 +11,21 @@
         'numberposts' => -1,
         'post_type' => 'team-member',
         'post_status' => 'publish',
-        'category_name' => 'committee',
+        'tax_query' => [
+            [
+                'taxonomy' => 'locations',
+                'field' => 'slug',
+                'terms' => 'committee',
+            ],
+        ],
         'fields' => 'ids',
     ]);
 @endphp
 <x-section>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="pb-4 w-full ">
+        <h2 class="text-silver">The VistaShares Investment Committee</h2>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         @if ($committee)
             @foreach ($committee as $member)
                 @include('partials.team-members.preview', [
@@ -55,7 +64,11 @@
         </div>
     </div>
 </x-section>
-<x-section>
+<x-section class="bg-gradient-11">
+    <div class="pb-4 flex justify-center items-center gap-8">
+        <h2 class="text-silver">Team</h2>
+        <hr class="border-indigo  w-full" />
+    </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         @if ($team)
             @foreach ($team as $member)

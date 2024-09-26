@@ -16,6 +16,10 @@
             'href' => '#documents',
             'text' => 'ETF Documents',
         ],
+        [
+            'href' => '#faqs',
+            'text' => 'FAQs',
+        ],
     ];
     $featureImg = get_the_post_thumbnail_url();
     $title = get_the_title();

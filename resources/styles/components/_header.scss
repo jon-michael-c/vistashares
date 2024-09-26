@@ -1,11 +1,11 @@
 header {
   z-index: -2;
-  background: url('~@images/gradient-bg.svg');
+  background: url('~@images/gradient-bg.svg'), #0e141e;
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: 0px 7%;
   @include m-sm {
-    background-size: 160%;
+    background-size: cover;
   }
   nav {
     li.menu-item {
@@ -71,7 +71,7 @@ header {
   .sub-menu {
     @include lg {
       @apply absolute bg-white shadow-md;
-      top: 100%;
+      top: 167%;
       left: 0;
       z-index: 1000;
       max-height: 0px;
@@ -108,13 +108,12 @@ header {
     flex-direction: column;
   }
   .sub-menu {
-    @apply absolute shadow-md;
-
+    @apply absolute shadow-md  border-[1px] border-solid border-silver;
     background: url('~@images/gradient-bg.svg') !important;
     background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: top center;
-    top: 100%;
+    background-size: 200% !important;
+    background-position: right;
+    top: 167%;
     left: -24px;
     z-index: -100;
     visibility: hidden;
@@ -144,9 +143,12 @@ header {
         }
       }
 
+      left: 0;
       position: relative;
-      background: none;
+      background: none !important;
+
       box-shadow: none;
+      border: none;
     }
   }
   &:hover {

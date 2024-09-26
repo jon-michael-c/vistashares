@@ -15,7 +15,7 @@
                             <div class="">
                                 <img src="{{ $reason['icon']['url'] }}" alt="{{ $reason['icon']['alt'] }}"
                                     class="w-[48px] h-[48px] " />
-                                <div class="text-midnight pt-8">
+                                <div class="text-midnight pt-2 sm:pt-8">
                                     {!! $reason['text'] !!}
                                 </div>
                             </div>

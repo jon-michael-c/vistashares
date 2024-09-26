@@ -23,6 +23,12 @@
   }
 }
 
+@mixin m-xs {
+  @media (max-width: 479px) {
+    @content;
+  }
+}
+
 @mixin m-sm {
   @media (max-width: 639px) {
     @content;

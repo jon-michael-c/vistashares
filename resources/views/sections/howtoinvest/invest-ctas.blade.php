@@ -7,9 +7,9 @@
     <div class="w-full">
         @if ($investor_ctas)
             @foreach ($investor_ctas as $cta)
-                <div class="cta flex flex-col items-start w-full py-4 gap-2 sm:flex-row sm:justify-between ">
-                    <div>
-                        <p>{!! $cta['description'] !!}</p>
+                <div class="cta Termina flex flex-col items-start w-full py-4 gap-2 sm:flex-row sm:justify-between ">
+                    <div class="font-medium">
+                        {!! $cta['description'] !!}
                     </div>
                     <a href="{{ $cta['link']['url'] }}" class="wp-button">{{ $cta['link']['title'] }}</a>
                 </div>

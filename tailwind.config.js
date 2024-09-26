@@ -122,6 +122,7 @@ const config = {
       'gradient-8': 'linear-gradient(160deg, #F2F2F2 -65.05%, #B269FF 99.06%);',
       'gradient-9': 'linear-gradient(176deg, #B269FF -23.71%, #2E1493 101.4%);',
       'gradient-10': 'linear-gradient(180deg, #0A0021 0%, #290087 100%);',
+      'gradient-11': 'linear-gradient(180deg, #0E062D 0.01%, #3E2BA5 114.36%);',
     },
     borderWidth: {
       DEFAULT: '1px',

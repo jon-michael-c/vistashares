@@ -25,7 +25,7 @@
             </svg>
         </div>
     </div>
-    <div class="inner-full relative sm:absolute sm:top-0 sm:right-0 sm:w-[55%] sm:h-full ">
+    <div class="inner-full relative sm:absolute sm:top-0 sm:right-0 sm:w-[55%] sm:h-full z-10">
         @include('partials.home.etf-slider', [
             'etfs' => $hero_etfs,
             'bg_img' => $hero_img,

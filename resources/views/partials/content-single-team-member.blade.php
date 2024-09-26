@@ -1,4 +1,4 @@
-<div class="full-width w-full relative py-8 sm:py-24 bg-gradient-10">
+<div class="team-member-single full-width w-full relative py-8 sm:py-24 bg-gradient-10">
     <div class="line-bg">
         <img src="@asset('images/line-logo.svg')" alt="line background" />
     </div>
