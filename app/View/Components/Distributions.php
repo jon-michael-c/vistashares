@@ -5,6 +5,7 @@ namespace App\View\Components;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
+use App\Helpers\CSVHelper;
 
 class Distributions extends Component
 {
@@ -26,15 +27,27 @@ class Distributions extends Component
     {
         $data = [
             'head' => [],
-            'body' =>
-                [
-                    'ETF Name' => ['VistaShares ETF'],
-                    'Ticker Symbol' => ['VST'],
-                    'Total Assets' => ['$100,000,000'],
-                    'Expense Ratio' => ['0.05%'],
-                    'Inception Date' => ['01/01/2022'],
-                ]
+            'body' => []
         ];
+
+        // Get the CSV file path from .env
+        $csvFile = env('FEED_PATH') . '/TidalETF_Services.40ZZ.Tidal_SECYield.csv';
+        if (!file_exists($csvFile)) {
+            return $data;
+        }
+
+        $readCSV = CSVHelper::readCSV($csvFile);
+        $row = CSVHelper::findRowByTicker(get_the_title(), $readCSV);
+        if (!$row) {
+            return $data;
+        }
+
+        $SECYield = ['30-Day SEC Yield' => [$row['30-Day SEC Yield'] . '%']];
+
+        // Merge SECYield with the existing $data['body'] array
+        $data['body'] = array_merge($data['body'], $SECYield);
+
+
 
         return $data;
     }

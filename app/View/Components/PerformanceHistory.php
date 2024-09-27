@@ -5,6 +5,7 @@ namespace App\View\Components;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
+use App\Helpers\CSVHelper;
 
 class PerformanceHistory extends Component
 {
@@ -26,12 +27,48 @@ class PerformanceHistory extends Component
         $data = [
             'head' => ['1M', '3M', 'YTD', '1Y', '3Y', '5Y'],
             'body' => [
-                'Lorem Ispum' => ['10%', '10%', '10%', '10%', '10%', '10%'],
             ],
         ];
+        // Get the CSV file path from .env
+        $csvFile = env('FEED_PATH') . '/TidalETF_Services.40ZZ.OJ_TICKER_MonthlyPerformance.csv';
+        if (!file_exists($csvFile)) {
+            return $data;
+        }
+
+        // Read the CSV file
+        $readCSV = CSVHelper::readCSV($csvFile);
+        // Find row by ticker
+        $row = CSVHelper::findRowByTicker(get_the_title(), $readCSV);
+
+        // Parse the CSV data
+        // Extract the required data from the CSV
+        foreach ($readCSV as $row) {
+            $fundName = $row['Fund Name'];
+            $fundTicker = $row['Fund Ticker'];
+            $oneMonth = $row['1 Month'];
+            $threeMonth = $row['3 Month'];
+            $ytd = $row['YTD'];
+            $oneYear = $row['1 Year'];
+            $threeYear = $row['3 Year'];
+            $fiveYear = $row['5 Year'];
+
+            // Add the data to the $data array
+            $data['body'][$fundName] = [
+                $oneMonth . '%',
+                $threeMonth . '%',
+                $ytd . '%',
+                $oneYear . '%',
+                $threeYear . '%',
+                $fiveYear . '%',
+            ];
+        }
+
+
 
         return $data;
     }
+
+
 
     public function getDisclaimer()
     {

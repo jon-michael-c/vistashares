@@ -5,6 +5,7 @@ namespace App\View\Components;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
+use App\Helpers\CSVHelper;
 
 class TopHoldings extends Component
 {
@@ -24,11 +25,40 @@ class TopHoldings extends Component
     public function compileData()
     {
         $data = [
-            'head' => ['1M', '3M', 'YTD', '1Y', '3Y', '5Y'],
-            'body' => [
-                'Lorem Ispum' => ['10%', '10%', '10%', '10%', '10%', '10%'],
-            ],
+            'head' => ['CUSIP', 'Shares', 'Price', 'Market Value', 'Weightings'],
+            'body' => [],
         ];
+
+        // Get the CSV file path from .env
+        $csvFile = env('FEED_PATH') . '/TidalETF_Services.40ZZ.JO_Holdings_05082023.csv';
+        if (!file_exists($csvFile)) {
+            return $data;
+        }
+
+        // Read the CSV file
+        $readCSV = CSVHelper::readCSV($csvFile);
+
+        // Find row by ticker
+        $rows = CSVHelper::findRowsByTicker(get_the_title(), $readCSV, 'Account');
+
+        foreach ($rows as $row) {
+            $CUSIP = $row['CUSIP'];
+            $Shares = number_format($row['Shares'], 0);
+            $Price = '$' . number_format($row['Price'], 2);
+            $MarketValue = '$' . number_format($row['MarketValue'], 2);
+            $Weightings = $row['Weightings'];
+            $SecurityName = $row['SecurityName'];
+
+            $data['body'][$SecurityName] = [
+                $CUSIP,
+                $Shares,
+                $Price,
+                $MarketValue,
+                $Weightings,
+            ];
+
+
+        }
 
         return $data;
     }

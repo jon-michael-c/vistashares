@@ -36,7 +36,7 @@
     @endif
     @if ($download != '')
         <div class="flex justify-end items-center my-4 sm:my-8">
-            <x-download class="text-indigo light" color="#B269FF" :url="$download">
+            <x-download class="text-indigo" color="#B269FF" :url="$download">
                 Download
             </x-download>
         </div>

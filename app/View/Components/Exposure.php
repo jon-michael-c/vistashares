@@ -5,6 +5,7 @@ namespace App\View\Components;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
+use App\Helpers\CSVHelper;
 
 class Exposure extends Component
 {
@@ -31,6 +32,8 @@ class Exposure extends Component
             '#c5d4fb',
             '#9fc0f3',
             '#9c94bc',
+            '#cdaee5',
+            '#93a0c2'
 
         ];
         $this->output = $this->compileData();
@@ -38,24 +41,6 @@ class Exposure extends Component
         $this->download = $this->download();
 
 
-    }
-    private function readCSV($csvFile, $delimiter = ",")
-    {
-        $file_handle = fopen($csvFile, 'r');
-        $line_of_text = [];
-        while (!feof($file_handle)) {
-            $line_of_text[] = fgetcsv($file_handle, 1024, $delimiter);
-        }
-        fclose($file_handle);
-        $filtered = array_filter($line_of_text); // Filter out any empty lines
-        $header = array_shift($filtered); // Remove the header
-        $res = [];
-
-        foreach ($filtered as $key => $value) {
-            $res[] = array_combine($header, $value);
-        }
-
-        return $res;
     }
 
     private function formatData($arr)
@@ -67,17 +52,35 @@ class Exposure extends Component
 
     }
 
-
     private function compileData()
     {
-        $data = $this->readCSV(get_theme_root() . '/' . get_template() . '/resources/data/TidalETF_Services.40ZZ.JO_Holdings_05082023.csv', ',');
-        $this->formatData($data);
+        $file = get_field('exposure_data');
+        $context = stream_context_create([
+            'ssl' => [
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+            ],
+        ]);
+        $file_content = file_get_contents($file['url'], false, $context);
+        if ($file_content !== false) {
+            $csv_rows = array_map('str_getcsv', explode("\n", $file_content));
+
+            $headers = $csv_rows[0];
+            unset($csv_rows[0]);
+
+            $data = [];
+            foreach ($csv_rows as $row) {
+                if (!empty($row)) {
+                    $data[] = array_combine($headers, $row);
+                }
+            }
+        }
 
         $res = [];
         foreach ($data as $index => $item) {
             $res[] = [
-                'name' => $item['SecurityName'],
-                'y' => floatval(str_replace('%', '', $item['Weightings'])),
+                'name' => $item['Sector'],
+                'y' => floatval(str_replace('%', '', $item['Weight'])),
                 'color' => $this->colors[$index % count($this->colors)],
             ];
         }

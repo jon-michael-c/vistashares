@@ -40,12 +40,12 @@
         <h3 class="block sm:hidden">{!! $excerpt !!}</h3>
         <div class="grid gap-6 pt-8">
             @if ($fact_sheet)
-                <x-download :url="$fact_sheet['url']">
+                <x-download class="light" :url="$fact_sheet['url']">
                     Fact Sheet
                 </x-download>
             @endif
             @if ($presentation)
-                <x-download :url="$presentation['url']">
+                <x-download class="light" :url="$presentation['url']">
                     Presentation
                 </x-download>
             @endif

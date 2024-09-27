@@ -5,6 +5,7 @@ namespace App\View\Components;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
+use App\Helpers\CSVHelper;
 
 class ETFPrices extends Component
 {
@@ -26,18 +27,37 @@ class ETFPrices extends Component
         $data = [
             'head' => [],
             'body' => [
-                'NAV' => ['$35.87', '<span class="text-ultramarine font-medium">Daily Change</span>', '$0.10', '0.27%'],
-                'Market Price' => [
-                    '$40.58',
-                    '<span class="text-ultramarine font-medium">Daily Change</span>',
-                    '$0.11',
-                    '-10%',
-                ],
+                "NAV" => [],
+                "Market Price" => [],
             ],
         ];
 
+        // Get the CSV file path from .env
+        $csvFile = env('FEED_PATH') . '/TidalETF_Services.40ZZ.OJ_DailyNAV.csv';
+        if (!file_exists($csvFile)) {
+            return $data;
+        }
+
+        // Read the CSV file
+        $readCSV = CSVHelper::readCSV($csvFile);
+        // Find row by ticker
+        $row = CSVHelper::findRowByTicker(get_the_title(), $readCSV);
+
+
+        array_push($data['body']['NAV'], $row['NAV']);
+        array_push($data['body']['NAV'], '<span class="text-ultramarine font-medium">Daily Change</span>');
+        array_push($data['body']['NAV'], $row['NAV Change Dollars']);
+        array_push($data['body']['NAV'], $row['NAV Change Percentage'] . '%');
+        array_push($data['body']['Market Price'], $row['Market Price']);
+        array_push($data['body']['Market Price'], '<span class="text-ultramarine font-medium">Daily Change</span>');
+        array_push($data['body']['Market Price'], $row['Market Price Change Dollars']);
+        array_push($data['body']['Market Price'], $row['Market Price Change Percentage'] . '%');
+
+
+
         return $data;
     }
+
 
     public function getDisclaimer()
     {
@@ -49,7 +69,7 @@ class ETFPrices extends Component
     {
         $res = get_field('etf_prices_download');
         if (isset($res['url'])) {
-            $res = $res['url'];
+            $res = $res['url']['url'];
         } else {
             $res = '';
         }

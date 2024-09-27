@@ -48,18 +48,29 @@ main {
   min-height: 500px;
 
   a:not(.wp-button) {
+    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     &:hover {
       @apply text-ultramarine;
+      p {
+        @apply text-ultramarine;
+      }
 
-      svg {
-        @apply fill-ultramarine;
+      &.download {
+        svg {
+          @apply fill-ultramarine;
+        }
       }
     }
     &.light {
       &:hover {
-        @apply text-ultramarine;
-        svg {
-          @apply fill-ultramarine;
+        @apply text-indigoLight;
+        p {
+          @apply text-ultramarine;
+        }
+        &.download {
+          svg {
+            @apply fill-indigoLight;
+          }
         }
       }
     }

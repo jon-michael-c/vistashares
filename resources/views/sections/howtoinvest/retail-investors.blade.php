@@ -21,8 +21,8 @@
                 @if ($investors)
                     <ul class="retail-investor border-list border-list-ultramarine">
                         @foreach ($investors as $investor)
-                            <li class="py-2  "><a href="{{ $investor['link']['url'] }}" target="_blank"
-                                    class="inline-flex justify-between items-center w-full">
+                            <li class=""><a href="{{ $investor['link']['url'] }}" target="_blank"
+                                    class="py-3 inline-flex justify-between items-center w-full">
                                     <p class="text-midnight font-Termina font-bold leading-[1.15]">
                                         {{ $investor['link']['title'] }}</p>
                                     <div class="w-[8px]">
