@@ -30,7 +30,7 @@ class PerformanceHistory extends Component
             ],
         ];
         // Get the CSV file path from .env
-        $csvFile = env('FEED_PATH') . '/TidalETF_Services.40ZZ.OJ_TICKER_MonthlyPerformance.csv';
+        $csvFile = env('FEED_PATH') . env("FEED_PREFIX") . '.OJ_' . 'TICKER_MonthlyPerformance.csv';
         if (!file_exists($csvFile)) {
             return $data;
         }
@@ -62,8 +62,6 @@ class PerformanceHistory extends Component
                 $fiveYear . '%',
             ];
         }
-
-
 
         return $data;
     }

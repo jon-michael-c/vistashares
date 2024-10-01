@@ -60,7 +60,13 @@ class Exposure extends Component
                 'verify_peer' => false,
                 'verify_peer_name' => false,
             ],
+            'http' => [
+                'header' => "Authorization: Basic " . base64_encode("viewer:{JQbfe!y(D8")
+            ]
         ]);
+        if (!isset($file['url'])) {
+            return [];
+        }
         $file_content = file_get_contents($file['url'], false, $context);
         if ($file_content !== false) {
             $csv_rows = array_map('str_getcsv', explode("\n", $file_content));

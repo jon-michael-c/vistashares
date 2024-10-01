@@ -39,6 +39,7 @@ return [
             'menu_icon' => 'dashicons-chart-line',
             'supports' => ['title', 'editor', 'thumbnail', 'revisions'],
             'show_in_rest' => true,
+            'rewrite' => ['slug' => 'etf', 'with_front' => false],
             'labels' => [
                 'name' => 'ETFs',
                 'singular_name' => 'ETF',
