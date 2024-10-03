@@ -1,5 +1,5 @@
-header {
-  z-index: -2;
+header.banner {
+  z-index: 99999;
   background: url('~@images/gradient-bg.svg'), #0e141e;
   background-repeat: no-repeat;
   background-size: 100%;
