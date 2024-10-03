@@ -13,6 +13,36 @@
   &.btn--sm {
     @apply font-light px-[16px] py-[4px];
   }
+
+  &.btn-primary {
+    background-size: 200% auto;
+
+    background-position: right center;
+    background-image: linear-gradient(
+      to right,
+      #c7a1ff 0%,
+      #b269ff 50%,
+      #3e2ba5 100%
+    );
+
+    padding: 0.4rem 1rem;
+    transition: all 0.35s ease;
+
+    &:hover {
+      background-position: left center;
+      @apply text-midnight;
+    }
+  }
+
+  &.btn-secondary {
+    background: none;
+    @apply bg-ultramarine border-cornflower border-[1px] border-solid text-white;
+
+    &:hover,
+    &.active {
+      @apply bg-indigo border-ultramarine text-midnight;
+    }
+  }
 }
 
 .wp-buttons {
@@ -26,7 +56,6 @@
   background-position: right center;
   background-image: linear-gradient(
     to right,
-
     #c7a1ff 0%,
     #b269ff 50%,
     #3e2ba5 100%

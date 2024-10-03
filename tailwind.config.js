@@ -124,6 +124,7 @@ const config = {
       'gradient-9': 'linear-gradient(176deg, #B269FF -23.71%, #2E1493 101.4%);',
       'gradient-10': 'linear-gradient(180deg, #0A0021 0%, #290087 100%);',
       'gradient-11': 'linear-gradient(180deg, #0E062D 0.01%, #3E2BA5 114.36%);',
+      'gradient-12': 'linear-gradient(1deg, #5D13C1 -18.98%, #0E062D 94.52%);',
     },
     borderWidth: {
       DEFAULT: '1px',

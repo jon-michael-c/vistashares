@@ -28,3 +28,22 @@
     }
   }
 }
+
+.pagination {
+  .current {
+    @apply font-bold text-indigo;
+  }
+
+  .page-numbers {
+    transition: color 0.1s ease-in;
+    &:hover {
+      @apply text-indigo;
+    }
+  }
+
+  .arrow {
+    &.left {
+      transform: rotate(180deg);
+    }
+  }
+}
