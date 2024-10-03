@@ -6,15 +6,17 @@
     <div class="exposure-tabs w-full max-w-[300px] flex justify-between items-center gap-2 mb-8">
         @php($i = 0)
         @foreach ($output as $item)
-            <div class="exposure-tab" data-tab="{{ $i }}">{{ $item['type'] }}</div>
+            <div class="exposure-tab @if ($i == 0) active @endif" data-tab="{{ $i }}">
+                {{ $item['type'] }}</div>
             @php($i++)
         @endforeach
     </div>
     @php($i = 0)
     @foreach ($output as $data)
-        <div class="exposure-table grid items-center lg:grid-cols-2 gap-4" data-tab-index={{ $i }}>
+        <div class="exposure-table @if ($i == 0) active @endif grid items-center lg:grid-cols-2 gap-4"
+            data-tab-index={{ $i }}>
             <div data-series="{{ json_encode($data['items']) }}" id="exposure-chart-{{ $data['type'] }}"
-                class="exposure-chart top-chart w-full h-[400px] bg-gray-200">
+                class="exposure-chart  top-chart w-full h-[400px] bg-gray-200">
             </div>
             <div class="exposure-list text-midnight">
                 <ul class="flex flex-col border-list border-list-light">
