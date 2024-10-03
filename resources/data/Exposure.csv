@@ -1,12 +1,16 @@
-Sector,Holding,Weight
-Technology,ABC Corp,10.5
-Healthcare,XYZ Inc,8.2
-Financials,DEF Bank,7.6
-Consumer Discretionary,123 Corp,6.8
-Industrials,456 Inc,5.9
-Consumer Staples,GHI Corp,5.3
-Energy,JKL Ltd,4.7
-Utilities,MNO Corp,4.1
-Real Estate,PQR Inc,3.5
-Materials,STU Ltd,2.9
-Telecommunication Services,VWX Corp,2.3
+Type,Name,Weight
+Sector,Consumer Discretionary,35.1
+Sector,Technology,22.4
+Sector,Healthcare,18.3
+Sector,Financials,14.2
+Sector,Energy,9.9
+Industry,Software,28.8
+Industry,Biotechnology,17.5
+Industry,Banks,12.3
+Industry,Oil & Gas,26.2
+Industry,Retail,15.1
+Country,USA,48.8
+Country,Germany,16.4
+Country,Japan,11.2
+Country,UK,13.6
+Country,Canada,10.0

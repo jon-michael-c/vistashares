@@ -14,6 +14,7 @@ class Exposure extends Component
     public $colors;
     public $disclaimer;
     public $download;
+    public $date;
 
     /**
      * Create a new component instance.
@@ -39,17 +40,53 @@ class Exposure extends Component
         $this->output = $this->compileData();
         $this->disclaimer = $this->getDisclaimer();
         $this->download = $this->download();
+        $this->date = get_field('exposure_date');
 
 
     }
 
     private function formatData($arr)
     {
-        // Sort the array by the 'Weightings' key in reverse order
-        usort($arr, function ($a, $b) {
-            return $b['Weightings'] <=> $a['Weightings'];
+
+        $result = [];
+        foreach ($arr as $item) {
+            $type = $item['Type'] ?? 'unknown';
+            if (!isset($result[$type])) {
+                $result[$type] = [];
+            }
+            $result[$type][] = $item;
+        }
+
+        $iterableResult = [];
+        foreach ($result as $type => $items) {
+            $iterableResult[] = [
+                'type' => $type,
+                'items' => $items
+            ];
+        }
+
+        foreach ($iterableResult as &$group) {
+            foreach ($group['items'] as $index => &$item) {
+                $item = [
+                    'name' => $item['Name'],
+                    'y' => floatval(str_replace('%', '', $item['Weight'])),
+                    'color' => $this->colors[$index % count($this->colors)],
+                ];
+            }
+        }
+
+        // Sort by weight
+        usort($iterableResult, function ($a, $b) {
+            $weightA = $a['items'][0]['y'];
+            $weightB = $b['items'][0]['y'];
+            return $weightA <=> $weightB;
         });
 
+        var_dump($iterableResult);
+
+
+
+        return $iterableResult;
     }
 
     private function compileData()
@@ -68,20 +105,8 @@ class Exposure extends Component
             return [];
         }
         $file_content = file_get_contents($file['url'], false, $context);
-        if ($file_content !== false) {
-            $csv_rows = array_map('str_getcsv', explode("\n", $file_content));
 
-            $headers = $csv_rows[0];
-            unset($csv_rows[0]);
-
-            $data = [];
-            foreach ($csv_rows as $row) {
-                if (!empty($row)) {
-                    $data[] = array_combine($headers, $row);
-                }
-            }
-        }
-
+        /*
         $res = [];
         foreach ($data as $index => $item) {
             $res[] = [
@@ -90,6 +115,13 @@ class Exposure extends Component
                 'color' => $this->colors[$index % count($this->colors)],
             ];
         }
+        */
+
+        // Convert the CSV data to an array
+        $data = CSVHelper::parseCSVString($file_content);
+        $formatted = $this->formatData($data);
+        $res = $formatted;
+
 
         return $res;
 

@@ -23,6 +23,20 @@ class CSVHelper
         return $res;
     }
 
+    public static function parseCSVString($csvString, $delimiter = ',')
+    {
+        $lines = explode("\n", $csvString);
+        $res = [];
+        $header = str_getcsv(array_shift($lines), $delimiter);
+        foreach ($lines as $line) {
+            $data = str_getcsv($line, $delimiter);
+            if (count($header) === count($data)) {
+                $res[] = array_combine($header, $data);
+            }
+        }
+        return $res;
+    }
+
     public static function findRowByTicker($ticker, $readCSV, $col = 'Fund Name')
     {
         // Find row by ticker
@@ -41,4 +55,5 @@ class CSVHelper
         });
         return $rows;
     }
+
 }

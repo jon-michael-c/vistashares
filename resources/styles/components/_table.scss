@@ -168,3 +168,26 @@
     }
   }
 }
+
+.exposure-tabs {
+  .exposure-tab {
+    @apply text-ultramarine font-normal;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &.active {
+      @apply bg-ultramarine text-white;
+    }
+    &:hover {
+      @apply bg-ultramarine text-white;
+    }
+  }
+}
+
+.exposure-table {
+  display: none;
+
+  &.active {
+    display: grid;
+  }
+}
