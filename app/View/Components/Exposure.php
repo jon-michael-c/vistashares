@@ -82,7 +82,6 @@ class Exposure extends Component
             return $weightA <=> $weightB;
         });
 
-        var_dump($iterableResult);
 
 
 
