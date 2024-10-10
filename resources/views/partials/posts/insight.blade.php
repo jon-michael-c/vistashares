@@ -1,7 +1,7 @@
 @if (isset($id))
     <a href="{{ get_the_permalink($id) }}" class="insight-preview">
         <div class="w-full">
-            <img src="{{ get_the_post_thumbnail_url($id, 'medium') }}" alt="{{ get_the_title($id) }}"
+            <img src="{{ get_the_post_thumbnail_url($id, 'medium-large') }}" alt="{{ get_the_title($id) }}"
                 class="w-full h-auto m-auto" />
         </div>
         <div class="pt-4 grid gap-1">
