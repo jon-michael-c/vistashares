@@ -209,3 +209,25 @@ function register_custom_thumbnail_size()
 {
     add_image_size('sm', 250, 250, true);
 }
+
+function add_google_analytics_code()
+{
+    $google_analytics_code = get_field('google_analytics_snippet', 'option');
+    if ($google_analytics_code) {
+        // Clean up any potential issues with the code
+        $google_analytics_code = str_replace(['“', '”', '‘', '’'], ['"', '"', "'", "'"], $google_analytics_code);
+        echo $google_analytics_code;
+    }
+}
+add_action('wp_head', 'add_google_analytics_code', 1);
+
+function add_body_code()
+{
+    $body_code = get_field('body_code', 'option');
+    if ($body_code) {
+        // Clean up any potential issues with the code
+        $body_code = str_replace(['“', '”', '‘', '’'], ['"', '"', "'", "'"], $body_code);
+        echo $body_code;
+    }
+}
+add_action('wp_body_open', 'add_body_code', 1);

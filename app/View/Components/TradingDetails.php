@@ -5,6 +5,7 @@ namespace App\View\Components;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
+use App\Helpers\CSVHelper;
 
 class TradingDetails extends Component
 {
@@ -26,13 +27,38 @@ class TradingDetails extends Component
         $data = [
             'head' => [],
             'body' => [
-                'Ticker' => ['VST100'],
-                'CUSIP' => ['123456789'],
-                'Exchange' => ['NYSE'],
-                'Bloomberg IOPV Ticker' => ['VST100IV'],
-                'Index Ticker' => ['VST100TR'],
+                'Ticker' => [],
+                'Bloomberg Index Ticker' => [],
+                'CUSIP' => [],
+                'ISIN' => [],
+                'Primary Exchange' => [],
+                'Shares Outstanding' => [],
+                'Number of Holdings' => [],
+                '30-Day Median Bid-Ask Spread' => [],
+
             ],
         ];
+
+        $csvFile = env('FEED_PATH') . env("FEED_PREFIX") . '.OJ_DailyNAV.csv';
+        if (!file_exists($csvFile)) {
+            return $data;
+        }
+
+        $readCSV = CSVHelper::readCSV($csvFile);
+        $row = CSVHelper::findRowByTicker(get_the_title(), $readCSV);
+        if (!$row) {
+            return $data;
+        }
+
+        array_push($data['body']['Ticker'], $row['Fund Ticker'] ?? '');
+        array_push($data['body']['Bloomberg Index Ticker'], $row['Fund Ticker'] ?? '');
+        array_push($data['body']['CUSIP'], $row['CUSIP'] ?? '');
+        array_push($data['body']['ISIN'], $row['ISIN'] ?? 'N/A');
+        array_push($data['body']['Primary Exchange'], $row['Primary Exchange'] ?? 'NYSE');
+        array_push($data['body']['Shares Outstanding'], $row['Shares Outstanding'] ?? 'N/A');
+        array_push($data['body']['Number of Holdings'], $row['Holdings'] ?? 'N/A');
+        array_push($data['body']['30-Day Median Bid-Ask Spread'], ($row['Median 30 Day Spread Percentage'] ?? '0') . '%');
+
 
         return $data;
     }

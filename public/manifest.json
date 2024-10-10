@@ -54,6 +54,7 @@
   "fonts/Termina/Termina-Black.woff2": "fonts/Termina/Termina-Black.woff2",
   "fonts/Grotesk/Grotesk-Thin.woff2": "fonts/Grotesk/Grotesk-Thin.woff2",
   "../theme.json": "../theme.json",
+  "images/download-dark.svg": "images/download-dark.svg",
   "images/download.svg": "images/download.svg",
   "images/reddit.svg": "images/reddit.svg",
   "images/line-logo.svg": "images/line-logo.svg",

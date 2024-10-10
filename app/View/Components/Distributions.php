@@ -46,6 +46,9 @@ class Distributions extends Component
 
         // Merge SECYield with the existing $data['body'] array
         $data['body'] = array_merge($data['body'], $SECYield);
+        $frequency = ['Distribution Frequency' => ['Semi-Annually']];
+        $data['body'] = array_merge($data['body'], $frequency);
+
 
 
 

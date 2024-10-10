@@ -7,19 +7,7 @@
         'fields' => 'ids',
     ]);
 
-    $committee = get_posts([
-        'numberposts' => -1,
-        'post_type' => 'team-member',
-        'post_status' => 'publish',
-        'tax_query' => [
-            [
-                'taxonomy' => 'locations',
-                'field' => 'slug',
-                'terms' => 'committee',
-            ],
-        ],
-        'fields' => 'ids',
-    ]);
+    $committee = get_field('investment_committee', 'option');
 @endphp
 <x-section>
     <div class="pb-4 w-full ">
@@ -29,18 +17,17 @@
         @if ($committee)
             @foreach ($committee as $member)
                 @include('partials.team-members.preview', [
-                    'id' => $member,
+                    'id' => $member['member'],
                 ])
             @endforeach
         @endif
     </div>
 </x-section>
 <x-section class="full-width">
-    <div class="bg-image inner-full">
-        <img src="@asset('images/gradient-angle.svg')" alt="gradient angle" />
+    <div class="bg-benefit inner-full">
     </div>
-    <div class="benefits relative">
-        <div class="sm:max-w-[1100px]">
+    <div class="benefits relative lg:pr-[12rem]">
+        <div>
             <h2 class="text-midnight">Benefits</h2>
             <div
                 class="benefits-items flex flex-col lg:flex-row sm:items-center sm:justify-between max-w-[950px] gap-4 lg:gap-28 pt-4">

@@ -27,11 +27,11 @@ class FundDetails extends Component
         $data = [
             'head' => [],
             'body' => [
-                'Inception Date' => ['12/31/2020'],
-                'Type' => ['ETF'],
-                'Underyling Index' => ['VistaShares 100 Index'],
-                'Number of Holdings' => ['100'],
-                'Total Expense Ratio' => ['1.2'],
+                'Inception Date' => ['10/01/2024'],
+                'Total Expense Ratio' => ['0.5%'],
+                'Net Assets' => ['$100,000,000'],
+                'NAV' => ['$50.25'],
+                'Fact Sheet' => ['<a target="_blank" href="#"><span class="icon"></span></a>'],
             ],
         ];
 

@@ -43,9 +43,11 @@
             </div>
         </div>
         <div class="grid  gap-6 sm:grid-cols-2">
-            <x-fund-details />
+            <div class="grid gap-6">
+                <x-fund-details />
+                <x-distributions />
+            </div>
             <x-trading-details />
-            <x-distributions />
         </div>
     </div>
 </x-section>

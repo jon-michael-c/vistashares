@@ -30,9 +30,7 @@ export default class ETFSlider {
     });
     this.elem.addEventListener('mouseleave', () => {
       if (this.timeout) clearTimeout(this.timeout);
-      this.timeout = setTimeout(() => {
-        this.play();
-      }, 5000);
+      this.play();
     });
   }
 
@@ -48,23 +46,22 @@ export default class ETFSlider {
     this.updateScrollBar();
   }
   next() {
-    this.pause();
     this.move(this.index + 1);
   }
 
   prev() {
-    this.pause();
     this.move(this.index - 1);
   }
 
   play() {
+    if (this.interval) clearInterval(this.interval);
     this.interval = setInterval(() => {
-      this.next();
-    }, 5000);
+      this.move(this.index + 1);
+    }, 4000);
   }
 
   pause() {
-    clearInterval(this.interval);
+    if (this.interval) clearInterval(this.interval);
   }
 
   updateScrollBar() {

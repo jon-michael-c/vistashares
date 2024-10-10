@@ -12,6 +12,7 @@ class ETFRisk extends Component
     public $output;
     public $disclaimer;
     public $download;
+    public $date;
     /**
      * Create a new component instance.
      */
@@ -20,6 +21,7 @@ class ETFRisk extends Component
         $this->output = $this->compileData();
         $this->disclaimer = $this->getDisclaimer();
         $this->download = $this->download();
+        $this->date = get_field('etf_risk_date') ?? '10/01/2024';
     }
 
     public function compileData()

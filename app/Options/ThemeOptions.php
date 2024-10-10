@@ -123,6 +123,20 @@ class ThemeOptions extends Field
                 'label' => 'Google Analytics',
                 'instructions' => 'Add your Google Analytics code here.',
             ])
+            ->addTab('Team', [
+                'placement' => 'left',
+            ])
+            ->addRepeater('investment_committee', [
+                'label' => 'Investment Committee',
+                'instructions' => 'Add your investment committee members here.',
+                'layout' => 'block',
+                'button_label' => 'Add Member',
+            ])
+            ->addPostObject('member', [
+                'post_type' => ['team-member'],
+                'return_format' => 'id',
+            ])
+            ->endRepeater()
             /**
              * 404 Page Tab
              */
@@ -152,7 +166,23 @@ class ThemeOptions extends Field
                 'instructions' => 'Add your footer disclaimer here.',
                 'toolbar' => 'full',
             ])
-            ->addTab("ETFs")
+            ->addTab('Code Snippets', [
+                'placement' => 'left',
+            ])
+            ->addTextArea('header_code', [
+                'label' => 'Header Code',
+                'instructions' => 'Add your header code here.',
+            ])
+            ->addTextArea('body_code', [
+                'label' => 'Body Code',
+                'instructions' => 'Add your body code here.',
+            ])
+            ->addTextarea('footer_code', [
+                'label' => 'Footer Code',
+                'instructions' => 'Add your footer code here.',
+            ])
+
+
         ;
 
         return $themeOptions->build();
