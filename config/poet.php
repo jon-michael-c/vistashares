@@ -37,12 +37,14 @@ return [
         'etf' => [ // Custom post type 'ETF'
             'enter_title_here' => 'Enter ETF name',
             'menu_icon' => 'dashicons-chart-line',
-            'supports' => ['title', 'editor', 'thumbnail', 'revisions'],
+            'supports' => ['title', 'thumbnail', 'revisions'],
+            'taxonomies' => ['category', 'post_tag'],
             'show_in_rest' => true,
             'rewrite' => ['slug' => 'etf', 'with_front' => false],
             'labels' => [
                 'name' => 'ETFs',
                 'singular_name' => 'ETF',
+                'plural_name' => 'ETFs',
                 'add_new' => 'Add New ETF',
                 'add_new_item' => 'Add New ETF',
                 'edit_item' => 'Edit ETF',

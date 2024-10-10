@@ -182,6 +182,13 @@ strong {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #fff;
   color: transparent;
+
+  &.font-outline-md {
+    font-feature-settings: 'clig' off, 'liga' off;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: #fff;
+    color: transparent;
+  }
 }
 
 .icon {

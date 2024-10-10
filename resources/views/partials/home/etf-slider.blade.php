@@ -16,7 +16,9 @@
                     </div>
                     {!! $etf['etf_description'] !!}
                     <div class="wp-buttons">
-                        <a href="{{ get_the_permalink($etf['etf']) }}" class="wp-button">Learn More</a>
+                        <div class="font-outline font-outline-md font-Termina">
+                            <h2 class="font-semibold uppercase">COMING SOON</h2>
+                        </div>
                     </div>
                 </div>
             @endforeach
