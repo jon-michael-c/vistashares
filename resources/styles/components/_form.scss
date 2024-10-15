@@ -1,6 +1,7 @@
 label {
   @apply uppercase mb-1 block;
 }
+
 input,
 textarea,
 select {
@@ -9,6 +10,7 @@ select {
   width: 100%;
   display: block;
   padding: 13px 21px;
+  color: white;
   font-size: 1rem;
   font-family: 'Grotesk', Geneva, Tahoma, sans-serif;
   transition: all 0.2s ease-in-out;
@@ -146,6 +148,142 @@ select {
     color: white;
     &::before {
       opacity: 1;
+    }
+  }
+}
+
+.hs-form-field {
+  @apply mb-4;
+  transition: all 0.2s ease-in-out;
+}
+
+.hs-error-msgs {
+  margin-top: 1rem;
+  padding: 8px 12px;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid rgba(199, 161, 255, 0.8);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background-color: rgba(69, 47, 170, 0.5);
+  label {
+    text-transform: unset !important;
+    margin-bottom: 0px !important;
+  }
+}
+
+.hs-submit {
+  input[type='submit'] {
+    @extend .btn;
+    @extend .btn-primary;
+    border: none !important;
+    text-transform: uppercase;
+    max-width: fit-content;
+  }
+}
+
+.hs-input.hs-fieldtype-textarea {
+  height: 200px;
+}
+
+.hbspt-form {
+  position: relative;
+  z-index: 9999;
+}
+
+.hbspt-form {
+  .hs-fieldtype-select {
+    .input {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        transform: translate(0, -50%);
+        width: 18px;
+        height: 18px;
+
+        background-image: url('~@images/down-arrow.svg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        z-index: 9;
+      }
+
+      // Hide the default arrow in IE
+      &::-ms-expand {
+        display: none;
+      }
+      select {
+        appearance: none !important;
+        position: relative;
+      }
+    }
+  }
+}
+
+.newsletter-btn {
+  &.active {
+    border-color: #7327d1;
+    @apply bg-indigo;
+  }
+}
+
+.newsletter-form {
+  position: absolute;
+  top: 50px;
+  right: 25%;
+  z-index: 9999;
+  width: 125%;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  form {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    gap: 4px;
+
+    .hs-form-field {
+      margin-bottom: 0;
+    }
+
+    .hs-error-msgs {
+      display: none !important;
+      margin-top: 0;
+      position: absolute;
+      @apply bg-ultramarine;
+    }
+
+    label {
+      display: none;
+    }
+    input {
+      @apply border-midnight;
+      color: white !important;
+      width: 100%;
+      font-size: 16px;
+      padding: 4px 10px;
+      // Placeholder text color
+      &::placeholder {
+        color: white;
+      }
+    }
+
+    input[type='submit'] {
+      text-transform: capitalize !important;
+      font-weight: 500;
+      padding: 5px 12px !important;
+      width: 100% !important;
+      font-family: 'Termina', sans-serif !important;
     }
   }
 }

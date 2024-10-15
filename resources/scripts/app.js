@@ -50,60 +50,25 @@ domReady(async () => {
       }
     });
   });
-  if (document.getElementById('contact-form')) {
-    function selectCountry(country) {
-      document.getElementById('country').value = country;
+
+  const newsletterBtn = document.querySelector('.newsletter-btn');
+  const newsletterForm = document.querySelector('.newsletter-form');
+
+  newsletterBtn.addEventListener('click', function () {
+    newsletterBtn.classList.toggle('active');
+    newsletterForm.classList.toggle('open');
+  });
+
+  // If the user clicks outside the form, close it
+  document.addEventListener('click', function (event) {
+    if (
+      !newsletterForm.contains(event.target) &&
+      !newsletterBtn.contains(event.target)
+    ) {
+      newsletterBtn.classList.remove('active');
+      newsletterForm.classList.remove('open');
     }
-
-    let countriesData = countries.data;
-    // Move US to the top of the list
-    let us = countriesData.find(
-      (country) => country.country === 'United States'
-    );
-    countriesData = countriesData.filter(
-      (country) => country.country !== 'United States'
-    );
-    countriesData.unshift(us);
-
-    const countrySelect = document.querySelector('.dropdown.country');
-
-    function insertCountries(dropdown) {
-      for (let i = 0; i < countriesData.length; i++) {
-        let dropDownItem = document.createElement('div');
-        dropDownItem.classList.add('dropdown-item');
-        dropDownItem.textContent = countriesData[i].country;
-        dropDownItem.addEventListener('click', function () {
-          selectCountry(countriesData[i].country);
-        });
-
-        dropdown.querySelector('.dropdown-content').appendChild(dropDownItem);
-      }
-    }
-
-    insertCountries(countrySelect);
-
-    countrySelect.addEventListener('click', function () {
-      countrySelect.classList.toggle('open');
-    });
-
-    document.addEventListener('click', function (event) {
-      const dropdowns = document.querySelectorAll('.dropdown');
-      const target = event.target;
-      let isDropdown = false;
-      dropdowns.forEach(function (dropdown) {
-        if (dropdown.contains(target)) {
-          isDropdown = true;
-        } else {
-          dropdown.classList.remove('open');
-        }
-      });
-      if (!isDropdown) {
-        dropdowns.forEach(function (dropdown) {
-          dropdown.classList.remove('open');
-        });
-      }
-    });
-  }
+  });
 });
 
 /**

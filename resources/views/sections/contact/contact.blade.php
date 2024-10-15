@@ -19,11 +19,20 @@
             <div class="pb-4">
                 <h3>Connect with VistaShares</h3>
             </div>
-            @include('partials.contact.form')
+            <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+            <script>
+                hbspt.forms.create({
+                    region: "na1",
+                    portalId: "45890113",
+                    formId: "73ac7d71-894e-41f9-9f06-3c4a14291022"
+                });
+            </script>
         </div>
     </div>
     <div class="line-bg">
 
         <img src="@asset('images/line-logo.svg')" alt="line background" />
     </div>
+
+
 </x-section>
