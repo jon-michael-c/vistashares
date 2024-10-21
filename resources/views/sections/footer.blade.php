@@ -17,10 +17,16 @@
                 @endif
             </div>
             <div class="footer-newsletter text-midnight pb-4 sm:pb-0">
-                <p>Subscribe to Newsletter</p>
-                <input placeholder="Email Address" />
-                <button>Subscribe</button>
-
+                <p class="text-midnight font-semibold font-Termina">Subscribe to Newsletter</p>
+                <div class="newsletter-footer">
+                    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+                    <script>
+                        hbspt.forms.create({
+                            portalId: "45890113",
+                            formId: "f95d9ab9-242b-47ce-8221-dae55d9ea484"
+                        });
+                    </script>
+                </div>
             </div>
             <div class="footer-socials block sm:hidden">
                 @include('components.socials', ['socialLinks' => $socialLinks])

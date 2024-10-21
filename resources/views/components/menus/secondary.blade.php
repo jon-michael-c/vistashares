@@ -7,7 +7,7 @@
          </div>
          <div
              class="newsletter-form text-left text-[16px] bg-indigoLight border-[1px] border-solid border-midnight px-6 py-4">
-             <div class="text-midnight font-semibold w-full whitespace-nowrap ">SUBSCRIBE TO NEWSLETTER</div>
+             <div class="text-midnight font-semibold w-full">SUBSCRIBE TO NEWSLETTER</div>
              <div class="hbspt-form hbspt-newsletter">
                  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
                  <script>

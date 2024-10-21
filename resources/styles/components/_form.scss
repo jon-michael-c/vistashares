@@ -230,6 +230,71 @@ select {
   }
 }
 
+.newsletter-footer {
+  form {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    gap: 4px;
+
+    @include m-sm {
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .hs-form-field {
+      margin-bottom: 0;
+    }
+
+    .hs-error-msgs {
+      display: none !important;
+      margin-top: 0;
+      position: absolute;
+      @apply bg-ultramarine;
+    }
+
+    label {
+      display: none;
+    }
+    input {
+      @apply border-ultramarine text-ultramarine;
+      background: transparent;
+      width: 100%;
+      font-size: 16px;
+      padding: 4px 10px;
+      // Placeholder text color
+      &::placeholder {
+        @apply text-ultramarine;
+      }
+    }
+
+    input[type='submit'] {
+      text-transform: capitalize !important;
+      font-weight: 500;
+      padding: 5px 12px !important;
+      width: 100% !important;
+      font-family: 'Termina', sans-serif !important;
+      color: white;
+    }
+
+    @include m-sm {
+      max-width: 300px;
+      margin: 0 auto;
+      .hs-email {
+        width: 100%;
+        margin-top: 0.75rem;
+      }
+      .hs-submit {
+        width: 100%;
+        input {
+          max-width: 100% !important;
+        }
+      }
+    }
+  }
+}
+
 .newsletter-form {
   position: absolute;
   top: 50px;
@@ -240,6 +305,10 @@ select {
   visibility: hidden;
   transition: all 0.3s ease-in-out;
 
+  @include m-sm {
+    right: 0;
+    width: 100%;
+  }
   &.open {
     opacity: 1;
     visibility: visible;
@@ -251,6 +320,11 @@ select {
     align-items: center;
     width: 100%;
     gap: 4px;
+
+    @include m-sm {
+      flex-direction: column;
+      gap: 8px;
+    }
 
     .hs-form-field {
       margin-bottom: 0;
@@ -284,6 +358,18 @@ select {
       padding: 5px 12px !important;
       width: 100% !important;
       font-family: 'Termina', sans-serif !important;
+    }
+
+    @include m-sm {
+      .hs-email {
+        width: 100%;
+      }
+      .hs-submit {
+        width: 100%;
+        input {
+          max-width: 100% !important;
+        }
+      }
     }
   }
 }
