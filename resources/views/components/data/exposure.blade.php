@@ -27,9 +27,10 @@
                             <div class="flex items-center gap-2">
                                 <span class="color aspect-square w-[15px] h-[15px] block "
                                     style="background: {{ $item['color'] }};"></span>
-                                <span class="font-Termina font-[500] text-ultramarine name">{{ $item['name'] }}</span>
+                                <span
+                                    class="text-[15px] font-Termina font-[500] text-ultramarine name">{{ $item['name'] }}</span>
                             </div>
-                            <span class="font-Grotesk y">{{ $item['y'] }} %</span>
+                            <span class="font-Grotesk y text-[15px] text-nowrap ml-4">{{ $item['y'] }} %</span>
                         </li>
                         @php($i++)
                     @endforeach

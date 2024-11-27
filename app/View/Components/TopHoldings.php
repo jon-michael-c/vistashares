@@ -9,9 +9,11 @@ use App\Helpers\CSVHelper;
 
 class TopHoldings extends Component
 {
+    public $file = '.T5_ETF_Holdings_';
     public $output;
     public $disclaimer;
     public $download;
+    public $date;
     /**
      * Create a new component instance.
      */
@@ -20,6 +22,7 @@ class TopHoldings extends Component
         $this->output = $this->compileData();
         $this->disclaimer = $this->getDisclaimer();
         $this->download = $this->download();
+        $this->date = $this->getDate();
     }
 
     public function compileData()
@@ -30,8 +33,9 @@ class TopHoldings extends Component
         ];
 
         // Get the CSV file path from .env
-        $csvFile = env('FEED_PATH') . '/TidalETF_Services.40ZZ.JO_Holdings_05082023.csv';
+        $csvFile = CSVHelper::getRecentFile($this->file);
         if (!file_exists($csvFile)) {
+            dd('File not found: ' . $csvFile);
             return $data;
         }
 
@@ -39,7 +43,7 @@ class TopHoldings extends Component
         $readCSV = CSVHelper::readCSV($csvFile);
 
         // Find row by ticker
-        $rows = CSVHelper::findRowsByTicker(get_the_title(), $readCSV, 'Account');
+        $rows = CSVHelper::findRowsByTicker('TBD', $readCSV, 'Account');
 
         foreach ($rows as $row) {
             $CUSIP = $row['CUSIP'];
@@ -60,6 +64,10 @@ class TopHoldings extends Component
 
         }
 
+        // Get the the top 10 holdings
+        $data['body'] = array_slice($data['body'], 0, 10);
+
+
         return $data;
     }
 
@@ -78,6 +86,12 @@ class TopHoldings extends Component
             $res = '';
         }
         return $res;
+    }
+
+    public function getDate()
+    {
+        $date = CSVHelper::getMostRecentDate($this->file);
+        return $date;
     }
 
     /**

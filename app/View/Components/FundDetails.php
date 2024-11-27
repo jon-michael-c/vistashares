@@ -2,15 +2,18 @@
 
 namespace App\View\Components;
 
+use App\Helpers\CSVHelper;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
 class FundDetails extends Component
 {
+    public $file = '.T5_DailyNAV_';
     public $output;
     public $disclaimer;
     public $download;
+    public $date;
     /**
      * Create a new component instance.
      */
@@ -19,6 +22,7 @@ class FundDetails extends Component
         $this->output = $this->compileData();
         $this->disclaimer = $this->getDisclaimer();
         $this->download = $this->download();
+        $this->date = $this->getDate();
 
     }
 
@@ -28,12 +32,29 @@ class FundDetails extends Component
             'head' => [],
             'body' => [
                 'Inception Date' => ['10/01/2024'],
-                'Total Expense Ratio' => ['0.58%'],
-                'Net Assets' => ['$100,000,000'],
-                'NAV' => ['$50.25'],
+                'Total Expense Ratio' => [],
+                'Net Assets' => [],
+                'NAV' => [],
                 'Fact Sheet' => ['<a target="_blank" href="#"><span class="icon"></span></a>'],
             ],
         ];
+
+        $csvFile = CSVHelper::getRecentFile($this->file);
+        if (!file_exists($csvFile)) {
+            return $data;
+        }
+
+        $readCSV = CSVHelper::readCSV($csvFile);
+
+        $row = CSVHelper::findRowByTicker('TBD', $readCSV);
+        if (!$row) {
+            return $data;
+        }
+
+        array_push($data['body']['Total Expense Ratio'], $row['Total Expense Ratio'] ?? '');
+        array_push($data['body']['Net Assets'], isset($row['Net Assets']) ? '$' . number_format($row['Net Assets'], 2) : '');
+        array_push($data['body']['NAV'], $row['NAV'] ?? '');
+
 
         return $data;
     }
@@ -53,6 +74,12 @@ class FundDetails extends Component
             $res = '';
         }
         return $res;
+    }
+
+    public function getDate()
+    {
+        $date = CSVHelper::getMostRecentDate($this->file);
+        return $date;
     }
 
     /**

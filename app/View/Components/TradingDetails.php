@@ -9,9 +9,11 @@ use App\Helpers\CSVHelper;
 
 class TradingDetails extends Component
 {
+    public $file = '.T5_DailyNAV_';
     public $output;
     public $disclaimer;
     public $download;
+    public $date;
     /**
      * Create a new component instance.
      */
@@ -20,6 +22,7 @@ class TradingDetails extends Component
         $this->output = $this->compileData();
         $this->disclaimer = $this->getDisclaimer();
         $this->download = $this->download();
+        $this->date = $this->getDate();
     }
 
     public function compileData()
@@ -39,13 +42,14 @@ class TradingDetails extends Component
             ],
         ];
 
-        $csvFile = env('FEED_PATH') . env("FEED_PREFIX") . '.OJ_DailyNAV.csv';
+        $csvFile = CSVHelper::getRecentFile($this->file);
         if (!file_exists($csvFile)) {
             return $data;
         }
 
         $readCSV = CSVHelper::readCSV($csvFile);
-        $row = CSVHelper::findRowByTicker(get_the_title(), $readCSV);
+
+        $row = CSVHelper::findRowByTicker('TBD', $readCSV);
         if (!$row) {
             return $data;
         }
@@ -78,6 +82,12 @@ class TradingDetails extends Component
             $res = '';
         }
         return $res;
+    }
+
+    public function getDate()
+    {
+        $date = CSVHelper::getMostRecentDate($this->file);
+        return $date;
     }
 
     /**

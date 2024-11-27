@@ -21,7 +21,7 @@
             </div>
             <div class="e-content sm:w-[60%]">
 
-                <div class="text-silver grid gap-4">
+                <div class="text-silver grid gap-4 prose prose-a:text-indigo">
                     @php(the_content())
                 </div>
             </div>

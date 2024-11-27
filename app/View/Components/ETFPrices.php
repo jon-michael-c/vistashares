@@ -9,9 +9,11 @@ use App\Helpers\CSVHelper;
 
 class ETFPrices extends Component
 {
+    public $file = '.T5_DailyNAV_';
     public $output;
     public $disclaimer;
     public $download;
+    public $date;
     /**
      * Create a new component instance.
      */
@@ -20,6 +22,7 @@ class ETFPrices extends Component
         $this->output = $this->compileData();
         $this->disclaimer = $this->getDisclaimer();
         $this->download = $this->download();
+        $this->date = $this->getDate();
     }
 
     public function compileData()
@@ -33,7 +36,7 @@ class ETFPrices extends Component
         ];
 
         // Get the CSV file path from .env
-        $csvFile = env('FEED_PATH') . '/TidalETF_Services.40ZZ.OJ_DailyNAV.csv';
+        $csvFile = CSVHelper::getRecentFile($this->file);
         if (!file_exists($csvFile)) {
             return $data;
         }
@@ -41,7 +44,7 @@ class ETFPrices extends Component
         // Read the CSV file
         $readCSV = CSVHelper::readCSV($csvFile);
         // Find row by ticker
-        $row = CSVHelper::findRowByTicker(get_the_title(), $readCSV);
+        $row = CSVHelper::findRowByTicker('TBD', $readCSV);
 
 
         array_push($data['body']['NAV'], $row['NAV']);
@@ -74,6 +77,12 @@ class ETFPrices extends Component
             $res = '';
         }
         return $res;
+    }
+
+    public function getDate()
+    {
+        $date = CSVHelper::getMostRecentDate($this->file);
+        return $date;
     }
     /**
      * Get the view / contents that represent the component.

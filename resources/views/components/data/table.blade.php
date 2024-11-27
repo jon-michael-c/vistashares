@@ -1,7 +1,7 @@
 <div class="data-table {{ $type }}">
     <div class="data-table-head flex justify-between items-center flex-wrap gap-2 ">
         <h3>{!! $title !!}</h3>
-        <h5>{!! $date ?? '10/01/2024' !!}</h5>
+        <h5>As of {!! $date !!}</h5>
     </div>
     <div class="table-wrapper">
         <div class="table-container overflow-x-auto">
