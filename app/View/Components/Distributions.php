@@ -10,9 +10,11 @@ use App\Helpers\CSVHelper;
 class Distributions extends Component
 {
 
+    public $file = '.T5_SECYield_';
     public $output;
     public $disclaimer;
     public $download;
+    public $date;
     /**
      * Create a new component instance.
      */
@@ -21,17 +23,25 @@ class Distributions extends Component
         $this->output = $this->compileData();
         $this->disclaimer = $this->getDisclaimer();
         $this->download = $this->download();
+        $this->date = $this->getDate();
     }
 
     public function compileData()
     {
         $data = [
             'head' => [],
-            'body' => []
+            'body' => [
+                '30-Day SEC Yield' => [],
+                'Distribution Frequency' => ['Semi-Annually']
+            ]
         ];
 
         // Get the CSV file path from .env
-        $csvFile = env('FEED_PATH') . '/TidalETF_Services.40ZZ.Tidal_SECYield.csv';
+        try {
+            $csvFile = CSVHelper::getRecentFile($this->file);
+        } catch (\Exception $e) {
+            return $data;
+        }
         if (!file_exists($csvFile)) {
             return $data;
         }
@@ -42,12 +52,7 @@ class Distributions extends Component
             return $data;
         }
 
-        $SECYield = ['30-Day SEC Yield' => [$row['30-Day SEC Yield'] . '%']];
-
-        // Merge SECYield with the existing $data['body'] array
-        $data['body'] = array_merge($data['body'], $SECYield);
-        $frequency = ['Distribution Frequency' => ['Semi-Annually']];
-        $data['body'] = array_merge($data['body'], $frequency);
+        array_push($data['body']['30-Day SEC Yield'], $row['30-Day SEC Yield'] ?? '');
 
 
 
@@ -70,6 +75,12 @@ class Distributions extends Component
             $res = '';
         }
         return $res;
+    }
+
+    public function getDate()
+    {
+        $date = CSVHelper::getMostRecentDate($this->file);
+        return $date;
     }
 
     /**
