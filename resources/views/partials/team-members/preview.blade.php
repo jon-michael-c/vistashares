@@ -4,7 +4,7 @@
             class="w-full h-auto max-w-[250px] m-auto" />
     </div>
     <div class="pt-4 text-center">
-        <h5 class="text-indigoLight font-bold">{{ get_the_title($id) }}</h5>
+        <h5 class="text-indigoLight font-bold">{!! get_the_title($id) !!}</h5>
         <p class="uppercase font-Termina text-cornflower">{{ get_field('title', $id) }}</p>
     </div>
 </a>

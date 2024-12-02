@@ -55,6 +55,11 @@ class FundDetails extends Component
         array_push($data['body']['Net Assets'], isset($row['Net Assets']) ? '$' . number_format($row['Net Assets'], 2) : '');
         array_push($data['body']['NAV'], $row['NAV'] ?? '');
 
+        $fact_sheet = get_field('fact_sheet', get_the_ID());
+        if ($fact_sheet) {
+            $data['body']['Fact Sheet'] = ['<a target="_blank" href="' . $fact_sheet['url'] . '"><span class="icon"></span></a>'];
+        }
+
 
         return $data;
     }
