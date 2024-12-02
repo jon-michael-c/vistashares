@@ -2,6 +2,7 @@
     <h2 class="text-white pb-4">Prices & Performance</h2>
     <div class="grid gap-6">
         <x-e-t-f-prices />
-        <x-performance-history />
+        {{--         <x-performance-history />
+ --}}
     </div>
 </x-section>
