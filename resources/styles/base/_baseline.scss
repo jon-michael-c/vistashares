@@ -166,6 +166,61 @@ sup {
   vertical-align: super;
 }
 
+article {
+  @apply text-silver;
+  p:not(:last-child) {
+    margin-bottom: 6px;
+  }
+
+  ul {
+    list-style-position: outside;
+    list-style-type: disc;
+    padding-left: 15px;
+    li {
+      @extend p;
+      margin-bottom: 5px;
+    }
+  }
+
+  .wp-block-table {
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+      margin-bottom: 1rem;
+      thead {
+        border: none !important;
+        @apply text-silver;
+      }
+      th,
+      td {
+        padding: 0.5rem;
+        @apply border border-indigoLight text-silver;
+      }
+      th {
+        @apply bg-indigo;
+        text-align: left;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+figcaption {
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+.single-post {
+  article {
+    .e-content {
+      & > .grid {
+        font-family: 'Grotesk', sans-serif;
+      }
+    }
+  }
+}
+
 b,
 strong {
   font-weight: 600;
