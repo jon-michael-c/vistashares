@@ -31,7 +31,7 @@ class Distributions extends Component
         $data = [
             'head' => [],
             'body' => [
-                '30-Day SEC Yield' => [],
+                '30-Day SEC Yield' => ['0'],
                 'Distribution Frequency' => ['Semi-Annually']
             ]
         ];
@@ -40,6 +40,7 @@ class Distributions extends Component
         try {
             $csvFile = CSVHelper::getRecentFile($this->file);
         } catch (\Exception $e) {
+
             return $data;
         }
         if (!file_exists($csvFile)) {
@@ -47,13 +48,13 @@ class Distributions extends Component
         }
 
         $readCSV = CSVHelper::readCSV($csvFile);
-        $row = CSVHelper::findRowByTicker(get_the_title(), $readCSV);
+        $ticker = strtoupper(get_the_title());
+        $row = CSVHelper::findRowByTicker($ticker, $readCSV);
         if (!$row) {
             return $data;
         }
 
-        array_push($data['body']['30-Day SEC Yield'], $row['30-Day SEC Yield'] ?? '');
-
+        array_push($data['body']['30-Day SEC Yield'], $row['30-Day SEC Yield'] ?? '0');
 
 
 

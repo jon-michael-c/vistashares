@@ -39,7 +39,8 @@ class PerformanceHistory extends Component
         // Read the CSV file
         $readCSV = CSVHelper::readCSV($csvFile);
         // Find row by ticker
-        $row = CSVHelper::findRowByTicker(get_the_title(), $readCSV);
+        $ticker = strtoupper(get_the_title());
+        $row = CSVHelper::findRowByTicker($ticker, $readCSV);
 
         // Parse the CSV data
         // Extract the required data from the CSV

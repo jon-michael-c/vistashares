@@ -32,7 +32,6 @@ class FundDetails extends Component
             'head' => [],
             'body' => [
                 'Inception Date' => ['10/01/2024'],
-                'Total Expense Ratio' => [],
                 'Net Assets' => [],
                 'NAV' => [],
                 'Fact Sheet' => ['<a target="_blank" href="#"><span class="icon"></span></a>'],
@@ -46,12 +45,12 @@ class FundDetails extends Component
 
         $readCSV = CSVHelper::readCSV($csvFile);
 
-        $row = CSVHelper::findRowByTicker('TBD', $readCSV);
+        $ticker = strtoupper(get_the_title());
+        $row = CSVHelper::findRowByTicker($ticker, $readCSV);
         if (!$row) {
             return $data;
         }
 
-        array_push($data['body']['Total Expense Ratio'], $row['Total Expense Ratio'] ?? '');
         array_push($data['body']['Net Assets'], isset($row['Net Assets']) ? '$' . number_format($row['Net Assets'], 2) : '');
         array_push($data['body']['NAV'], $row['NAV'] ?? '');
 

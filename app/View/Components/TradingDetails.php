@@ -49,7 +49,8 @@ class TradingDetails extends Component
 
         $readCSV = CSVHelper::readCSV($csvFile);
 
-        $row = CSVHelper::findRowByTicker('TBD', $readCSV);
+        $ticker = strtoupper(get_the_title());
+        $row = CSVHelper::findRowByTicker($ticker, $readCSV);
         if (!$row) {
             return $data;
         }

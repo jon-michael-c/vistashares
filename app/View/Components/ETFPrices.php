@@ -44,7 +44,9 @@ class ETFPrices extends Component
         // Read the CSV file
         $readCSV = CSVHelper::readCSV($csvFile);
         // Find row by ticker
-        $row = CSVHelper::findRowByTicker('TBD', $readCSV);
+        // Uppercase the ticker to match the CSV file
+        $ticker = strtoupper(get_the_title());
+        $row = CSVHelper::findRowByTicker($ticker, $readCSV);
 
 
         array_push($data['body']['NAV'], $row['NAV']);
@@ -55,6 +57,7 @@ class ETFPrices extends Component
         array_push($data['body']['Market Price'], '<span class="text-ultramarine font-medium">Daily Change</span>');
         array_push($data['body']['Market Price'], $row['Market Price Change Dollars']);
         array_push($data['body']['Market Price'], $row['Market Price Change Percentage'] . '%');
+
 
 
 

@@ -21,19 +21,21 @@
                 @if ($investors)
                     <ul class="retail-investor border-list border-list-ultramarine">
                         @foreach ($investors as $investor)
-                            <li class=""><a href="{{ $investor['link']['url'] }}" target="_blank"
-                                    class="py-3 inline-flex justify-between items-center w-full">
-                                    <p class="text-midnight font-Termina font-bold leading-[1.15]">
-                                        {{ $investor['link']['title'] }}</p>
-                                    <div class="w-[8px]">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="18"
-                                            viewBox="0 0 11 18" fill="none">
-                                            <path d="M1 1L9 9L1 17" stroke="#3E2BA5" stroke-width="2"
-                                                stroke-linecap="round" />
-                                        </svg>
-                                    </div>
-                                </a>
-                            </li>
+                            @if (isset($investor['link']['url']) && isset($investor['link']['title']))
+                                <li class=""><a href="{{ $investor['link']['url'] }}" target="_blank"
+                                        class="py-3 inline-flex justify-between items-center w-full">
+                                        <p class="text-midnight font-Termina font-bold leading-[1.15]">
+                                            {{ $investor['link']['title'] }}</p>
+                                        <div class="w-[8px]">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="18"
+                                                viewBox="0 0 11 18" fill="none">
+                                                <path d="M1 1L9 9L1 17" stroke="#3E2BA5" stroke-width="2"
+                                                    stroke-linecap="round" />
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </li>
+                            @endif
                         @endforeach
                     </ul>
                 @endif

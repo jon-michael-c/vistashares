@@ -13,7 +13,7 @@ class TopHoldings extends Component
     public $output;
     public $disclaimer;
     public $download;
-    public $date;
+    public $date = '10/01/2024';
     /**
      * Create a new component instance.
      */
@@ -22,7 +22,6 @@ class TopHoldings extends Component
         $this->output = $this->compileData();
         $this->disclaimer = $this->getDisclaimer();
         $this->download = $this->download();
-        $this->date = $this->getDate();
     }
 
     public function compileData()
@@ -43,7 +42,8 @@ class TopHoldings extends Component
         $readCSV = CSVHelper::readCSV($csvFile);
 
         // Find row by ticker
-        $rows = CSVHelper::findRowsByTicker('TBD', $readCSV, 'Account');
+        $ticker = strtoupper(get_the_title());
+        $rows = CSVHelper::findRowsByTicker($ticker, $readCSV, 'Account');
 
         foreach ($rows as $row) {
             $CUSIP = $row['CUSIP'];
@@ -63,6 +63,8 @@ class TopHoldings extends Component
 
 
         }
+
+        $this->date = $rows[0]['Date'];
 
         // Get the the top 10 holdings
         $data['body'] = array_slice($data['body'], 0, 10);

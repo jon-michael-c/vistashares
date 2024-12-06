@@ -37,7 +37,7 @@ class CSVHelper
         return $res;
     }
 
-    public static function findRowByTicker($ticker, $readCSV, $col = 'Fund Name')
+    public static function findRowByTicker($ticker, $readCSV, $col = 'Fund Ticker')
     {
         // Find row by ticker
         $row = array_filter($readCSV, function ($item) use ($ticker, $col) {

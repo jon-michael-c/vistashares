@@ -1,8 +1,7 @@
 <x-section id="holdings">
     <h2 class="pb-4">Holdings & Characteristics</h2>
     <div class="grid gap-6">
-        {{--         <x-top-holdings />
- --}}
+        <x-top-holdings />
         <x-exposure />
         <div class="grid gap-6 sm:grid-cols-2 sm:gap-6">
             <x-e-t-f-characteristics />
