@@ -33,7 +33,6 @@ class TradingDetails extends Component
                 'Ticker' => [],
                 'Bloomberg Index Ticker' => [],
                 'CUSIP' => [],
-                'ISIN' => [],
                 'Primary Exchange' => [],
                 'Shares Outstanding' => [],
                 'Number of Holdings' => [],

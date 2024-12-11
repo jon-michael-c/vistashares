@@ -2,7 +2,7 @@
     $paged = get_query_var('paged') ? get_query_var('paged') : 1;
     $category = get_query_var('category_name') ? get_query_var('category_name') : '';
     $query = new WP_Query([
-        'posts_per_page' => 2,
+        'posts_per_page' => 9,
         'post_type' => 'post',
         'post_status' => 'publish',
         'paged' => $paged,
