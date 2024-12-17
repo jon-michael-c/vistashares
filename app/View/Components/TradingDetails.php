@@ -55,15 +55,34 @@ class TradingDetails extends Component
         }
 
         array_push($data['body']['Ticker'], $row['Fund Ticker'] ?? '');
-        array_push($data['body']['Bloomberg Index Ticker'], $row['Fund Ticker'] ?? '');
+        array_push($data['body']['Bloomberg Index Ticker'], get_field('bloomberg_ticker') ?? '');
         array_push($data['body']['CUSIP'], $row['CUSIP'] ?? '');
         array_push($data['body']['Primary Exchange'], $row['Primary Exchange'] ?? 'NYSE');
         array_push($data['body']['Shares Outstanding'], $row['Shares Outstanding'] ?? 'N/A');
-        array_push($data['body']['Number of Holdings'], $row['Holdings'] ?? 'N/A');
+        array_push($data['body']['Number of Holdings'], $this->getNumHoldings() ?? 'N/A');
         array_push($data['body']['30-Day Median Bid-Ask Spread'], ($row['Median 30 Day Spread Percentage'] ?? '0') . '%');
 
 
         return $data;
+    }
+
+    private function getNumHoldings()
+    {
+        $res = 0;
+
+        $csvFile = CSVHelper::getRecentFile('.T5_ETF_Holdings_');
+        if (!file_exists($csvFile)) {
+            return $res;
+        }
+
+        $readCSV = CSVHelper::readCSV($csvFile);
+
+        $ticker = strtoupper(get_the_title());
+        $rows = CSVHelper::findRowsByTicker($ticker, $readCSV, 'Account');
+
+        $res = count($rows);
+
+        return $res;
     }
 
     public function getDisclaimer()
