@@ -14,10 +14,11 @@ class Table extends Component
     public $download;
     public $disclaimer;
     public $date;
+    public $holdings;
     /**
      * Create a new component instance.
      */
-    public function __construct($title = '', $output = [], $type = 'default', $download = '', $disclaimer = '', $date = '10/01/24')
+    public function __construct($title = '', $output = [], $type = 'default', $download = '', $disclaimer = '', $date = '10/01/24', $holdings = false)
     {
         $this->title = $title;
         $this->output = count($output) != 0 ? $output : $this->sampleOutput();
@@ -25,6 +26,7 @@ class Table extends Component
         $this->download = $download;
         $this->disclaimer = $disclaimer;
         $this->date = $date;
+        $this->holdings = $holdings;
     }
 
     private function sampleOutput()

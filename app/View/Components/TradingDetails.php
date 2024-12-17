@@ -57,7 +57,6 @@ class TradingDetails extends Component
         array_push($data['body']['Ticker'], $row['Fund Ticker'] ?? '');
         array_push($data['body']['Bloomberg Index Ticker'], $row['Fund Ticker'] ?? '');
         array_push($data['body']['CUSIP'], $row['CUSIP'] ?? '');
-        array_push($data['body']['ISIN'], $row['ISIN'] ?? 'N/A');
         array_push($data['body']['Primary Exchange'], $row['Primary Exchange'] ?? 'NYSE');
         array_push($data['body']['Shares Outstanding'], $row['Shares Outstanding'] ?? 'N/A');
         array_push($data['body']['Number of Holdings'], $row['Holdings'] ?? 'N/A');

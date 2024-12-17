@@ -44,6 +44,7 @@ class TopHoldings extends Component
         // Find row by ticker
         $ticker = strtoupper(get_the_title());
         $rows = CSVHelper::findRowsByTicker($ticker, $readCSV, 'Account');
+        $rows = $this->sortData($rows);
 
         foreach ($rows as $row) {
             $CUSIP = $row['CUSIP'];
@@ -94,6 +95,18 @@ class TopHoldings extends Component
     {
         $date = CSVHelper::getMostRecentDate($this->file);
         return $date;
+    }
+
+    private function sortData($data)
+    {
+        // Sort by Weightings
+        $res = [];
+        foreach ($data as $key => $row) {
+            $res[$key] = $row['Weightings'];
+        }
+        array_multisort($res, SORT_DESC, $data);
+
+        return $data;
     }
 
     /**
