@@ -262,10 +262,12 @@
   width: 16px;
   height: 16px;
   margin-left: auto;
-  background-image: url('~@images/download-dark.svg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
+  &-download {
+    background-image: url('~@images/download-dark.svg');
+  }
 }
 
 .bg-benefit {

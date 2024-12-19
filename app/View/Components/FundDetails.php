@@ -34,7 +34,7 @@ class FundDetails extends Component
                 'Inception Date' => ['10/01/2024'],
                 'Net Assets' => [],
                 'NAV' => [],
-                'Fact Sheet' => ['<a target="_blank" href="#"><span class="icon"></span></a>'],
+                'Fact Sheet' => ['<a target="_blank" href="#"><span class="icon icon-download"></span></a>'],
             ],
         ];
 
@@ -56,7 +56,7 @@ class FundDetails extends Component
 
         $fact_sheet = get_field('fact_sheet', get_the_ID());
         if ($fact_sheet) {
-            $data['body']['Fact Sheet'] = ['<a target="_blank" href="' . $fact_sheet['url'] . '"><span class="icon"></span></a>'];
+            $data['body']['Fact Sheet'] = ['<a target="_blank" href="' . $fact_sheet['url'] . '"><span class="icon icon-download"></span></a>'];
         }
 
 
