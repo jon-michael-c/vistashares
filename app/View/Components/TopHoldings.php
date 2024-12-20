@@ -27,7 +27,7 @@ class TopHoldings extends Component
     public function compileData()
     {
         $data = [
-            'head' => ['CUSIP', 'Shares', 'Price', 'Market Value', 'Weightings'],
+            'head' => ['Ticker', 'Market Value', 'Weightings'],
             'body' => [],
         ];
 
@@ -47,17 +47,13 @@ class TopHoldings extends Component
         $rows = $this->sortData($rows);
 
         foreach ($rows as $row) {
-            $CUSIP = $row['CUSIP'];
-            $Shares = number_format($row['Shares'], 0);
-            $Price = '$' . number_format($row['Price'], 2);
+            $Ticker = $row['StockTicker'];
             $MarketValue = '$' . number_format($row['MarketValue'], 2);
             $Weightings = $row['Weightings'];
             $SecurityName = $row['SecurityName'];
 
             $data['body'][$SecurityName] = [
-                $CUSIP,
-                $Shares,
-                $Price,
+                $Ticker,
                 $MarketValue,
                 $Weightings,
             ];

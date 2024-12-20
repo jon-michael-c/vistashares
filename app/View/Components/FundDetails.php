@@ -31,7 +31,7 @@ class FundDetails extends Component
         $data = [
             'head' => [],
             'body' => [
-                'Inception Date' => ['10/01/2024'],
+                'Inception Date' => [],
                 'Net Assets' => [],
                 'NAV' => [],
                 'Fact Sheet' => ['<a target="_blank" href="#"><span class="icon icon-download"></span></a>'],
@@ -53,6 +53,7 @@ class FundDetails extends Component
 
         array_push($data['body']['Net Assets'], isset($row['Net Assets']) ? '$' . number_format($row['Net Assets'], 2) : '');
         array_push($data['body']['NAV'], $row['NAV'] ?? '');
+        array_push($data['body']['Inception Date'], get_field('inception_date') ?? '10/01/2024');
 
         $fact_sheet = get_field('fact_sheet', get_the_ID());
         if ($fact_sheet) {
