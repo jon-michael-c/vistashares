@@ -355,3 +355,8 @@ body
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
+
+iframe {
+  width: 100% !important;
+  height: 400px;
+}

@@ -27,7 +27,6 @@
   "dependencies": {
     "@roots/bud-sass": "^6.20.0",
     "@tailwindcss/typography": "^0.5.15",
-    "caniuse-lite": "^1.0.30001689",
     "highcharts": "^11.4.8"
   }
 }

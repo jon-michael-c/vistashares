@@ -160,3 +160,20 @@
     margin-right: 0 !important;
   }
 }
+
+.post-type-post {
+  .is-root-container {
+    padding-left: 24px;
+    padding-right: 24px;
+    color: white;
+    @apply prose prose-a:text-indigo text-white;
+    strong {
+      color: white !important;
+    }
+  }
+}
+
+iframe {
+  width: 100% !important;
+  height: 400px;
+}
